@@ -1,0 +1,372 @@
+/* styling vars */
+
+$primary-font-stack: helvetica
+$secondary-font-stack: serif
+
+$primary-color: white
+$secondary-color: red
+$tertiary-color: DarkRed
+$background-color: #6dc4c7 /*#d8e4bc*/
+
+
+// Dimensions
+$dot-size: 1px
+$dot-space: 22px
+
+$header-padding-y: 2.2rem
+$header-padding-x: 1rem
+$grid-line-size: 0.05rem
+$content-margin: 0.1rem
+$hover-transition-time: 0.25s
+
+/* font face declarations */
+@font-face 
+	font-family: 'Favorit Extended'
+	font-style: normal
+	font-weight: normal
+	src: local('Favorit Extended'), url('/res/fonts/Favorit-RegularExtended.otf')
+
+@font-face 
+	font-family: 'Acumin Pro'
+	font-style: normal
+	font-weight: normal
+	src: local('Acumin Pro'), url('../../../res/fonts/Acumin-RPro.woff') format('woff')
+
+@font-face 
+	font-family: 'Acumin Pro Italic'
+	font-style: normal
+	font-weight: normal
+	src: local('Acumin Pro Italic'), url('../../../res/fonts/Acumin-ItPro.woff') format('woff')
+
+@font-face 
+	font-family: 'Acumin Pro Bold'
+	font-style: normal
+	font-weight: normal
+	src: local('Acumin Pro Bold'), url('../../../res/fonts/Acumin-BdPro.woff') format('woff')
+       
+@font-face 
+	font-family: 'Acumin Pro Bold Italic'
+	font-style: normal
+	font-weight: normal
+	src: local('Acumin Pro Bold Italic'), url('../../../res/fonts/Acumin-BdItPro.woff') format('woff')
+
+html, body
+	margin: 0
+	min-height: 100%
+
+body 
+	/*background: linear-gradient(90deg, $background-color ($dot-space - $dot-size), transparent 1%) center, linear-gradient($background-color ($dot-space - $dot-size), transparent 1%) center, $secondary-color */
+	/* background-size: $dot-space $dot-space */
+	background-image: url("/res/dynamic/stars.gif")
+
+header
+	display: flex
+
+	nav
+		display: flex
+		flex-direction: column
+
+main
+	display: flex
+
+	.stage
+		display: flex
+		justify-content: center
+		flex: 1 50%
+
+	.menu
+		flex: 50%
+
+
+.textContainer
+	// Style
+	background-color: black
+	color: white
+	font-family: $primary-font-stack
+
+	// Display
+	display: flex
+	align-items: flex-start
+	
+.flex-grid
+	display: flex
+	flex-wrap: wrap
+	/*justify-content: space-between*/
+
+	.item
+		display: flex
+		flex: 0 32%
+		justify-content: center
+		align-items: center
+
+		height: 100px
+		margin-bottom: 7rem
+
+		cursor: pointer
+
+		img
+			height: 10rem
+
+.dropdown
+	display: flex
+	flex-direction: column
+	justify-content: center
+	align-items: center
+
+	.dropdown-btn
+		display: flex
+		justify-content: center
+		align-items: center
+	.dropdown-content
+		/*display: none*/
+		background-color: none
+		visibility: hidden
+
+		a
+			color: $primary-color
+			text-decoration: none
+
+		a:visited
+			color: $primary-color
+			text-decoration: none
+		
+		a:hover
+			color: $secondary-color
+			text-decoration: none
+
+		a:active
+			color: $tertiary-color
+			text-decoration: none
+
+.dropdown:hover .dropdown-content
+	visibility: visible 
+
+.dropdown:hover .dropdown-btn
+	img
+		transform: rotate(90deg)
+
+.dropdown-btn:hover
+	img
+		transform: rotate(90deg)
+
+#expansionContainer
+	height: 800px
+
+.btn-secondary
+	background-color: $secondary-color
+.btn-secondary:hover
+	cursor: pointer
+	background-color: $tertiary-color
+
+.blot-portrait
+	position: relative
+	overflow: hidden
+	border-radius: 45% 55% 40% 60% / 58% 77% 23% 42%
+	margin: 0px auto
+	background-color: white
+
+	img
+		width: 100%
+		height: auto
+
+.blot-portrait:hover, .blot-portrait:active, .blot-portrait.active
+	-webkit-filter: grayscale(100%)
+	filter: grayscale(100%)
+	
+
+.blot-portrait:hover
+	background-color: $secondary-color
+	transition: background-color 0.5s ease
+
+.blot-portrait:active, .blot-portrait.active
+	background-color: $tertiary-color
+
+.contentBody
+	width: 40%
+	background-color: black
+	color: white
+	text-align: center
+	padding: 1rem
+
+
+/* utility classes - psuedo tailwind naming convention*/
+/* square */
+.m-0
+	margin: 0
+.p-05
+	padding: 0.5rem
+.p-5
+	padding: 5rem
+.p-10
+	padding: 10rem
+.p-20
+	padding: 20rem	
+.p-30
+	padding: 30rem
+
+/* top */
+.mt-1
+	margin-top: 1rem
+.mt-2
+	margin-top: 2rem
+.mt-5
+	margin-top: 5rem
+.mt-8
+	margin-top: 8rem
+.mt-15
+	margin-top: 15rem
+.mtn-6
+	margin-top: -6rem
+
+.pt-01
+	padding-top: 0.1rem
+.pt-2
+	padding-top: 2rem
+.pt-5
+	padding-top: 5rem
+.pt-10
+	padding-top: 10rem
+.pt-20
+	padding-top: 20rem
+.pt-30
+	padding-top: 30rem
+
+/* bottom */
+.pb-01
+	padding-bottom: 0.1rem
+.pb-5
+	padding-bottom: 5rem
+.pb-10
+	padding-bottom: 10rem
+.pb-20
+	padding-bottom: 20rem
+.pb-30
+	padding-bottom: 30rem
+
+.mb-5
+	margin-bottom: 5rem
+
+
+/* left */
+.pl-05
+	padding-left: 0.5rem
+.pl-5
+	padding-left: 5rem
+.pl-8
+	padding-left: 8rem
+.pl-10
+	padding-left: 10rem
+.pl-15
+	padding-left: 15rem
+.pl-20
+	padding-left: 20rem	
+.pl-30
+	padding-left: 30rem
+
+.ml-5
+	margin-left: 5rem
+.ml-20
+	margin-left: 20rem
+.ml-25
+	margin-left: 25rem
+.ml-50
+	margin-left: 50rem
+
+/* right */
+.pr-05
+	padding-right: 0.5rem
+.pr-5
+	padding-right: 5rem
+.pr-10
+	padding-right: 10rem
+.pr-20
+	padding-right: 20rem	
+.pr-30
+	padding-right: 30rem
+
+/* z index */
+.z-0
+	z-index: 0
+.z-1
+	z-index: 1
+.z-2
+	z-index: 2
+
+/* Display */
+.absolute
+	position: absolute
+
+.relative
+	position: relative
+
+.left-border
+	left: 24.5%
+
+.right-border
+	right: 24.5%
+
+.left-border-interior
+	left: 0
+
+.right-border-interior
+	right: 0
+
+.translate-height-up
+	transform: translateY(-100%)
+
+.flex
+	display: flex
+.flex-row
+	flex-direction: row
+.w-20
+	width: 20%
+.w-25
+	width: 25%
+.w-30
+	width: 30%
+.w-100
+	width: 100%
+.h-a
+	height: auto
+.h-100
+	height: 100%
+.bs-bb
+	box-sizing: border-box
+.fs-070
+	font-size: 0.7rem
+.fs-100
+	font-size: 100%
+.font-bold
+	font-weight: bold
+.font-normal
+	font-weight: normal
+.primary-font-stack
+	font-family: $primary-font-stack
+.secondary-font-stack
+	font-family: $secondary-font-stack
+.primary-color
+	color: $primary-color
+.ta-left
+	text-align: left
+.ta-right
+	text-align: right
+.ta-center
+	text-align: center
+.jc-center
+	justify-content: center
+.mb-4
+	margin-bottom: 4rem
+.mt-4
+	margin-top: 4rem
+.ml-auto
+	margin-left: auto
+.mr-auto
+	margin-right: auto
+.top
+	top: 0
+.bottom
+	bottom: 0
+
+.bc-secondary
+	background-color: $secondary-color
+
