@@ -35,11 +35,14 @@
 </header> #}
 
 <main>
-    <div>
-        <img  src="/res/static/goblin.png"/></div>
+    <div class="w-50 text-center">
+        <img  class="w-50 h-auto"src="/res/static/goblin.png"/>
+	</div>
 	<!-- Split into two main areas - stage and menu where hover + click on an element in menu expands it into stage -->
-	<div class="contentBody -mt-6 ml-25 mb-5">
-		{% block textContent %}{% endblock %}
+	<div class="w-50">
+		<div class="contentBody -mt-6 ml-10 mr-5 mb-5">
+			{% block textContent %}{% endblock %}
+		</div>
 	</div>
 </main>
 
