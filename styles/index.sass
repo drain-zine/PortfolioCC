@@ -190,6 +190,29 @@ main
 	p
 		margin-top: 0
 
+.dragContainer
+	display: flex
+	flex-flow: column 
+	align-content: space-between
+	height: 580px
+	width: 100%
+
+	.item
+		width: fit-content
+		margin-bottom: 2%
+	.item:nth-child(3n+1) 
+		order: 1
+	.item:nth-child(3n+2)
+		order: 2
+	.item:nth-child(3n)
+		order: 3
+.dragContainer::before, .dragContainer::after 
+	content: ""
+	flex-basis: 100%
+	width: 0
+	order: 2
+
+
 
 /* utility classes - psuedo tailwind naming convention*/
 /* square */
@@ -467,3 +490,6 @@ main
 	height: auto
 .text-center
 	text-align: center
+
+.w-150
+	width: 150px

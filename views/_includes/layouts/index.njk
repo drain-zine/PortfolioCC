@@ -1,0 +1,17 @@
+{% extends "layouts/root.njk" %}
+{% block content %}
+
+<script src="https://cdn.jsdelivr.net/npm/interactjs/dist/interact.min.js"></script>
+<script src="/scripts/interactDrag.js"></script>
+
+<main class="pt-2">
+    <div class="dragContainer">
+        <div class="item draggable"><img class="w-150 h-auto blot-portrait" src="/res/PLACEHOLDER/gnome1.jpg"/></div>
+        <div class="item draggable"><img class="w-150 blot-portrait" src="/res/PLACEHOLDER/gnome2.png"/></div>
+        <div class="item draggable"><img class="w-150 blot-portrait" src="/res/PLACEHOLDER/gnome3.png"/></div>
+
+        <div class="item draggable"><img class="w-150 blot-portrait" src="/res/PLACEHOLDER/gnome4.png"/></div>
+        <div class="item draggable"><img class="w-150 blot-portrait" src="/res/PLACEHOLDER/gnome5.png"/></div>
+   </div>
+</main>
+{% endblock %}
