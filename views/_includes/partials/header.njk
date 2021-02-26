@@ -1,9 +1,5 @@
-{% extends "layouts/root.njk" %}
-{% block content %}
-
-
-{# <header class="pt-2 pl-10">
-	<nav class="mt-15 ml-5 ">
+<header class="pt-2 pl-10">
+	<nav class="mt-8">
 		<div class="textContainer p-05">
 			<p class="m-0">Christian Carlson</p>
 		</div>
@@ -18,28 +14,18 @@
 
 				<div class="dropdown-content w-100">
 					<div class="textContainer p-05 bs-bb w-100"><a href="">Home</a></div>
-					<div class="textContainer p-05 bs-bb w-100"><a href="">Portfolio</a></div>
+					<div class="textContainer p-05 bs-bb w-100"><a href="/index.html">Portfolio</a></div>
 					<div class="textContainer p-05 bs-bb w-100"><a href="">Contact</a></div>
 				</div>
 			</div>
 		
 	</nav>
 
-	<div class="titleCard w-25 pl-5 mt-5">
+	<div class="titleCard w-25 pl-15">
 		<div class="textContainer p-05 jc-center">
 			<p class="m-0">{{title}}</p>
 		</div>
 		<!--<img class="h-a w-100" src="/res/static/kaws3.jpg"/>-->
 		<marquee direction="right" class="primary-font-stack fs-070 primary-color">{{scrollingText}}</marquee>
 	</div> 
-</header> #}
-
-<main>
-    <div>
-        <img  src="/res/static/goblin.png"/></div>
-	<!-- Split into two main areas - stage and menu where hover + click on an element in menu expands it into stage -->
-	<div class="contentBody mtn-6 ml-25 mb-5">
-		{% block textContent %}{% endblock %}
-	</div>
-</main>
-{% endblock %}
+</header>
