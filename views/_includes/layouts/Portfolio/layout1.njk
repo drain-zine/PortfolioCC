@@ -4,11 +4,12 @@
 
 <main>
     <div class="w-1/2 text-center">
-        <img  class="w-1/2 h-auto"src="/res/static/goblin.png"/>
+        <img class="w-1/3 h-auto"src="/res/static/goblin.png"/>
 	</div>
 	<!-- Split into two main areas - stage and menu where hover + click on an element in menu expands it into stage -->
-	<div class="w-1/2">
-		<div class="contentBody -mt-24 mx-20 mb-20">
+	<div class="contentWrapper w-1/2 relative text-center -mt-24">
+		{% include "partials/blobs.njk" %}
+		<div class="contentBody mx-20 absolute">
 			{% block textContent %}{% endblock %}
 		</div>
 	</div>

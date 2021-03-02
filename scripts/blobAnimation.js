@@ -88,11 +88,15 @@ export function animateBlob() {
     return points;
   }
 
-  /* document.querySelector("#expansionContainer > .item").addEventListener("mouseover", () => {
-      noiseStep = 0.001;
+  document
+    .querySelector("#expansionContainer > .item")
+    .addEventListener("mouseenter", () => {
+      noiseStep *= 2;
     });
-    
-    document.querySelector("#expansionContainer > .item").addEventListener("mouseleave", () => {
-      noiseStep = 0.0005;
-    }); */
+
+  document
+    .querySelector("#expansionContainer > .item")
+    .addEventListener("mouseleave", () => {
+      noiseStep /= 2;
+    });
 }
