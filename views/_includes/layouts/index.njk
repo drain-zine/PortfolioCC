@@ -1,0 +1,22 @@
+{% extends "layouts/root.njk" %}
+{% block content %}
+
+<script src="https://cdn.jsdelivr.net/npm/interactjs/dist/interact.min.js"></script>
+<script src="/scripts/interactDrag.js"></script>
+<script src="/scripts/parallax.js"></script>
+
+<main class="pt-2 flex justify-center">
+
+   <div class="puzzle-container">
+        <div class="relative ta-center">
+            <h1 class="primary-font-stack primary-color" >{{subtitle | safe}}</h1>
+            {# <marquee class="hiddenClue" direction="left">The page is a visual contraption. Can I move it?</marquee>  #}
+            <img class="background" src="/res/static/puzzleBackBorder.png"/>
+        </div>
+          <div class="piece p1 draggable"><img src="/res/static/piece1.png"/></div><div class="link l1"><p><a href="portfolio.html">{{link1 | safe}}</a></p></div>
+          <div class="piece p2 draggable"><img src="/res/static/piece2.png"/></div><div class="link l2"><p><a href="">{{link2 | safe}}</a></p></div>
+          <div class="piece p3 draggable"><img src="/res/static/piece3.png"/></div><div class="link l3"><p><a href="">{{link3 | safe}}</a></p></div>
+          <div class="piece p4 draggable"><img  src="/res/static/piece4.png"/></div> <div class="link l4"><p><a href="contact.html">{{link4 | safe}}</a></p></div>
+   </div>
+</main>
+{% endblock %}

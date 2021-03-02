@@ -7,9 +7,11 @@
     
     </head>
 
-    <body>
+    <body class="{{background}}">
 
-        {% include "partials/header.njk" %}
+        {% if title != 'Home' %}
+            {% include "partials/header.njk" %}
+        {% endif %}
 
         {% block content %}
         {% endblock %}
@@ -17,4 +19,14 @@
         {% include "partials/footer.njk" %}
 
     </body>
+
+    <script>
+        $('body').flowtype({
+        minimum   : 500,
+        maximum   : 1200,
+        minFont   : 8,
+        maxFont   : 16,
+        fontRatio : 60
+        });
+    </script>
 </html>

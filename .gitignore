@@ -15,3 +15,6 @@ yarn-error.log*
 
 # Artefacts
 .DS_Store
+
+# Testing
+res/PLACEHOLDER

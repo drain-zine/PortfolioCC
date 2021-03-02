@@ -8,6 +8,9 @@ $secondary-color: red
 $tertiary-color: DarkRed
 $background-color: #6dc4c7 /*#d8e4bc*/
 
+.trolley
+	background-image: url("/res/static/trolley.png")
+	background-repeat: repeat
 
 // Dimensions
 $dot-size: 1px
@@ -57,7 +60,6 @@ html, body
 body 
 	/*background: linear-gradient(90deg, $background-color ($dot-space - $dot-size), transparent 1%) center, linear-gradient($background-color ($dot-space - $dot-size), transparent 1%) center, $secondary-color */
 	/* background-size: $dot-space $dot-space */
-	background-image: url("/res/dynamic/stars.gif")
 
 header
 	display: flex
@@ -122,21 +124,6 @@ main
 		background-color: none
 		visibility: hidden
 
-		a
-			color: $primary-color
-			text-decoration: none
-
-		a:visited
-			color: $primary-color
-			text-decoration: none
-		
-		a:hover
-			color: $secondary-color
-			text-decoration: none
-
-		a:active
-			color: $tertiary-color
-			text-decoration: none
 
 .dropdown:hover .dropdown-content
 	visibility: visible 
@@ -189,6 +176,125 @@ main
 	
 	p
 		margin-top: 0
+
+
+.puzzle-container
+	display: flex
+	flex-direction: row
+	flex-wrap: wrap
+	position: relative
+
+	width: 33.5%
+	
+	h1
+		z-index: 0
+		align-self: center
+		position: absolute
+		left: 50%
+		transform: translateX(-50%)
+		width: 100%
+
+	.background
+		width: 50vw
+		z-index: 1
+		
+
+	justify-content: center
+
+	.link
+		position: absolute
+		z-index: 2
+		height: fit-content
+
+		p
+			font-family: $primary-font-stack
+			color: white
+
+	.l1
+		top: 38%
+		left: 25%
+	.l2
+		top: 35%
+		left: 66%
+	.l3
+		top: 56%
+		left: 15%
+	.l4
+		top: 56%
+		left: 65%
+	
+
+	.piece
+		height: fit-content
+		position: absolute
+
+	
+		z-index: 3
+
+	.p1
+		width: 45% //450px
+		img
+			width: 100%
+			
+			height: auto
+
+		top: 28.3%
+		left: 9.46%
+
+	.p2
+		width: 39.1% //390px
+		img
+			width: 100%
+			height: auto
+
+		top: 28.5%
+		left: 51.4%
+
+	.p3
+		width: 44.1% //450px
+		img
+			width: 100%
+			height: auto
+
+		top: 45.2%
+		left: 1.8%
+
+	.p4
+		width: 55.2% // 550px
+		img
+			width: 100%
+			height: auto
+			
+		top: 47.3%
+		left: 38%
+
+.hiddenClue
+	color: white
+	position: absolute
+	z-index: 0
+	top: 6%
+	width: 50%
+	left: -5%
+
+a
+	color: $primary-color
+	text-decoration: none
+
+a:visited
+	color: $primary-color
+	text-decoration: none
+
+a:hover
+	color: $secondary-color
+	text-decoration: none
+
+a:active
+	color: $tertiary-color
+	text-decoration: none
+
+
+	
+
 
 
 /* utility classes - psuedo tailwind naming convention*/
@@ -467,3 +573,15 @@ main
 	height: auto
 .text-center
 	text-align: center
+.relative
+	position: relative
+
+.w-150
+	width: 150px
+
+.flex
+	display: flex
+.justify-center
+	justify-content: center
+
+
