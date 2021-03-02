@@ -5,7 +5,7 @@
   "scripts": {
     "clean": "rimraf _site",
     "start": "cross-env NODE_ENV=development npm-run-all -l clean --parallel start:*",
-    "start:sass": "sass --watch styles:_site/styles",
+    "start:sass": "sass --watch styles/index.sass:_site/styles/index.css",
     "start:eleventy": "eleventy --serve",
     "start:tailwind": "postcss -w styles/_tailwind.css -o _site/styles/tailwind.css",
     "build": "cross-env NODE_ENV=production npm-run-all -l clean --sequential build:*",
