@@ -10,7 +10,7 @@
     "start:tailwind": "postcss -w styles/_tailwind.css -o _site/styles/tailwind.css",
     "build": "cross-env NODE_ENV=production npm-run-all -l clean --sequential build:*",
     "build:sass": "sass --update styles/index.sass:_site/styles/index.css",
-    "build:tailwind": "postcss -w styles/_tailwind.css -o _site/styles/tailwind.css",
+    "build:tailwind": "postcss styles/_tailwind.css -o _site/styles/tailwind.css",
     "build:eleventy": "eleventy",
     "lint": "prettier -w ."
   },
