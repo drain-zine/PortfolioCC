@@ -1,8 +1,11 @@
 {% extends "layouts/root.njk" %}
 {% block content %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/gsap.min.js"></script>
 
-<script>
+<script type="module">
+import {animateBlob} from '/scripts/blobAnimation.js';
 $(document).ready(function(){ 
+	
 	// init
 	var $expansionContainer = $("#expansionContainer");
 	var $expand = $('.item.active').clone();
@@ -23,6 +26,8 @@ $(document).ready(function(){
 	$workTitle.html(works[0]);
 	$workLink.attr("href", work_links[0]);
 
+	animateBlob();
+
     $('.item > img').mouseenter(function(){
 		if( !($(this).parent()).hasClass("active")){
 			$expansionContainer.empty();
@@ -33,14 +38,15 @@ $(document).ready(function(){
 			$expand.removeClass("active"); // remove styling
 			$expansionContainer.html($expand); // update container
 
+			animateBlob();
+
 			$workTitle.html(works[($(this).parent()).index(($(this).parent()))]);
 		}
    });
 
 });
 </script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/gsap.min.js"></script>
-<script type="module" src="/scripts/blobAnimation.js"></script>
+
 
 
 <main class="pt-8">
@@ -87,7 +93,7 @@ $(document).ready(function(){
 			<div class="item"></div>
 
 			<!-- row 3 -->
-			<div class="item -ml-12">
+			<div class="item -ml-24">
 				{% include "partials/blobs.njk" %}
 				<img class="blot-portrait" src="/res/static/gnome2.png	"/>
 			</div>
