@@ -7,8 +7,10 @@
     "start": "cross-env NODE_ENV=development npm-run-all -l clean --parallel start:*",
     "start:sass": "sass --watch styles:_site/styles",
     "start:eleventy": "eleventy --serve",
-    "build": "cross-env NODE_ENV=production npm-run-all -l clean --parallel build:*",
+    "start:tailwind": "postcss -w styles/_tailwind.css -o _site/styles/tailwind.css",
+    "build": "cross-env NODE_ENV=production npm-run-all -l clean --sequential build:*",
     "build:sass": "sass --update styles:_site/styles",
+    "build:tailwind": "postcss styles/_tailwind.css -o _site/styles/tailwind.css",
     "build:eleventy": "eleventy",
     "lint": "prettier -w ."
   },
@@ -20,6 +22,7 @@
   "homepage": "https://github.com/drain-zine/portfolio#readme",
   "devDependencies": {
     "@11ty/eleventy": "^0.11.1",
+    "autoprefixer": "^10.2.4",
     "cross-env": "^7.0.3",
     "husky": "^4.3.8",
     "markdown-it": "^12.0.4",
@@ -28,15 +31,24 @@
     "markdown-it-bracketed-spans": "^1.0.1",
     "npm-run-all": "^4.1.5",
     "outdent": "^0.8.0",
+    "postcss": "^8.2.6",
+    "postcss-cli": "^8.3.1",
     "prettier": "^2.2.1",
     "pretty-quick": "^3.1.0",
     "rimraf": "^2.7.1",
     "sass": "^1.32.6",
-    "sass-convert": "^0.5.2"
+    "sass-convert": "^0.5.2",
+    "tailwindcss": "^2.0.3"
   },
   "husky": {
     "hooks": {
       "pre-commit": "pretty-quick --staged"
+    }
+  },
+  "postcss": {
+    "plugins": {
+      "tailwindcss": {},
+      "autoprefixer": {}
     }
   }
 }
