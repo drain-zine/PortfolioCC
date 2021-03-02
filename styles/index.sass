@@ -8,6 +8,9 @@ $secondary-color: red
 $tertiary-color: DarkRed
 $background-color: #6dc4c7 /*#d8e4bc*/
 
+.trolley
+	background-image: url("/res/static/trolley.png")
+	background-repeat: repeat
 
 // Dimensions
 $dot-size: 1px
@@ -57,8 +60,6 @@ html, body
 body 
 	/*background: linear-gradient(90deg, $background-color ($dot-space - $dot-size), transparent 1%) center, linear-gradient($background-color ($dot-space - $dot-size), transparent 1%) center, $secondary-color */
 	/* background-size: $dot-space $dot-space */
-	background-image: url("/res/PLACEHOLDER/test.png")
-	background-repeat: repeat
 
 header
 	display: flex
@@ -185,6 +186,13 @@ main
 
 	width: 33.5%
 	
+	h1
+		z-index: 0
+		align-self: center
+		position: absolute
+		left: 50%
+		transform: translateX(-50%)
+		width: 100%
 
 	.background
 		width: 50vw
@@ -210,7 +218,7 @@ main
 		left: 66%
 	.l3
 		top: 56%
-		left: 35%
+		left: 15%
 	.l4
 		top: 56%
 		left: 65%
@@ -565,6 +573,8 @@ a:active
 	height: auto
 .text-center
 	text-align: center
+.relative
+	position: relative
 
 .w-150
 	width: 150px
