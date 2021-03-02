@@ -5,71 +5,96 @@
 $(document).ready(function(){ 
 	// init
 	var $expansionContainer = $("#expansionContainer");
-	var $expand = $('.item > img.active').clone();
+	var $expand = $('.item.active').clone();
 
 	var works = [{{_works | safe}}]; // get pieces of work
+	var work_links = []; // get links
+
+	// pop links
+	for (var i = 0; i < works.length; i++) {
+    	work_links[i] = '/Portfolio/'+works[i].toLowerCase().replace(' ','') + '.html';
+	}
 	var $workTitle = $("#workTitle");
+	var $workLink = $("#workLink");
 
 	// initialise
-	$expand.addClass("h-100");
 	$expand.removeClass("active"); // remove styling
 	$expansionContainer.html($expand);
 	$workTitle.html(works[0]);
+	$workLink.attr("href", work_links[0]);
 
     $('.item > img').mouseenter(function(){
-		
-		if( !$(this).hasClass("active")){
-
+		if( !($(this).parent()).hasClass("active")){
 			$expansionContainer.empty();
-			$('.item > img').removeClass("active"); // remove active ref from all menu objects
-			$(this).addClass("active"); // add to this one :)
+			$(".item").removeClass("active"); // remove active ref from all menu objects
+			($(this).parent()).addClass("active"); // add to this one :)
 		
-			var $expand = $(this).clone();
-			$expand.addClass("h-100");
+			var $expand = ($(this).parent()).clone();
 			$expand.removeClass("active"); // remove styling
-			$expansionContainer.html($expand);
+			$expansionContainer.html($expand); // update container
 
-			$workTitle.html(works[$('.item > img').index($(this))]);
+			$workTitle.html(works[($(this).parent()).index(($(this).parent()))]);
 		}
    });
 
-   if($('.item > img').hasClass("active")){
-	   	console.log("Hello");
-		/*var $expand = $(this).clone();
-		$expansionContainer.html($expand);*/
-   }
-
 });
 </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/gsap.min.js"></script>
+<script type="module" src="/scripts/blobAnimation.js"></script>
 
 
 <main class="pt-8">
 	<!-- Split into two main areas - stage and menu where hover + click on an element in menu expands it into stage -->
 	<div class="stage">
 		<div id="expansionContainer"></div>
-		<div class="flex flex-row absolute z-20 ml-96 mt-20">
+		<div id="expandedTitleContainer" class="flex flex-row absolute z-20 ml-96 mt-20">
 			<div class="textContainer px-2">
 				<p id="workTitle" class="m-0"></p>
 			</div>
 
-			<a href="/Portfolio/layout_1.html"><div class="textContainer btn-secondary px-2">
+			<a id="workLink" href="/Portfolio/layout_1.html"><div class="textContainer btn-secondary px-2">
 				<p class="m-0">Read</p>
 			</div></a>
 		</div>
 	</div>
 	<div class="menu -mt-40">
 		<div class="flex-grid">
-			<div class="item"><img class="active blot-portrait" src="/res/static/goblin.png"/></div>
-			<div class="item"><img class="blot-portrait" src="/res/static/goblin.png"/></div>
-			<div class="item"><img class="blot-portrait" src="/res/static/goblin2.png"/></div>
+			<!-- row 1 -->
+			<div class="active item">
+				{% include "partials/blobs.njk" %}
+				<img class="blot-portrait" src="/res/static/goblin.png"/>
+			</div>
+			<div class="item"></div>
+			<div class="item"></div>
 
-			<div class="item"><img class="blot-portrait" src="/res/static/goblin3.png"/></div>
-			<div class="item"><img class="blot-portrait" src="/res/static/goblin4.png"/></div>
-			<div class="item"><img class="blot-portrait" src="/res/static/gnome1.png"/></div>
+			<!-- row 2 -->
+			<div class="item"></div>
+			<div class="item">
+				{% include "partials/blobs.njk" %}
+				<img class="blot-portrait" src="/res/static/goblin2.png"/>
+			</div>
+			<div class="item"></div>
 
-			<div class="item"><img class="blot-portrait" src="/res/static/goblin.png"/></div>
-			<div class="item"><img class="blot-portrait" src="/res/static/goblin.png"/></div>
-			<div class="item"><img class="blot-portrait" src="/res/static/goblin.png"/></div>
+			<!-- row 3 -->
+			<div class="item">
+				{% include "partials/blobs.njk" %}
+				<img class="blot-portrait" src="/res/static/goblin3.png"/>
+			</div>
+			<div class="item mt-32 ml-24">
+				{% include "partials/blobs.njk" %}
+				<img class="blot-portrait" src="/res/static/goblin4.png"/>
+			</div>
+			<div class="item"></div>
+
+			<!-- row 3 -->
+			<div class="item -ml-12">
+				{% include "partials/blobs.njk" %}
+				<img class="blot-portrait" src="/res/static/gnome2.png	"/>
+			</div>
+			<div class="item mt-24 ml-12">
+				{% include "partials/blobs.njk" %}
+				<img class="blot-portrait" src="/res/static/gnome1.png"/>
+			</div>
 		</div>
 	</div>
 </main>
