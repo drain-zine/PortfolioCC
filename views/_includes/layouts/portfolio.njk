@@ -35,7 +35,7 @@ $(document).ready(function(){
 			($(this).parent()).addClass("active"); // add to this one :)
 		
 			var $expand = ($(this).parent()).clone();
-			$expand.removeClass("active"); // remove styling
+			$expand.attr('class', 'item'); // remove styling
 			$expansionContainer.html($expand); // update container
 
 			animateBlob();
