@@ -4,10 +4,10 @@ import SimplexNoise from "https://cdn.skypack.dev/simplex-noise@2.4.0";
 export function animateBlob() {
   // reset vals
 
-  $("#expansionContainer > .item > svg > path").attr("id", "blob");
+  $("#expansionContainer > .item > svg > path").attr("class", "blob");
   $("#expansionContainer > .item > svg > path").attr("d", "");
   // our <path> element
-  const path = document.querySelector("#blob");
+  const path = document.querySelectorAll(".blob");
   // used to set our custom property values
 
   let hueNoiseOffset = 0;
@@ -15,37 +15,39 @@ export function animateBlob() {
 
   const simplex = new SimplexNoise();
 
-  const points = createPoints();
+  const points = [createPoints(), createPoints()];
 
   (function animate() {
-    path.setAttribute("d", spline(points, 1, true));
+    for (var j = 0; j < path.length; j++) {
+      path[j].setAttribute("d", spline(points[j], 1, true));
 
-    // for every point...
-    for (let i = 0; i < points.length; i++) {
-      const point = points[i];
+      // for every point...
+      for (let i = 0; i < points[j].length; i++) {
+        const point = points[j][i];
 
-      // return a pseudo random value between -1 / 1 based on this point's current x, y positions in "time"
-      const nX = noise(point.noiseOffsetX, point.noiseOffsetX);
-      const nY = noise(point.noiseOffsetY, point.noiseOffsetY);
-      // map this noise value to a new value, somewhere between it's original location -20 and it's original location + 20
-      const x = map(nX, -1, 1, point.originX - 20, point.originX + 20);
-      const y = map(nY, -1, 1, point.originY - 20, point.originY + 20);
+        // return a pseudo random value between -1 / 1 based on this point's current x, y positions in "time"
+        const nX = noise(point.noiseOffsetX, point.noiseOffsetX);
+        const nY = noise(point.noiseOffsetY, point.noiseOffsetY);
+        // map this noise value to a new value, somewhere between it's original location -20 and it's original location + 20
+        const x = map(nX, -1, 1, point.originX - 20, point.originX + 20);
+        const y = map(nY, -1, 1, point.originY - 20, point.originY + 20);
 
-      // update the point's current coordinates
-      point.x = x;
-      point.y = y;
+        // update the point's current coordinates
+        point.x = x;
+        point.y = y;
 
-      // progress the point's x, y values through "time"
-      point.noiseOffsetX += noiseStep;
-      point.noiseOffsetY += noiseStep;
+        // progress the point's x, y values through "time"
+        point.noiseOffsetX += noiseStep;
+        point.noiseOffsetY += noiseStep;
+      }
+
+      const hueNoise = noise(hueNoiseOffset, hueNoiseOffset);
+      const hue = map(hueNoise, -1, 1, 0, 360);
+
+      hueNoiseOffset += noiseStep / 6;
+
+      requestAnimationFrame(animate);
     }
-
-    const hueNoise = noise(hueNoiseOffset, hueNoiseOffset);
-    const hue = map(hueNoise, -1, 1, 0, 360);
-
-    hueNoiseOffset += noiseStep / 6;
-
-    requestAnimationFrame(animate);
   })();
 
   function map(n, start1, end1, start2, end2) {

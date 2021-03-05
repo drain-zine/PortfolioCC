@@ -25,6 +25,7 @@ $(document).ready(function(){
 	$expansionContainer.html($expand);
 	$workTitle.html(works[0]);
 	$workLink.attr("href", work_links[0]);
+	$('.item.active > svg > path').attr("class","blob");
 
 	animateBlob();
 
@@ -66,7 +67,7 @@ $(document).ready(function(){
 	<div class="menu -mt-40">
 		<div class="flex-grid">
 			<!-- row 1 -->
-			<div class="active item">
+			<div class="item active">
 				{% include "partials/blobs.njk" %}
 				<img class="blot-portrait" src="/res/static/goblin.png"/>
 			</div>
