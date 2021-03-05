@@ -11,12 +11,25 @@ $(document).ready(function(){
 
 
 
-<main class="flex justify-center">
+<main class="flex justify-center -mt-48 ml-32 ">
 	<!-- Split into two main areas - stage and menu where hover + click on an element in menu expands it into stage -->
-	<div class="w-1/2 text-center -mt-24">
+	<div class="w-1/2 relative text-center -mt-24">
 		{% include "partials/blobs.njk" %}
-		<div class="contentBody mx-20 absolute">
-			{% block textContent %}{% endblock %}
+		<div class="primary-font-stack absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+  			<table class="border-spacing-2">
+				<tr>
+					<th class="font-bold text-left mr-24">Email</th>
+					<th class="font-normal secondary-font-stack">{{email}}</th>
+				</tr>
+				<tr>
+					<th class="font-bold text-left">Mobile</th>
+					<th class="font-normal secondary-font-stack">{{mobile}}</th>
+				</tr>
+				<tr>
+					<th class="font-bold text-left">LinkedIn</th>
+					<th class="font-normal secondary-font-stack">{{LinkedIn}}</th>
+				</tr>
+            </table>
 		</div>
 	</div>
 </main>
