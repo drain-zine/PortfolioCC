@@ -1,11 +1,13 @@
 import { spline } from "https://cdn.skypack.dev/@georgedoescode/spline@1.0.1";
 import SimplexNoise from "https://cdn.skypack.dev/simplex-noise@2.4.0";
 
-export function animateBlob() {
+export function animateBlob(blob_path, hover_path = null) {
   // reset vals
+  $(blob_path).attr("id", "blob");
+  $(blob_path).attr("d", "");
 
-  $("#expansionContainer > .item > svg > path").attr("id", "blob");
-  $("#expansionContainer > .item > svg > path").attr("d", "");
+  // strip static styling
+  $(blob_path).attr("transform", "");
   // our <path> element
   const path = document.querySelector("#blob");
   // used to set our custom property values
@@ -88,15 +90,13 @@ export function animateBlob() {
     return points;
   }
 
-  document
-    .querySelector("#expansionContainer > .item")
-    .addEventListener("mouseenter", () => {
+  if (hover_path != null) {
+    document.querySelector(hover_path).addEventListener("mouseenter", () => {
       noiseStep *= 2;
     });
 
-  document
-    .querySelector("#expansionContainer > .item")
-    .addEventListener("mouseleave", () => {
+    document.querySelector(hover_path).addEventListener("mouseleave", () => {
       noiseStep /= 2;
     });
+  }
 }

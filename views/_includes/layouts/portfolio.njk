@@ -9,6 +9,8 @@ $(document).ready(function(){
 	// init
 	var $expansionContainer = $("#expansionContainer");
 	var $expand = $('.item.active').clone();
+	var $items = $('.item').not('.empty');
+	var i =0
 
 	var works = [{{_works | safe}}]; // get pieces of work
 	var work_links = []; // get links
@@ -26,7 +28,7 @@ $(document).ready(function(){
 	$workTitle.html(works[0]);
 	$workLink.attr("href", work_links[0]);
 
-	animateBlob();
+	animateBlob("#expansionContainer > .item > svg > path", "#expansionContainer > .item");
 
     $('.item > img').mouseenter(function(){
 		if( !($(this).parent()).hasClass("active")){
@@ -38,27 +40,29 @@ $(document).ready(function(){
 			$expand.attr('class', 'item'); // remove styling
 			$expansionContainer.html($expand); // update container
 
-			animateBlob();
+			animateBlob("#expansionContainer > .item > svg > path", "#expansionContainer > .item");
 
-			$workTitle.html(works[($(this).parent()).index(($(this).parent()))]);
+			i = $items.index($(this).parent());
+			console.log(i);
+
+			$workTitle.html(works[i]);
+			$workLink.attr("href",work_links[i]);
 		}
    });
 
 });
 </script>
 
-
-
 <main class="pt-8">
 	<!-- Split into two main areas - stage and menu where hover + click on an element in menu expands it into stage -->
 	<div class="stage">
-		<div id="expansionContainer"></div>
+		<div id="expansionContainer" class="z-0"></div>
 		<div id="expandedTitleContainer" class="flex flex-row absolute z-20 ml-96 mt-20">
 			<div class="textContainer px-2">
 				<p id="workTitle" class="m-0"></p>
 			</div>
 
-			<a id="workLink" href="/Portfolio/layout_1.html"><div class="textContainer btn-secondary px-2">
+			<a id="workLink" href=""><div class="textContainer btn-secondary px-2">
 				<p class="m-0">Read</p>
 			</div></a>
 		</div>
@@ -70,16 +74,16 @@ $(document).ready(function(){
 				{% include "partials/blobs.njk" %}
 				<img class="blot-portrait" src="/res/static/goblin.png"/>
 			</div>
-			<div class="item"></div>
-			<div class="item"></div>
+			<div class="item empty"></div>
+			<div class="item empty"></div>
 
 			<!-- row 2 -->
-			<div class="item"></div>
+			<div class="item empty"></div>
 			<div class="item">
 				{% include "partials/blobs.njk" %}
 				<img class="blot-portrait" src="/res/static/goblin2.png"/>
 			</div>
-			<div class="item"></div>
+			<div class="item empty"></div>
 
 			<!-- row 3 -->
 			<div class="item">
@@ -90,7 +94,7 @@ $(document).ready(function(){
 				{% include "partials/blobs.njk" %}
 				<img class="blot-portrait" src="/res/static/goblin4.png"/>
 			</div>
-			<div class="item"></div>
+			<div class="item empty"></div>
 
 			<!-- row 3 -->
 			<div class="item -ml-16">
