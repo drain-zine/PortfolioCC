@@ -23,7 +23,16 @@
 
   gtag("config", "UA-154153463-1")</script>  
   
-<script src="/scripts/headerRandomizer.js"></script>  
 <script src="/scripts/FlowType.js"></script>  
+<script type="module">
+import {setRandomPos} from '/scripts/headerRandomizer.js';
 
+$(document).ready(function() {
+  var dx = $(".rand_container").outerWidth() / 5 ;
+  var dy = $(".rand_container").height() * 2/3;
+
+  setRandomPos($(".rand_pos"),dx,dy,0,0);
+});
+
+</script>
 <title>{{title}}</title>

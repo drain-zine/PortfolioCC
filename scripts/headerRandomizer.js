@@ -1,54 +1,62 @@
-$(document).ready(function (){
-    
-    var page = $(this).attr('title');
-    console.log(page != "Portfolio");
+export function setRandomPos(elements, dx, dy, x, y) {
+  var boxDims = new Array();
 
-    // struct = [ [navX, navY], [titleCardX, titleCardY] ], origin @ top left pixel.
-    var defaultOffset = [  [0,8], 
-                            [15,0]  ];                    
+  elements.each(function () {
+    var conflict = true;
+    var fixLeft = 0;
+    var fixTop = 0;
 
-    var delta = [   [0,0], 
-                    [0,0]  ]; 
+    while (conflict) {
+      fixLeft = Math.abs(Math.round(Math.random() * dx) + x);
+      fixTop = Math.abs(Math.round(Math.random() * dy) + y);
 
-    var finalOffset = [   [0,0], 
-                          [0,0]  ]; 
+      $(this).css("top", fixTop);
+      $(this).css("left", fixLeft);
 
-    var deltaRange = [   [8,10], 
-                         [8,10]  ]; 
+      var rect1 = $(this)[0].getBoundingClientRect();
 
-
-    // Apply randomisation only on non main pages
-    
-    // Construct offset array
-    if(page !== "Portfolio"){
-        for(var y = 0; y < 2; y++){
-            for(var x = 0; x < 2; x++){
-                delta[x][y] = getRandomIntInclusive(0,deltaRange[x][y]);
-                finalOffset[x][y] = delta[x][y]; // org + default
-            }
+      conflict = false;
+      for (var i = 0; i < boxDims.length; i++) {
+        var rect2 = boxDims[i].getBoundingClientRect();
+        if (overlap(rect1, rect2)) {
+          conflict = true;
+          break;
+        } else {
+          conflict = false;
         }
-    }else{
-        for(var y = 0; y < 2; y++){
-            for(var x = 0; x < 2; x++){
-                finalOffset[x][y] = defaultOffset[x][y]; // org + default
-            }
-        }
-    }
-    
-
-    /* if(finalOffset[0][0] == finalOffset[0][1])
-        finalOffset[0][1] += (Math.round(Math.random()) * 2 - 1)*Math.rdeltaRange[0][1]/4 */
-       
-
-
-     // Apply
-     $("nav").addClass("ml-" + finalOffset[0][0].toString() + " mt-"+ finalOffset[0][1].toString());
-     $(".titleCard").addClass("ml-" + finalOffset[1][0].toString() + " mt-"+ finalOffset[1][1].toString());
-
-    // generic func
-    function getRandomIntInclusive(min, max) {
-        min = Math.ceil(min);
-        max = Math.floor(max);
-        return Math.floor(Math.random() * (max - min + 1) + min); //The maximum is inclusive and the minimum is inclusive
       }
-});
+    }
+    boxDims.push($(this)[0]);
+  });
+}
+
+function overlap(rect1, rect2) {
+  //console.log("checking overlap");
+
+  console.log(
+    "Dims (t,b,r,l): (" +
+      rect1.top +
+      "," +
+      rect1.bottom +
+      "," +
+      rect1.right +
+      "," +
+      rect1.left +
+      "), (" +
+      rect2.top +
+      "," +
+      rect2.bottom +
+      "," +
+      rect2.right +
+      "," +
+      rect2.left +
+      ")"
+  );
+
+  return !(
+    rect1.top > rect2.bottom ||
+    rect1.right < rect2.left ||
+    rect1.bottom < rect2.top ||
+    rect1.left > rect2.right
+  );
+}

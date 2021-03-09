@@ -1,5 +1,6 @@
-<header class="pt-8 pl-40">
-	<nav class="mt-32">
+<header class="mt-8 ml-40 relative">
+	<div class="rand_container w-full relative">
+	<nav class="rand_pos absolute">
 		<div class="textContainer p-2">
 			<p class="m-0">Christian Carlson</p>
 		</div>
@@ -21,11 +22,13 @@
 		
 	</nav>
 
-	<div class="ml-16 titleCard w-1/4">
+	<div class="rand_pos titleCard w-1/4 absolute height-min-content">
 		<div class="textContainer p-2 justify-center">
 			<p class="m-0">{{title}}</p>
 		</div>
 		<!--<img class="h-a w-100" src="/res/static/kaws3.jpg"/>-->
 		<marquee direction="right" class="primary-font-stack primary-color text-xs">{{scrollingText}}</marquee>
 	</div> 
+	</div>
+
 </header>
