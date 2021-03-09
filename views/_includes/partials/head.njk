@@ -28,8 +28,8 @@
 import {setRandomPos} from '/scripts/headerRandomizer.js';
 
 $(document).ready(function() {
-  var dx = $(".rand_container").outerWidth() / 5 ;
-  var dy = $(".rand_container").height() * 2/3;
+  var dx = $(".rand_container").outerWidth() * 0.15 ;
+  var dy = $(".rand_container").height() * 1/2;
 
   setRandomPos($(".rand_pos"),dx,dy,0,0);
 });
