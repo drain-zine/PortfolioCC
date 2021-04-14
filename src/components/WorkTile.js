@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import backIco from "./../res/dynamic/skullback.gif";
 import BackgroundScrollTransistion from "./animations/BackgroundScrollTransistion";
 import SVGHorizLine from "./SVGHorizLine";
 
-const WorkTile = ({data}) => {
+const WorkTile = ({data, incrementTogglesCounter, decrementTogglesCounter}) => {
 
     const [expanded, setExpanded] = useState(false);
     const [init, setInit] = useState([Math.floor(Math.random() * 100) + 1, Math.floor(Math.random() * 100) + 1])
@@ -16,6 +16,10 @@ const WorkTile = ({data}) => {
     const toggleWorkTile = () => {
         setExpanded(!expanded);
     };
+
+    useEffect(() => {
+        expanded ? incrementTogglesCounter() : decrementTogglesCounter();
+    }, [expanded]);
 
     return(
 
