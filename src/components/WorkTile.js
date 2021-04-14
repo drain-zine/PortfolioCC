@@ -2,6 +2,7 @@ import React, { useState } from "react";
 
 import backIco from "./../res/dynamic/skullback.gif";
 import BackgroundScrollTransistion from "./animations/BackgroundScrollTransistion";
+import SVGHorizLine from "./SVGHorizLine";
 
 const WorkTile = ({data}) => {
 
@@ -35,15 +36,13 @@ const WorkTile = ({data}) => {
                         <p className="flex-inital mx-2 text-red-900">LINK</p> */}
 
                             <div className="flex-1 mx-2">
-                            <svg width="100%" height="100%" viewBox="0 0 100% 100%">
-                                <line class="point" x1="0" x2="100%" y1="50%" y2="50%" />
-                            </svg></div>
+                                <SVGHorizLine /> 
+                            </div>
 
                             <p className="flex-initial mx-2 text-center text-red-900">2021</p> 
                             <div className="flex-1 mx-2">
-                            <svg width="100%" height="100%" viewBox="0 0 100% 100%">
-                                <line class="point" x1="0" x2="100%" y1="50%" y2="50%" />
-                            </svg></div>
+                                <SVGHorizLine /> 
+                            </div>
                     </div>
                     
                     <div className="flex-1 flex flex-row justify-center items-center">
@@ -60,23 +59,22 @@ const WorkTile = ({data}) => {
                     </div>
 
                     <div className="w-full relative text-right flex-inital flex" style={{height: "24px"}}>
-                        <div className="flex-1 relative" style={{height: "24px"}}>
+                        {/* <div className="flex-1 relative" style={{height: "24px"}}>
                             <svg width="100%" height="100%" viewBox="0 0 100% 100%">
                                 <line class="point" x1="0" x2="100%" y1="50%" y2="50%" />
                             </svg>
                         </div>
-                        <p className="flex-inital mx-2 text-red-900">LINK</p>
+                        <p className="flex-inital mx-2 text-red-900">LINK</p> */}
 
-                            {/* <div className="flex-1 mx-2">
-                            <svg width="100%" height="100%" viewBox="0 0 100% 100%">
-                                <line class="point" x1="0" x2="100%" y1="50%" y2="50%" />
-                            </svg></div>
-
-                            <p className="flex-initial mx-2 text-center text-red-900">LINK</p> 
+{/* for variation 4, set long svg line to flex: 1 1 60% and margin on text to mx-1 */}
                             <div className="flex-1 mx-2">
-                            <svg width="100%" height="100%" viewBox="0 0 100% 100%">
-                                <line class="point" x1="0" x2="100%" y1="50%" y2="50%" />
-                            </svg></div> */}
+                                <SVGHorizLine /> 
+                            </div>
+
+                            <p className="flex-initial mx-2 text-center text-red-800 hover:text-red-900 cursor-pointer">LINK</p> 
+                            <div className="flex-1 mx-2">
+                                <SVGHorizLine /> 
+                            </div>
                     </div>
                     
 

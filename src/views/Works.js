@@ -13,7 +13,7 @@ const Works = () => {
     useInteractDrag(".draggable");
 
     return(
-        <main className="relative primary-font-stack bg-color primary-font-color h-screen">
+        <main className="relative primary-font-stack bg-color primary-font-color h-screen select-none">
             <div className="backgroundTitle absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2">
                 <h1 className="select-none">WORKS</h1>
             </div>
