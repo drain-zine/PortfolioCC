@@ -24,8 +24,13 @@ const WorkTile = ({data}) => {
                     <img className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full h-full rounded-md shadow-md z-0" src={data.img} />
                 </div>
 
-                <BackgroundScrollTransistion className={"link w-full h-full absolute flex flex-row justify-center items-center text-white z-10"} trigger={expanded} >
-                    <div className="flex flex-row justify-center items-center">
+                <BackgroundScrollTransistion className={"link w-full h-full absolute flex flex-col justify-center items-center text-white z-10"} trigger={expanded} >
+                    
+                    <div className="text-left flex-inital">
+                        <p>2021</p>
+                    </div>
+                    
+                    <div className="flex-1 flex flex-row justify-center items-center">
                         <div className="flex-1">
                             <div className="transform -rotate-90">
                                 <h1 className="text-6xl">{data.title.toUpperCase()}</h1>
@@ -37,6 +42,11 @@ const WorkTile = ({data}) => {
                             
                         </div>
                     </div>
+
+                    <div className="text-right flex-inital">
+                        <p>2021</p>
+                    </div>
+                    
 
                 </BackgroundScrollTransistion>
             </div>
