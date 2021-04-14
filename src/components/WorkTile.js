@@ -26,8 +26,24 @@ const WorkTile = ({data}) => {
 
                 <BackgroundScrollTransistion className={"link w-full h-full absolute flex flex-col justify-center items-center text-white z-10"} trigger={expanded} >
                     
-                    <div className="w-full flex text-left flex-inital">
-                     
+                <div className="w-full relative text-right flex-inital flex" style={{height: "24px"}}>
+                        {/* <div className="flex-1 relative" style={{height: "24px"}}>
+                            <svg width="100%" height="100%" viewBox="0 0 100% 100%">
+                                <line class="point" x1="0" x2="100%" y1="50%" y2="50%" />
+                            </svg>
+                        </div>
+                        <p className="flex-inital mx-2 text-red-900">LINK</p> */}
+
+                            <div className="flex-1 mx-2">
+                            <svg width="100%" height="100%" viewBox="0 0 100% 100%">
+                                <line class="point" x1="0" x2="100%" y1="50%" y2="50%" />
+                            </svg></div>
+
+                            <p className="flex-initial mx-2 text-center text-red-900">2021</p> 
+                            <div className="flex-1 mx-2">
+                            <svg width="100%" height="100%" viewBox="0 0 100% 100%">
+                                <line class="point" x1="0" x2="100%" y1="50%" y2="50%" />
+                            </svg></div>
                     </div>
                     
                     <div className="flex-1 flex flex-row justify-center items-center">
@@ -43,13 +59,24 @@ const WorkTile = ({data}) => {
                         </div>
                     </div>
 
-                    <div className="w-full text-right flex-inital flex">
+                    <div className="w-full relative text-right flex-inital flex" style={{height: "24px"}}>
                         <div className="flex-1 relative" style={{height: "24px"}}>
                             <svg width="100%" height="100%" viewBox="0 0 100% 100%">
                                 <line class="point" x1="0" x2="100%" y1="50%" y2="50%" />
                             </svg>
                         </div>
                         <p className="flex-inital mx-2 text-red-900">LINK</p>
+
+                            {/* <div className="flex-1 mx-2">
+                            <svg width="100%" height="100%" viewBox="0 0 100% 100%">
+                                <line class="point" x1="0" x2="100%" y1="50%" y2="50%" />
+                            </svg></div>
+
+                            <p className="flex-initial mx-2 text-center text-red-900">LINK</p> 
+                            <div className="flex-1 mx-2">
+                            <svg width="100%" height="100%" viewBox="0 0 100% 100%">
+                                <line class="point" x1="0" x2="100%" y1="50%" y2="50%" />
+                            </svg></div> */}
                     </div>
                     
 
