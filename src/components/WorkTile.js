@@ -43,8 +43,8 @@ const WorkTile = ({data, incrementTogglesCounter, decrementTogglesCounter}) => {
                                 <SVGHorizLine /> 
                             </div>
 
-                            <p className="flex-initial mx-2 text-center text-red-900">2021</p> 
-                            <div className="flex-1 mx-2">
+                            <p className="flex-initial mx-1 text-center text-red-900">2021</p> 
+                            <div className="mx-2" style={{flex: "1 1 60%"}}>
                                 <SVGHorizLine /> 
                             </div>
                     </div>
@@ -71,11 +71,11 @@ const WorkTile = ({data, incrementTogglesCounter, decrementTogglesCounter}) => {
                         <p className="flex-inital mx-2 text-red-900">LINK</p> */}
 
 {/* for variation 4, set long svg line to flex: 1 1 60% and margin on text to mx-1 */}
-                            <div className="flex-1 mx-2">
+                            <div className="mx-2" style={{flex: "1 1 60%"}}>
                                 <SVGHorizLine /> 
                             </div>
 
-                            <p className="flex-initial mx-2 text-center text-red-800 hover:text-red-900 cursor-pointer">LINK</p> 
+                            <p className="flex-initial mx-1 text-center text-red-800 hover:text-red-900 cursor-pointer">LINK</p> 
                             <div className="flex-1 mx-2">
                                 <SVGHorizLine /> 
                             </div>

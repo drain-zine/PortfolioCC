@@ -36,11 +36,11 @@ const Works = () => {
             }
         
            
-        }else if(togglesCounter.count === 0 && togglesCounter.ve === 1 &&firstClick){
+        }else if(togglesCounter.count === 0 && togglesCounter.ve === 1 && firstClick){
              setTrigger(!trigger); 
              /* setFirstClick(false) */
         }
-         if(togglesCounter.count === -1 && togglesCounter.ve === -1){
+         if(togglesCounter.count === -1 && togglesCounter.ve === -1 && firstClick){
             console.log("HERE");
             setTrigger(!trigger);
         }
@@ -51,23 +51,15 @@ const Works = () => {
 
     return(
         <main className="relative primary-font-stack bg-color primary-font-color h-screen select-none">
-            
+             <marquee direction="right" className={"w-full absolute z-20 top-0 left-0 " + (!trigger ? "text-white" : "text-black")}>I wonder if I can click these...</marquee>
             <div className="w-full h-full absolute z-0">
-                <div className="absolute left-0 top-0 w-full">
-                    <Marquee direction={"right"}>
-                        <p>I wonder if I can click these...</p>
-                    </Marquee>
-                </div>
+
                 <div className="backgroundTitle absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2">
                     <h1 className="select-none">WORKS</h1>
                 </div>
             </div>
-            <BackgroundScrollTransistion className={"w-full h-full absolute z-0 bg-white text-black"} trigger={trigger} up={false} >
-                <div className="absolute left-0 top-0 w-full">
-                    <Marquee direction={"right"}>
-                        <p>I wonder if I can click these...</p>
-                    </Marquee>
-                </div>
+            <BackgroundScrollTransistion className={"w-full h-full absolute z-0 bg-noisy text-black"} trigger={trigger} up={false} >
+
                 <div className="backgroundTitle absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2">
                     <h1 className="select-none">WORKS</h1>
                 </div>
