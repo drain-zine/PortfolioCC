@@ -15,7 +15,7 @@ const Works = () => {
     return(
         <main className="relative primary-font-stack bg-color primary-font-color h-screen">
             <div className="backgroundTitle absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                <h1>WORKS</h1>
+                <h1 className="select-none">WORKS</h1>
             </div>
 
             <div className="worksCanvas w-full">
