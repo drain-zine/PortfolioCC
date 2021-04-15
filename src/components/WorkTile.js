@@ -50,11 +50,11 @@ const WorkTile = ({data, incrementTogglesCounter, decrementTogglesCounter}) => {
                     </div>
                     
                     <div className="flex-1 flex flex-row justify-center items-center">
-                        <div className="flex-1">
-                            <div className="transform -rotate-90">
+                        <div className="flex-grow text-center">
+                         
                                 <h1 className="text-6xl text-red-900">{data.title.toUpperCase()}</h1>
-                                <p className="text-sm text-center mt-4">LOREM IPSUM LA LASFG ASWAG MONEY WEED XANS</p>
-                            </div>
+                                <p className="text-sm mt-4">LOREM IPSUM LA LASFG ASWAG MONEY WEED XANS</p>
+                            
                         </div>
 
                         <div className="flex-1 text-sm">
