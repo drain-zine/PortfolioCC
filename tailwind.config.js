@@ -6,7 +6,9 @@
      extend: {},
    },
    variants: {
-     extend: {},
+     extend: {
+      borderWidth: ['hover'],
+     },
    },
    plugins: [],
  }
