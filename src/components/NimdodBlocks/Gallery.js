@@ -3,11 +3,12 @@ import React from "react";
 const Gallery = (props) => {
 
     const {imgs} = props;
+    const size = (imgs.length === 1 ? 100 : 100/(imgs.length+1));
     
     return(
         <div className="imgContainer justify-center flex flex-row mt-8">
             {imgs.map((img) => (
-                <img className="w-1/4 mx-4" src={require("../../res/" + img).default} />
+                <img style={{width: size+"%"}} className="mx-4" src={require("../../res/" + img).default} />
             ))}
         </div>
     );
