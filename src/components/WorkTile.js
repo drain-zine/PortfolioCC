@@ -32,12 +32,6 @@ const WorkTile = ({data, incrementTogglesCounter, decrementTogglesCounter}) => {
                 <BackgroundScrollTransistion className={"link w-full h-full absolute flex flex-col justify-center items-center text-white z-10"} trigger={expanded} >
                     
                 <div className="w-full relative text-right flex-inital flex" style={{height: "24px"}}>
-                        {/* <div className="flex-1 relative" style={{height: "24px"}}>
-                            <svg width="100%" height="100%" viewBox="0 0 100% 100%">
-                                <line class="point" x1="0" x2="100%" y1="50%" y2="50%" />
-                            </svg>
-                        </div>
-                        <p className="flex-inital mx-2 text-red-900">LINK</p> */}
 
                             <div className="flex-1 mx-2">
                                 <SVGHorizLine /> 
@@ -63,14 +57,6 @@ const WorkTile = ({data, incrementTogglesCounter, decrementTogglesCounter}) => {
                     </div>
 
                     <div className="w-full relative text-right flex-inital flex" style={{height: "24px"}}>
-                        {/* <div className="flex-1 relative" style={{height: "24px"}}>
-                            <svg width="100%" height="100%" viewBox="0 0 100% 100%">
-                                <line class="point" x1="0" x2="100%" y1="50%" y2="50%" />
-                            </svg>
-                        </div>
-                        <p className="flex-inital mx-2 text-red-900">LINK</p> */}
-
-{/* for variation 4, set long svg line to flex: 1 1 60% and margin on text to mx-1 */}
                             <div className="mx-2" style={{flex: "1 1 60%"}}>
                                 <SVGHorizLine /> 
                             </div>

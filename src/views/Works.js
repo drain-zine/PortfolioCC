@@ -17,6 +17,7 @@ const Works = () => {
     const [trigger, setTrigger] = useState(false);
     const [firstClick, setFirstClick] = useState(false);
 
+    // increment + decrement toggles i.e. how many tiles have been toggled open
     const incrementTogglesCounter = () =>{
         setTogglesCounter({count: togglesCounter.count + 1, ve: 1});
         
@@ -26,6 +27,7 @@ const Works = () => {
         setTogglesCounter({count: togglesCounter.count - 1, ve: -1})
     }
 
+    // listen to when first card is opened and last card is closed to trigger background anim
     useEffect(() => {
         if(togglesCounter.count === -1){
             console.log("EVERYTHING CLOSED");
