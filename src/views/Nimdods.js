@@ -6,6 +6,11 @@ import CursorDot from "../components/CursorDot";
 import BackgroundScrollTransistion from './../components/animations/BackgroundScrollTransistion'
 import ScrollableLine from './../components/ScrollableLine';
 
+import Title from './../components/NimdodBlocks/Title.js';
+import TextBox from './../components/NimdodBlocks/TextBox.js';
+import Button from './../components/NimdodBlocks/Button.js';
+import Gallery from './../components/NimdodBlocks/Gallery.js';
+
 const Works = () => {
 
       // animate lines
@@ -73,35 +78,18 @@ const Works = () => {
                     ))} */}
 
                     <div id="Weed" className="w-full justify-center items-center flex flex-col mt-24">
-                        <div className="header text-center flex-1 text-9xl">
-                            Weed
-                        </div>
-                        <div className="body my-16 text-center">
-                        <p className="text-6xl">Jabari Shelton (born December 23, 1991 in Harlem, New York City), is an American streetwear designer and entrepreneur better known as ASAP Bari (stylized as A$AP Bari). Bari is best known as a co-founding member of the New York hip-hop collective ASAP Mob, a group he helped form in 2006 alongside ASAP Yams, ASAP Kham and ASAP Illz.[1] He is also a co-founder of the streetwear clothing label VLONE.[2] In 2019 he was convicted of sexual assault.[3][4]</p>
-                        </div>
-                        <div className="footer mt-8 border-t-2 border-b-2 hover:border-l-2 hover:border-r-2 border-white py-16 px-4">
-                            <p className="text-6xl">Read More Of My Analysis at <span className="text-red-900">highsnobiety.com</span></p>
-                            <p className="text-red-900 text-center mt-4 text-4xl">2021</p>
-                        </div>
+                        <Title title={"Weed"} />
+                        <TextBox content={"Jabari Shelton (born December 23, 1991 in Harlem, New York City), is an American streetwear designer and entrepreneur better known as ASAP Bari (stylized as A$AP Bari). Bari is best known as a co-founding member of the New York hip-hop collective ASAP Mob, a group he helped form in 2006 alongside ASAP Yams, ASAP Kham and ASAP Illz.[1] He is also a co-founder of the streetwear clothing label VLONE.[2] In 2019 he was convicted of sexual assault.[3][4]"} />
+                        <Button title={"Read More Of My Analysis at"} link={"highsnobiety.com"} subtitle={"2021"} />
                     </div>
 
-                    <div id="Weed" className="w-full justify-center items-center flex flex-col mt-24">
-                        <div className="header text-center flex-1 text-9xl">
-                            Swag
-                        </div>
+                    <div id="Swag" className="w-full justify-center items-center flex flex-col mt-24">
+                        <Title title={"Swag"} />
                         <div className="body my-16 text-center">
-                            <p className="text-6xl">Following the success of ASAP Mob, fellow member Kamoni Chandler, also known as A$AP K, founded the streetwear label VLONE in 2011. Shelton, who had previously been the head of A$AP Rocky's merchandise during his tours,[2] worked together with Chandler on the brand. After a falling out Chandler left the brand and Shelton took over. Shelton brought in Edison Chen of CLOT, who handles the design work of the label. He stated in an interview with Mass Appeal that much of his influence came from trying on and stealing clothes with his friends while living in Harlem, feeling the fabrics of high-value brands.[5]</p>
-                            <div className="imgContainer justify-center flex flex-row mt-8">
-                                <img className="w-1/4 mx-4" src={require("./../res/static/swag1.jpg").default} />
-                                <img className="w-1/4 mx-4" src={require("./../res/static/swag2.jpg").default} />
-                                <img className="w-1/4 mx-4" src={require("./../res/static/swag3.jpg").default} />
-                            </div>
-                        </div>
-
-                        <div className="footer mt-8 border-t-2 border-b-2 border-white py-16">
-                            <p className="text-6xl">Radicalising and Democratizing Swag</p>
-                            <p className="text-red-900 text-center mt-4 text-4xl">2069</p>
-                        </div>
+                            <TextBox content={"Following the success of ASAP Mob, fellow member Kamoni Chandler, also known as A$AP K, founded the streetwear label VLONE in 2011. Shelton, who had previously been the head of A$AP Rocky's merchandise during his tours,[2] worked together with Chandler on the brand. After a falling out Chandler left the brand and Shelton took over. Shelton brought in Edison Chen of CLOT, who handles the design work of the label. He stated in an interview with Mass Appeal that much of his influence came from trying on and stealing clothes with his friends while living in Harlem, feeling the fabrics of high-value brands.[5]"} />
+                            <Gallery imgs={["static/swag1.jpg", "static/swag2.jpg", "static/swag3.jpg"]} />
+                         </div>
+                        <Button title={"Radicalising and Democratizing Swag"} subtitle={"2069"} />
                     </div>
             </div>
 
