@@ -16,6 +16,9 @@ import QuoteBox from './../components/NimdodBlocks/QuoteBox.js';
 
 const Nimdods = () => {
 
+    const [loading, setLoading] = useState(true);
+    const [XMLMap, setXMLMap] = useState(0);
+
       // animate lines
     useEffect(() => {
         const paths = document.getElementsByClassName("line-path-test");
@@ -61,13 +64,23 @@ const Nimdods = () => {
 
     }, []);
 
-    useEffect(() => {
-        axios.get(XMLData, {
+    useEffect( async() => {
+        await axios.get(XMLData, {
             "Content-Type": "application/xml; charset=utf-8"
-         })
-         .then((response) => {
+        })
+        .then((response) => {
             console.log('Your xml file as string', response.data);
-         });
+            setXMLMap(( new window.DOMParser() ).parseFromString(response.data, "text/xml"));
+        })
+
+        setLoading(false);
+        console.log("LOADED " +  XMLMap.getElementsByTagName("post")[0].children.length);
+        /* XMLMap[0] */
+
+        let root = XMLMap.getElementsByTagName("post")[0];
+        for(let i = 0; i < root.children.length; i++){
+            console.log("FOUND NODE: " + root.children[i].tagName);
+        }
     }, []);
 
 
@@ -89,7 +102,15 @@ const Nimdods = () => {
 
                     ))} */}
 
-                <div id="Weed" className="w-full justify-center items-center flex flex-col mt-16">
+                { loading ? <p>LOADING</p> : () => {
+                    return(
+                        <div id="Weed" className="w-full justify-center items-center flex flex-col mt-16">
+                           TEST
+                        </div>
+                    );
+                }}
+
+                {/* <div id="Weed" className="w-full justify-center items-center flex flex-col mt-16">
                     <Title title={"Weed"} />
                     <div className="body my-16 text-center w-full">
                         <TextBox content={"Jabari Shelton (born December 23, 1991 in Harlem, New York City), is an American streetwear designer and entrepreneur better known as ASAP Bari (stylized as A$AP Bari). Bari is best known as a co-founding member of the New York hip-hop collective ASAP Mob, a group he helped form in 2006 alongside ASAP Yams, ASAP Kham and ASAP Illz.[1] He is also a co-founder of the streetwear clothing label VLONE.[2] In 2019 he was convicted of sexual assault.[3][4]"} />
@@ -112,7 +133,7 @@ const Nimdods = () => {
                     <div className="body my-16 text-center w-full">
                         <QuoteBox quotes={[{quote: "EXODIA", colour: "red"}, {quote: "MAGICIAN", colour: "yellow"}, {quote: "AVARICE", colour: "blue"}, {quote: "BLUE-EYES", colour: "green"}]} />
                     </div>
-                </div>
+                </div> */}
             </div>
 
             {/* footer */}

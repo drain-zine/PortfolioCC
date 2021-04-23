@@ -1,9 +1,11 @@
-<Title>Weed</Title>
+<post>
+    <Title>Weed</Title>
 
-<Textbox>
-    "Jabari Shelton (born December 23, 1991 in Harlem, New York City), is an American streetwear designer and entrepreneur better known as ASAP Bari (stylized as A$AP Bari). Bari is best known as a co-founding member of the New York hip-hop collective ASAP Mob, a group he helped form in 2006 alongside ASAP Yams, ASAP Kham and ASAP Illz.[1] He is also a co-founder of the streetwear clothing label VLONE.[2] In 2019 he was convicted of sexual assault.[3][4]"
-</Textbox>
+    <Textbox>
+        "Jabari Shelton (born December 23, 1991 in Harlem, New York City), is an American streetwear designer and entrepreneur better known as ASAP Bari (stylized as A$AP Bari). Bari is best known as a co-founding member of the New York hip-hop collective ASAP Mob, a group he helped form in 2006 alongside ASAP Yams, ASAP Kham and ASAP Illz.[1] He is also a co-founder of the streetwear clothing label VLONE.[2] In 2019 he was convicted of sexual assault.[3][4]"
+    </Textbox>
 
-<Button link="highsnobiety.com" subtitle="2021">
-    "Read More Of My Analysis at"
-</Button>
+    <Button link="highsnobiety.com" subtitle="2021">
+        "Read More Of My Analysis at"
+    </Button>
+</post>
