@@ -1,17 +1,20 @@
 
 import React, { useState, useEffect} from "react"
 import CursorDot from "../components/CursorDot";
+import XMLData from '../data/Nimdods/Weed.xml';
 
 /* import NimdodsTile from "./../components/NimdodsTile"; */
 import BackgroundScrollTransistion from './../components/animations/BackgroundScrollTransistion'
 import ScrollableLine from './../components/ScrollableLine';
+import axios from "axios";
 
 import Title from './../components/NimdodBlocks/Title.js';
 import TextBox from './../components/NimdodBlocks/TextBox.js';
 import Button from './../components/NimdodBlocks/Button.js';
 import Gallery from './../components/NimdodBlocks/Gallery.js';
+import QuoteBox from './../components/NimdodBlocks/QuoteBox.js';
 
-const Works = () => {
+const Nimdods = () => {
 
       // animate lines
     useEffect(() => {
@@ -58,6 +61,15 @@ const Works = () => {
 
     }, []);
 
+    useEffect(() => {
+        axios.get(XMLData, {
+            "Content-Type": "application/xml; charset=utf-8"
+         })
+         .then((response) => {
+            console.log('Your xml file as string', response.data);
+         });
+    }, []);
+
 
     return(
         <main className="cursor-none relative flex flex-col primary-font-stack bg-color primary-font-color select-none px-10">
@@ -77,20 +89,30 @@ const Works = () => {
 
                     ))} */}
 
-                    <div id="Weed" className="w-full justify-center items-center flex flex-col mt-24">
-                        <Title title={"Weed"} />
+                <div id="Weed" className="w-full justify-center items-center flex flex-col mt-16">
+                    <Title title={"Weed"} />
+                    <div className="body my-16 text-center w-full">
                         <TextBox content={"Jabari Shelton (born December 23, 1991 in Harlem, New York City), is an American streetwear designer and entrepreneur better known as ASAP Bari (stylized as A$AP Bari). Bari is best known as a co-founding member of the New York hip-hop collective ASAP Mob, a group he helped form in 2006 alongside ASAP Yams, ASAP Kham and ASAP Illz.[1] He is also a co-founder of the streetwear clothing label VLONE.[2] In 2019 he was convicted of sexual assault.[3][4]"} />
                         <Button title={"Read More Of My Analysis at"} link={"highsnobiety.com"} subtitle={"2021"} />
                     </div>
+                </div>
 
-                    <div id="Swag" className="w-full justify-center items-center flex flex-col mt-24">
-                        <Title title={"Swag"} />
-                        <div className="body my-16 text-center">
-                            <TextBox content={"Following the success of ASAP Mob, fellow member Kamoni Chandler, also known as A$AP K, founded the streetwear label VLONE in 2011. Shelton, who had previously been the head of A$AP Rocky's merchandise during his tours,[2] worked together with Chandler on the brand. After a falling out Chandler left the brand and Shelton took over. Shelton brought in Edison Chen of CLOT, who handles the design work of the label. He stated in an interview with Mass Appeal that much of his influence came from trying on and stealing clothes with his friends while living in Harlem, feeling the fabrics of high-value brands.[5]"} />
-                            <Gallery imgs={["static/swag1.jpg", "static/swag2.jpg", "static/swag3.jpg"]} />
-                         </div>
-                        <Button title={"Radicalising and Democratizing Swag"} subtitle={"2069"} />
+                <div id="Swag" className="w-full justify-center items-center flex flex-col mt-16">
+                    <Title title={"Swag"} />
+                    <div className="body my-16 text-center w-full">
+                        <TextBox content={"Following the success of ASAP Mob, fellow member Kamoni Chandler, also known as A$AP K, founded the streetwear label VLONE in 2011. Shelton, who had previously been the head of A$AP Rocky's merchandise during his tours,[2] worked together with Chandler on the brand. After a falling out Chandler left the brand and Shelton took over. Shelton brought in Edison Chen of CLOT, who handles the design work of the label. He stated in an interview with Mass Appeal that much of his influence came from trying on and stealing clothes with his friends while living in Harlem, feeling the fabrics of high-value brands.[5]"} />
+                        <Gallery imgs={["static/swag1.jpg", "static/swag2.jpg", "static/swag3.jpg"]} />
                     </div>
+                    <Button title={"Radicalising and Democratizing Swag"} subtitle={"2069"} />
+                </div>
+
+                <div id="Yu-gi-oh" className="w-full justify-center items-center flex flex-col mt-16">
+                    <Title title={"Yu-gi-oh"} />
+
+                    <div className="body my-16 text-center w-full">
+                        <QuoteBox quotes={[{quote: "EXODIA", colour: "red"}, {quote: "MAGICIAN", colour: "yellow"}, {quote: "AVARICE", colour: "blue"}, {quote: "BLUE-EYES", colour: "green"}]} />
+                    </div>
+                </div>
             </div>
 
             {/* footer */}
@@ -100,4 +122,4 @@ const Works = () => {
     );
 }
 
-export default Works;
+export default Nimdods;
