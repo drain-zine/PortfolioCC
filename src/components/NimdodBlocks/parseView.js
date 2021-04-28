@@ -47,8 +47,8 @@ const parseView = (element, index) => {
         );
 
         if(element.tagName === "post"){
-            props = {id: "Weed", className="w-full justify-center items-center flex flex-col mt-16"};
-        }
+            props = {id: "Weed", className: "w-full justify-center items-center flex flex-col mt-16 text-center"}; 
+        } 
 
         console.log(props);
 

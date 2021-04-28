@@ -98,7 +98,7 @@ const Nimdods = () => {
 
             setXMLMap(test);
             setLoading(false);
-            ReactDOM.render(parseCMS(test), document.getElementById('Weed'));
+            ReactDOM.render(parseCMS(test), document.getElementById('stagingArea'));
             
 
         }
@@ -128,8 +128,8 @@ const Nimdods = () => {
 
                 { loading ? <p className="text-white">LOADING</p> :  (
                     
-                        <div id="Weed" className="w-full justify-center items-center flex flex-col mt-16">
-                        </div>
+                         <div id="stagingArea" className="nimdodsCanvas w-full flex-grow px-16 mb-96">
+                        </div> 
                     ) 
 
                     
