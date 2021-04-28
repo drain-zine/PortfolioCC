@@ -2,6 +2,9 @@
 import React, { useState, useEffect} from "react"
 import CursorDot from "../components/CursorDot";
 import XMLData from '../data/Nimdods/Weed.xml';
+import XMLToReact from '@condenast/xml-to-react';
+import ReactDOM from 'react-dom';
+import parseCMS from '../components/NimdodBlocks/parserCMS';
 
 /* import NimdodsTile from "./../components/NimdodsTile"; */
 import BackgroundScrollTransistion from './../components/animations/BackgroundScrollTransistion'
@@ -13,11 +16,20 @@ import TextBox from './../components/NimdodBlocks/TextBox.js';
 import Button from './../components/NimdodBlocks/Button.js';
 import Gallery from './../components/NimdodBlocks/Gallery.js';
 import QuoteBox from './../components/NimdodBlocks/QuoteBox.js';
+import { parse } from "postcss";
 
 const Nimdods = () => {
 
     const [loading, setLoading] = useState(true);
-    const [XMLMap, setXMLMap] = useState(0);
+    const [XMLMap, setXMLMap] = useState({});
+    const [reactTree, setReactTree] = useState(null);
+
+    const xmlToReact = new XMLToReact({
+        post: (attrs) => ({type: 'div', props: attrs}),
+        title: (attrs) => ({ type: Title, props: attrs }),
+        textbox: (attrs) => ({ type: TextBox, props: attrs }),
+        button: (attrs) => ({ type: Button, props: attrs })
+    });
 
       // animate lines
     useEffect(() => {
@@ -64,23 +76,35 @@ const Nimdods = () => {
 
     }, []);
 
-    useEffect( async() => {
-        await axios.get(XMLData, {
-            "Content-Type": "application/xml; charset=utf-8"
-        })
-        .then((response) => {
-            console.log('Your xml file as string', response.data);
-            setXMLMap(( new window.DOMParser() ).parseFromString(response.data, "text/xml"));
-        })
+    useEffect(() => {
+        const fetchData = async() => {
+            let test = await axios.get(XMLData, {
+                "Content-Type": "application/xml; charset=utf-8"
+            })
+            .then(response => response.data)
+            .then(str =>  (new window.DOMParser()).parseFromString(str, "text/xml"))
+            .then(data => {
+                console.log(data);
+                return data;
+            });
 
-        setLoading(false);
-        console.log("LOADED " +  XMLMap.getElementsByTagName("post")[0].children.length);
-        /* XMLMap[0] */
+            console.log("TEST: " + test);
+            
+            
+            let root = test.getElementsByTagName("post")[0];
+            for(let i = 0; i < root.children.length; i++){
+                console.log("FOUND NODE: " + root.children[i].tagName);
+            }
 
-        let root = XMLMap.getElementsByTagName("post")[0];
-        for(let i = 0; i < root.children.length; i++){
-            console.log("FOUND NODE: " + root.children[i].tagName);
+            setXMLMap(test);
+            setLoading(false);
+            ReactDOM.render(parseCMS(test), document.getElementById('Weed'));
+            
+
         }
+
+        fetchData();
+        /* console.log("DEMO : " + demo.data); */
     }, []);
 
 
@@ -102,13 +126,14 @@ const Nimdods = () => {
 
                     ))} */}
 
-                { loading ? <p>LOADING</p> : () => {
-                    return(
+                { loading ? <p className="text-white">LOADING</p> :  (
+                    
                         <div id="Weed" className="w-full justify-center items-center flex flex-col mt-16">
-                           TEST
                         </div>
-                    );
-                }}
+                    ) 
+
+                    
+                }
 
                 {/* <div id="Weed" className="w-full justify-center items-center flex flex-col mt-16">
                     <Title title={"Weed"} />
