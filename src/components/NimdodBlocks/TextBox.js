@@ -3,7 +3,7 @@ import React from "react";
 const TextBox = (props) => {
 
     return(
-        <div className="mb-16">
+        <div className="block">
             <p className="text-6xl">{props.children}</p>
         </div>
     );
