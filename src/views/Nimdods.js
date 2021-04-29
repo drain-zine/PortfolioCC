@@ -12,8 +12,8 @@ import loadCMS from "../components/NimdodBlocks/loadCMS";
 
 const Nimdods = (props) => {
 
-    const { CMSTree } = props;
-    const [loading, setLoading] = useState(true);
+    const { CMSTree, loading } = props;
+
     const [reactTree, setReactTree] = useState(null);
 
     // animate lines
@@ -77,20 +77,20 @@ const Nimdods = (props) => {
 
         injectData();
     }, []);
-
-    // update DOM
-    useEffect(() => {
-        if(!loading && reactTree){
-            ReactDOM.render(reactTree, document.getElementById('stagingArea')); 
-        }
-    }, [loading, reactTree]); */
-
+    */
     // update DOM
     useEffect(() => {
         if(!loading && CMSTree){
             ReactDOM.render(CMSTree, document.getElementById('stagingArea')); 
         }
-    }, [CMSTree]);
+    }, [loading, CMSTree]); 
+
+    /* // update DOM
+    useEffect(() => {
+        if(!loading && CMSTree){
+            ReactDOM.render(CMSTree, document.getElementById('stagingArea')); 
+        }
+    }, [CMSTree]); */
 
 
     return(

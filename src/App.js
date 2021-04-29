@@ -63,7 +63,7 @@ function App() {
             <Switch location={location}>
               <Route path="/" exact component={Home} />
               <Route path="/works" exact component={() => (<Works previews={previews} loading={loading} />)}/>
-              <Route path="/nimdods-never-ending-scroll" exact component={Nimdods} CMSTree={CMSTree} />
+              <Route path="/nimdods-never-ending-scroll" exact component={() => (<Nimdods CMSTree={CMSTree} loading={loading} />)} />
             </Switch>
           );
 

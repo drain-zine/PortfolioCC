@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-
+import { Link } from "react-router-dom";
 import backIco from "./../res/dynamic/skullback.gif";
 import BackgroundScrollTransistion from "./animations/BackgroundScrollTransistion";
 import SVGHorizLine from "./SVGHorizLine";
@@ -61,7 +61,7 @@ const WorkTile = ({data, incrementTogglesCounter, decrementTogglesCounter}) => {
                                 <SVGHorizLine /> 
                             </div>
 
-                            <p className="flex-initial mx-1 text-center text-red-800 hover:text-red-900 cursor-pointer">LINK</p> 
+                            <p className="flex-initial mx-1 text-center text-red-800 hover:text-red-900 cursor-pointer"><Link to={"/nimdods-never-ending-scroll#"+data.title}>LINK</Link></p> 
                             <div className="flex-1 mx-2">
                                 <SVGHorizLine /> 
                             </div>
