@@ -21,7 +21,6 @@ import loadCMS from "../components/NimdodBlocks/loadCMS";
 const Nimdods = () => {
 
     const [loading, setLoading] = useState(true);
-    const [XMLMap, setXMLMap] = useState({});
     const [reactTree, setReactTree] = useState(null);
 
     const xmlToReact = new XMLToReact({
@@ -76,35 +75,8 @@ const Nimdods = () => {
 
     }, []);
 
+    // inject data into state
     useEffect(() => {
-       /*  const fetchData = async() => {
-            let test = await axios.get(XMLData, {
-                "Content-Type": "application/xml; charset=utf-8"
-            })
-            .then(response => response.data)
-            .then(str =>  (new window.DOMParser()).parseFromString(str, "text/xml"))
-            .then(data => {
-                console.log(data);
-                return data;
-            });
-
-            console.log("TEST: " + test);
-            
-            
-            let root = test.getElementsByTagName("post")[0];
-            for(let i = 0; i < root.children.length; i++){
-                console.log("FOUND NODE: " + root.children[i].tagName);
-            }
-
-            setXMLMap(test);
-            setLoading(false);
-            ReactDOM.render(parseCMS(test), document.getElementById('stagingArea'));
-            
-
-        }
-
-        fetchData();
-         console.log("DEMO : " + demo.data);  */
         const injectData = async() => {
 
 
@@ -112,8 +84,6 @@ const Nimdods = () => {
                 setReactTree(data);
                 setLoading(false);
             });
-            /* setLoading(false);
-            setReactTree(reactTree); */
 
             console.log("test");
             console.log(reactTree);
@@ -122,14 +92,9 @@ const Nimdods = () => {
         injectData();
     }, []);
 
+    // update DOM
     useEffect(() => {
         if(!loading && reactTree){
-           /*  reactTree.map((r, index) => {
-                console.log("IN REACT TREE: ");
-                console.log(r);
-                ReactDOM.render(r, document.getElementById('stagingArea')); 
-            }); */
-
             ReactDOM.render(reactTree, document.getElementById('stagingArea')); 
         }
     }, [loading, reactTree]);
@@ -152,35 +117,8 @@ const Nimdods = () => {
                     
                          <div id="stagingArea" className="nimdodsCanvas w-full flex-grow px-16 mb-96">
                         </div> 
-                    ) 
-
-                    
+                    )      
                 }
-
-                {/* <div id="Weed" className="w-full justify-center items-center flex flex-col mt-16">
-                    <Title title={"Weed"} />
-                    <div className="body my-16 text-center w-full">
-                        <TextBox content={"Jabari Shelton (born December 23, 1991 in Harlem, New York City), is an American streetwear designer and entrepreneur better known as ASAP Bari (stylized as A$AP Bari). Bari is best known as a co-founding member of the New York hip-hop collective ASAP Mob, a group he helped form in 2006 alongside ASAP Yams, ASAP Kham and ASAP Illz.[1] He is also a co-founder of the streetwear clothing label VLONE.[2] In 2019 he was convicted of sexual assault.[3][4]"} />
-                        <Button title={"Read More Of My Analysis at"} link={"highsnobiety.com"} subtitle={"2021"} />
-                    </div>
-                </div>
-
-                <div id="Swag" className="w-full justify-center items-center flex flex-col mt-16">
-                    <Title title={"Swag"} />
-                    <div className="body my-16 text-center w-full">
-                        <TextBox content={"Following the success of ASAP Mob, fellow member Kamoni Chandler, also known as A$AP K, founded the streetwear label VLONE in 2011. Shelton, who had previously been the head of A$AP Rocky's merchandise during his tours,[2] worked together with Chandler on the brand. After a falling out Chandler left the brand and Shelton took over. Shelton brought in Edison Chen of CLOT, who handles the design work of the label. He stated in an interview with Mass Appeal that much of his influence came from trying on and stealing clothes with his friends while living in Harlem, feeling the fabrics of high-value brands.[5]"} />
-                        <Gallery imgs={["static/swag1.jpg", "static/swag2.jpg", "static/swag3.jpg"]} />
-                    </div>
-                    <Button title={"Radicalising and Democratizing Swag"} subtitle={"2069"} />
-                </div>
-
-                <div id="Yu-gi-oh" className="w-full justify-center items-center flex flex-col mt-16">
-                    <Title title={"Yu-gi-oh"} />
-
-                    <div className="body my-16 text-center w-full">
-                        <QuoteBox quotes={[{quote: "EXODIA", colour: "red"}, {quote: "MAGICIAN", colour: "yellow"}, {quote: "AVARICE", colour: "blue"}, {quote: "BLUE-EYES", colour: "green"}]} />
-                    </div>
-                </div> */}
             </div>
 
             {/* footer */}
