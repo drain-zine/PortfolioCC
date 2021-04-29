@@ -4,6 +4,8 @@ import Gallery from "./Gallery";
 import QuoteBox from "./QuoteBox";
 import TextBox from "./TextBox";
 import Title from "./Title";
+import TextColumns from "./TextColumns";
+import Column from "./Column";
 
 
 const manifest = {
@@ -12,6 +14,8 @@ const manifest = {
     button: Button,
     gallery: Gallery,
     quotebox: QuoteBox,
+    textcol: TextColumns,
+    col: Column,
     post: 'div'
 };
 
@@ -37,9 +41,10 @@ const parseView = (element, index) => {
 
     if (component) {
         let reactChildren = [];
+
         if (element.childNodes) {
             for(let i = 0; i < element.childNodes.length; i++){
-                //console.log("CHILD " + i + " : " +element.childNodes[i]);
+                console.log("CHILD " + i + " : " +element.childNodes[i]);
                 reactChildren.push(parseView(element.childNodes[i], i));
             }
         }
@@ -52,7 +57,7 @@ const parseView = (element, index) => {
         // set post ID
         if(element.tagName === "post"){
             let post_id = element.getElementsByTagName("title")[0].textContent;
-            props = {id: post_id, className: "w-full justify-center items-center flex flex-col mt-16 text-center"}; 
+            props = {id: post_id, className: "w-full justify-center items-center flex flex-col mt-16"}; 
         } 
 
         //console.log(props);

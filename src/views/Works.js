@@ -7,11 +7,11 @@ import Marquee from "react-double-marquee";
 import WorkTile from "./../components/WorkTile";
 import BackgroundScrollTransistion from './../components/animations/BackgroundScrollTransistion'
 
-const Works = () => {
+const Works = (props) => {
 
-    var data = [{title: "Swag", img: require("./../data/assets/bape1.jpg").default},
-    {title: "Weed", img: require("./../data/assets/bape2.jpg").default},
-    {title: "Yu-gi-oh", img: require("./../data/assets/bape3.jpg").default}, ];
+    const { previews, loading } = props;
+
+
 
     const [togglesCounter, setTogglesCounter] = useState({count: 0, ve: 0});
     const [trigger, setTrigger] = useState(false);
@@ -49,6 +49,7 @@ const Works = () => {
         console.log(togglesCounter);
     }, [togglesCounter])
 
+    // bind drag listener
     useInteractDrag(".draggable");
 
     return(
@@ -68,11 +69,11 @@ const Works = () => {
             </BackgroundScrollTransistion>
 
             <div className="worksCanvas w-full">
-            {data.map((work) => (
+            { loading ? <p>LOADING</p> : (previews.map((p) => (
 
-                <WorkTile data={work} incrementTogglesCounter={incrementTogglesCounter} decrementTogglesCounter={decrementTogglesCounter}/>
+                <WorkTile data={p} incrementTogglesCounter={incrementTogglesCounter} decrementTogglesCounter={decrementTogglesCounter}/>
 
-                ))}
+                )))}
             </div>
         </main>
     );

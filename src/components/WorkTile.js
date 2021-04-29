@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-
+import { Link } from "react-router-dom";
 import backIco from "./../res/dynamic/skullback.gif";
 import BackgroundScrollTransistion from "./animations/BackgroundScrollTransistion";
 import SVGHorizLine from "./SVGHorizLine";
@@ -26,7 +26,7 @@ const WorkTile = ({data, incrementTogglesCounter, decrementTogglesCounter}) => {
             <div style={{width: width+"rem" , height: height+"rem", left: init[0]+"%", top: init[1]+"%"}} className="draggable tile absolute rounded-md shadow-md overflow-y-hidden" onDoubleClick={toggleWorkTile}>
                 <div className={"preview w-full h-full absolute z-0"}>
                     <p className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 text-4xl select-none">{data.title}</p>
-                    <img className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full h-full rounded-md shadow-md z-0" src={data.img} />
+                    <img className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full h-full rounded-md shadow-md z-0" src={require(("./../data/assets/"+data.img)).default} />
                 </div>
 
                 <BackgroundScrollTransistion className={"link w-full h-full absolute flex flex-col justify-center items-center text-white z-10"} trigger={expanded} >
@@ -47,7 +47,7 @@ const WorkTile = ({data, incrementTogglesCounter, decrementTogglesCounter}) => {
                         <div className="flex-grow text-center">
                          
                                 <h1 className="text-6xl text-red-900">{data.title.toUpperCase()}</h1>
-                                <p className="text-sm mt-4">LOREM IPSUM LA LASFG ASWAG MONEY WEED XANS</p>
+                                <p className="text-sm mt-4">{data.blurb}</p>
                             
                         </div>
 
@@ -61,7 +61,7 @@ const WorkTile = ({data, incrementTogglesCounter, decrementTogglesCounter}) => {
                                 <SVGHorizLine /> 
                             </div>
 
-                            <p className="flex-initial mx-1 text-center text-red-800 hover:text-red-900 cursor-pointer">LINK</p> 
+                            <p className="flex-initial mx-1 text-center text-red-800 hover:text-red-900 cursor-pointer"><Link to={"/nimdods-never-ending-scroll#"+data.title}>LINK</Link></p> 
                             <div className="flex-1 mx-2">
                                 <SVGHorizLine /> 
                             </div>
