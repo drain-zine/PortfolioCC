@@ -1,8 +1,6 @@
 
-import ReactDOM from 'react-dom';
 import parseCMS from './parserCMS';
 import axios from "axios";
-import XMLData from '../../data/Nimdods/Weed.xml';
 
 function importAll(r) {
     return r.keys().map(r);
@@ -27,9 +25,6 @@ const fetchData = async(url) => {
         console.log("FOUND NODE: " + root.children[i].tagName);
     }
 
-/*     setXMLMap(test);
-    setLoading(false); */
-    /* ReactDOM.render(parseCMS(test), document.getElementById('stagingArea')); */
     return parseCMS(test);
 }
 

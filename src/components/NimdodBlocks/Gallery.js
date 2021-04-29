@@ -2,7 +2,9 @@ import React from "react";
 
 const Gallery = (props) => {
 
-    const {imgs} = props;
+    // process
+    const imgs = props.children[0].replace(/[\n\s\"]+/g,"").split(",");
+   
     const size = (imgs.length === 1 ? 100 : 100/(imgs.length+1));
     
     return(

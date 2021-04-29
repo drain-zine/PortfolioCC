@@ -15,7 +15,6 @@ const manifest = {
 
 const parseView = (element, index) => {
 
-
     if (element.tagName === undefined) {
         
         if(!element.nodeValue.trim()){
@@ -28,19 +27,13 @@ const parseView = (element, index) => {
         return null;    
     } 
 
-    /* if(element.tagName === "title"){
-        post_id = element.textContent;
-    } */
 
     // cross ref w manifest to get component
     let component = manifest[element.tagName];
-    console.log("ele_name: " + element.tagName  +" COMPONENT: " + component);
+    //console.log("ele_name: " + element.tagName  +" COMPONENT: " + component);
 
     if (component) {
-
         let reactChildren = [];
-        const map= f => x => Array.prototype.map.call(x, f);
-
         if (element.childNodes) {
             for(let i = 0; i < element.childNodes.length; i++){
                 //console.log("CHILD " + i + " : " +element.childNodes[i]);
@@ -52,6 +45,13 @@ const parseView = (element, index) => {
         let props = Object.assign({},
             ...Array.from(element.attributes, ({name, value}) => ({[name]: value}))
         );
+
+      /*   // testing - doesnt like array params
+        if(element.tagName == "gallery"){
+            process.stdout.write("Found gallery: ");
+            console.log(element.attributes);
+            console.log(props);
+        } */
 
         if(element.tagName === "post"){
             let post_id = element.getElementsByTagName("title")[0].textContent;
