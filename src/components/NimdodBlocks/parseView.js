@@ -4,6 +4,8 @@ import Gallery from "./Gallery";
 import QuoteBox from "./QuoteBox";
 import TextBox from "./TextBox";
 import Title from "./Title";
+import TextColumns from "./TextColumns";
+import Column from "./Column";
 
 
 const manifest = {
@@ -12,6 +14,8 @@ const manifest = {
     button: Button,
     gallery: Gallery,
     quotebox: QuoteBox,
+    textcol: TextColumns,
+    col: Column,
     post: 'div'
 };
 
@@ -37,9 +41,10 @@ const parseView = (element, index) => {
 
     if (component) {
         let reactChildren = [];
+
         if (element.childNodes) {
             for(let i = 0; i < element.childNodes.length; i++){
-                //console.log("CHILD " + i + " : " +element.childNodes[i]);
+                console.log("CHILD " + i + " : " +element.childNodes[i]);
                 reactChildren.push(parseView(element.childNodes[i], i));
             }
         }
