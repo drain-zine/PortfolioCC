@@ -10,8 +10,9 @@ import ScrollableLine from './../components/ScrollableLine';
 import loadCMS from "../components/NimdodBlocks/loadCMS";
 
 
-const Nimdods = () => {
+const Nimdods = (props) => {
 
+    const { CMSTree } = props;
     const [loading, setLoading] = useState(true);
     const [reactTree, setReactTree] = useState(null);
 
@@ -60,7 +61,7 @@ const Nimdods = () => {
 
     }, []);
 
-    // inject data into state
+   /*  // inject data into state
     useEffect(() => {
         const injectData = async() => {
 
@@ -82,7 +83,14 @@ const Nimdods = () => {
         if(!loading && reactTree){
             ReactDOM.render(reactTree, document.getElementById('stagingArea')); 
         }
-    }, [loading, reactTree]);
+    }, [loading, reactTree]); */
+
+    // update DOM
+    useEffect(() => {
+        if(!loading && CMSTree){
+            ReactDOM.render(CMSTree, document.getElementById('stagingArea')); 
+        }
+    }, [CMSTree]);
 
 
     return(
@@ -98,12 +106,14 @@ const Nimdods = () => {
             {/* tiles */}
             <div className="nimdodsCanvas w-full flex-grow px-16 mb-96">
 
-                { loading ? <p className="text-white">LOADING</p> :  (
+               {/*  { loading ? <p className="text-white">LOADING</p> :  (
                     
                          <div id="stagingArea" className="nimdodsCanvas w-full flex-grow px-16 mb-96">
                         </div> 
                     )      
-                }
+                } */}
+                <div id="stagingArea" className="nimdodsCanvas w-full flex-grow px-16 mb-96">
+                        </div> 
             </div>
 
             {/* footer */}
