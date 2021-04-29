@@ -10,6 +10,7 @@ import ReactDOM from "react-dom";
 
 function App() {
   const [CMSTree, setCMSTree] = useState(null);
+  const [previews, setPreviews] = useState(null);
   const [loading, setLoading] = useState(true);
 
    // inject data into state
@@ -18,7 +19,8 @@ function App() {
 
 
         Promise.all(loadCMS()).then((data) => {
-            setCMSTree(data);
+            setCMSTree(data["trees"]);
+            setPreviews(data["previews"]);
             setLoading(false);
         });
 
@@ -43,7 +45,7 @@ function App() {
           return(
             <Switch location={location}>
               <Route path="/" exact component={Home} />
-              <Route path="/works" exact component={Works} />
+              <Route path="/works" exact component={Works} previews={previews}/>
               <Route path="/nimdods-never-ending-scroll" exact component={Nimdods} CMSTree={CMSTree} />
             </Switch>
           );

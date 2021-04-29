@@ -47,7 +47,7 @@ const WorkTile = ({data, incrementTogglesCounter, decrementTogglesCounter}) => {
                         <div className="flex-grow text-center">
                          
                                 <h1 className="text-6xl text-red-900">{data.title.toUpperCase()}</h1>
-                                <p className="text-sm mt-4">LOREM IPSUM LA LASFG ASWAG MONEY WEED XANS</p>
+                                <p className="text-sm mt-4">{data.blurb}</p>
                             
                         </div>
 

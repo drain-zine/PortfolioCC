@@ -31,13 +31,17 @@ const fetchData = async(url) => {
 const loadCMS = () => {
     const files = importAll(require.context('./../../data/Nimdods', false, /\.xml/));
     let reactTree = [];
+    let previews= [];
 
     for(let i = 0; i < files.length; i++){
         console.log(files[i]);
-        reactTree.push(fetchData(files[i].default));
+        let content = fetchData(files[i].default);
+        reactTree.push(content["tree"]);
+        previews.push(content["preview"]);
+        console.log(content);
     }
 
-    return reactTree;
+    return {"trees": reactTree, "previews": previews};
 }
 
 export default loadCMS;
