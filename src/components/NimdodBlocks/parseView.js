@@ -1,6 +1,7 @@
 import React from "react";
 import Button from "./Button";
 import Gallery from "./Gallery";
+import QuoteBox from "./QuoteBox";
 import TextBox from "./TextBox";
 import Title from "./Title";
 
@@ -10,11 +11,13 @@ const manifest = {
     textbox: TextBox,
     button: Button,
     gallery: Gallery,
+    quotebox: QuoteBox,
     post: 'div'
 };
 
 const parseView = (element, index) => {
 
+    // catch either terminating children to send as child props or whitespace as null
     if (element.tagName === undefined) {
         
         if(!element.nodeValue.trim()){
@@ -46,20 +49,13 @@ const parseView = (element, index) => {
             ...Array.from(element.attributes, ({name, value}) => ({[name]: value}))
         );
 
-      /*   // testing - doesnt like array params
-        if(element.tagName == "gallery"){
-            process.stdout.write("Found gallery: ");
-            console.log(element.attributes);
-            console.log(props);
-        } */
-
+        // set post ID
         if(element.tagName === "post"){
             let post_id = element.getElementsByTagName("title")[0].textContent;
             props = {id: post_id, className: "w-full justify-center items-center flex flex-col mt-16 text-center"}; 
         } 
 
         //console.log(props);
-
         props.key = index;
         return React.createElement(component, props, reactChildren); 
     }
