@@ -1,22 +1,22 @@
 
 import React, { useState, useEffect} from "react"
+import ReactDOM from 'react-dom';
 import CursorDot from "../components/CursorDot";
 import XMLData from '../data/Nimdods/Weed.xml';
 import XMLToReact from '@condenast/xml-to-react';
-import ReactDOM from 'react-dom';
-import parseCMS from '../components/NimdodBlocks/parserCMS';
 
 /* import NimdodsTile from "./../components/NimdodsTile"; */
 import BackgroundScrollTransistion from './../components/animations/BackgroundScrollTransistion'
 import ScrollableLine from './../components/ScrollableLine';
-import axios from "axios";
+
 
 import Title from './../components/NimdodBlocks/Title.js';
 import TextBox from './../components/NimdodBlocks/TextBox.js';
 import Button from './../components/NimdodBlocks/Button.js';
 import Gallery from './../components/NimdodBlocks/Gallery.js';
 import QuoteBox from './../components/NimdodBlocks/QuoteBox.js';
-import { parse } from "postcss";
+import loadCMS from "../components/NimdodBlocks/loadCMS";
+
 
 const Nimdods = () => {
 
@@ -77,7 +77,7 @@ const Nimdods = () => {
     }, []);
 
     useEffect(() => {
-        const fetchData = async() => {
+       /*  const fetchData = async() => {
             let test = await axios.get(XMLData, {
                 "Content-Type": "application/xml; charset=utf-8"
             })
@@ -104,8 +104,35 @@ const Nimdods = () => {
         }
 
         fetchData();
-        /* console.log("DEMO : " + demo.data); */
+         console.log("DEMO : " + demo.data);  */
+        const injectData = async() => {
+
+
+            Promise.all(loadCMS()).then((data) => {
+                setReactTree(data);
+                setLoading(false);
+            });
+            /* setLoading(false);
+            setReactTree(reactTree); */
+
+            console.log("test");
+            console.log(reactTree);
+        }
+
+        injectData();
     }, []);
+
+    useEffect(() => {
+        if(!loading && reactTree){
+           /*  reactTree.map((r, index) => {
+                console.log("IN REACT TREE: ");
+                console.log(r);
+                ReactDOM.render(r, document.getElementById('stagingArea')); 
+            }); */
+
+            ReactDOM.render(reactTree, document.getElementById('stagingArea')); 
+        }
+    }, [loading, reactTree]);
 
 
     return(
@@ -120,11 +147,6 @@ const Nimdods = () => {
 
             {/* tiles */}
             <div className="nimdodsCanvas w-full flex-grow px-16 mb-96">
-               {/*  {data.map((work) => (
-
-                   <WorkTile data={work} incrementTogglesCounter={incrementTogglesCounter} decrementTogglesCounter={decrementTogglesCounter}/>
-
-                    ))} */}
 
                 { loading ? <p className="text-white">LOADING</p> :  (
                     
