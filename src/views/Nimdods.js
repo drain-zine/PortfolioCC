@@ -2,19 +2,11 @@
 import React, { useState, useEffect} from "react"
 import ReactDOM from 'react-dom';
 import CursorDot from "../components/CursorDot";
-import XMLData from '../data/Nimdods/Weed.xml';
-import XMLToReact from '@condenast/xml-to-react';
 
 /* import NimdodsTile from "./../components/NimdodsTile"; */
 import BackgroundScrollTransistion from './../components/animations/BackgroundScrollTransistion'
 import ScrollableLine from './../components/ScrollableLine';
 
-
-import Title from './../components/NimdodBlocks/Title.js';
-import TextBox from './../components/NimdodBlocks/TextBox.js';
-import Button from './../components/NimdodBlocks/Button.js';
-import Gallery from './../components/NimdodBlocks/Gallery.js';
-import QuoteBox from './../components/NimdodBlocks/QuoteBox.js';
 import loadCMS from "../components/NimdodBlocks/loadCMS";
 
 
@@ -23,14 +15,7 @@ const Nimdods = () => {
     const [loading, setLoading] = useState(true);
     const [reactTree, setReactTree] = useState(null);
 
-    const xmlToReact = new XMLToReact({
-        post: (attrs) => ({type: 'div', props: attrs}),
-        title: (attrs) => ({ type: Title, props: attrs }),
-        textbox: (attrs) => ({ type: TextBox, props: attrs }),
-        button: (attrs) => ({ type: Button, props: attrs })
-    });
-
-      // animate lines
+    // animate lines
     useEffect(() => {
         const paths = document.getElementsByClassName("line-path-test");
 
