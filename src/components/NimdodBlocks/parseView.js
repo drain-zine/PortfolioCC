@@ -6,6 +6,7 @@ import TextBox from "./TextBox";
 import Title from "./Title";
 import TextColumns from "./TextColumns";
 import Column from "./Column";
+import FadeInDiv from "../animations/FadeInDiv";
 
 
 const manifest = {
@@ -16,7 +17,7 @@ const manifest = {
     quotebox: QuoteBox,
     textcol: TextColumns,
     col: Column,
-    post: 'div'
+    post: FadeInDiv
 };
 
 const parseView = (element, index) => {
