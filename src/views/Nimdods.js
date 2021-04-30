@@ -61,37 +61,12 @@ const Nimdods = (props) => {
 
     }, []);
 
-   /*  // inject data into state
-    useEffect(() => {
-        const injectData = async() => {
-
-
-            Promise.all(loadCMS()).then((data) => {
-                setReactTree(data);
-                setLoading(false);
-            });
-
-            console.log("test");
-            console.log(reactTree);
-        }
-
-        injectData();
-    }, []);
-    */
     // update DOM
     useEffect(() => {
         if(!loading && CMSTree){
             ReactDOM.render(CMSTree, document.getElementById('stagingArea')); 
         }
     }, [loading, CMSTree]); 
-
-    /* // update DOM
-    useEffect(() => {
-        if(!loading && CMSTree){
-            ReactDOM.render(CMSTree, document.getElementById('stagingArea')); 
-        }
-    }, [CMSTree]); */
-
 
     return(
         <main className="cursor-none relative flex flex-col primary-font-stack bg-color primary-font-color select-none px-10">
@@ -106,14 +81,8 @@ const Nimdods = (props) => {
             {/* tiles */}
             <div className="nimdodsCanvas w-full flex-grow px-16 mb-96">
 
-               {/*  { loading ? <p className="text-white">LOADING</p> :  (
-                    
-                         <div id="stagingArea" className="nimdodsCanvas w-full flex-grow px-16 mb-96">
-                        </div> 
-                    )      
-                } */}
                 <div id="stagingArea" className="nimdodsCanvas w-full flex-grow px-16 mb-96">
-                        </div> 
+                </div> 
             </div>
 
             {/* footer */}
