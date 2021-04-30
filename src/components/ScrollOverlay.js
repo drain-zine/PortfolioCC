@@ -10,7 +10,7 @@ const ScrollOverlay = (props) => {
     const [scrollPercent, setScrollPercent] = useState(0);
 
     const controls = useAnimation();
-    const trigger = 0.073
+    const trigger = 0.073; // derived from qualitative testing
 
     // handle visibilty
     useEffect(() => {
@@ -53,8 +53,8 @@ const ScrollOverlay = (props) => {
             transition={transition}
             variants={variants}
         >
-            <div className="absolute left-0 ml-4" style={{top: "20%"}}>
-                <p className="transform -rotate-90 text-2xl">{scrollPercent}</p>
+            <div className="absolute left-0 ml-4" style={{top: "15%"}}>
+                <p className="transform -rotate-90 text-2xl -translate-x-1/2">{scrollPercent}</p>
             </div>
         </motion.div>
     );
