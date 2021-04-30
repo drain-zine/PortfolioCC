@@ -9,10 +9,10 @@ const RouteTransition = ({exact, path, slide, slideUp, children, ...rest}) => (
   <Route exact={exact} path={path} {...rest}>
 
     <motion.div
-        exit={{ opacity: 0}}
-        initial={{ opacity: 0}}
+        exit={{ opacity: 0, transition: { duration: 0.5} }}
+        initial={{ opacity: 0, transition: { duration: 1,  staggerChildren: 1.5} }}
         animate={{ opacity: 1}}
-        transition={{duration: 1, staggerChildren: 1.5}}
+
     >
         {children}
     </motion.div>
