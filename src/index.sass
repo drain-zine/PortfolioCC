@@ -250,7 +250,19 @@ main
 
 	.background
 		width: 50vw
+		z-index: 2
+		position: relative
+
+	.puzzleBackground
+		position: absolute
+		width: 70%
+		height: 70%
+		left: 50%
+		top: 50%
+		transform: translate(-50%,-50%)
 		z-index: 1
+		
+		
 		
 
 	justify-content: center
@@ -266,15 +278,15 @@ main
 
 	.l1
 		top: 37%
-		left: 25%
+		left: 35%
 	.l2
 		top: 35%
-		left: 63%
+		left: 61%
 	.l3
 		top: 56%
-		left: 15%
+		left: 30%
 	.l4
-		top: 53%
+		top: 56%
 		left: 56%
 	
 
@@ -286,41 +298,41 @@ main
 		z-index: 3
 
 	.p1
-		width: 45% //450px
+		width: 30% //450px
 		img
 			width: 100%
 			
 			height: auto
 
-		top: 28.3%
-		left: 9.46%
+		top: 28.2%
+		left: 23.05%
 
 	.p2
-		width: 39.1% //390px
+		width: 25.8% //390px
 		img
 			width: 100%
 			height: auto
 
-		top: 28.5%
-		left: 51.4%
+		top: 28.6%
+		left: 50.9%
 
 	.p3
-		width: 44.1% //450px
+		width: 29.5% //450px
 		img
 			width: 100%
 			height: auto
 
-		top: 45.2%
-		left: 1.8%
+		top: 45.1%
+		left: 17.9%
 
 	.p4
-		width: 55.2% // 550px
+		width: 37% // 550px
 		img
 			width: 100%
 			height: auto
 			
 		top: 47.3%
-		left: 38%
+		left: 41.65%
 
 .hiddenClue
 	color: white
@@ -360,8 +372,6 @@ $primary-grid-border-stack: 1px solid rgba(255,255,255,0.25)
 .bg-noisy
 	background-image: url("./res/static/noiseGrey2.png")
 
-.link
-	background-color: #212121
 
 line.point
 	stroke: white

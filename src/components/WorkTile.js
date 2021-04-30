@@ -29,7 +29,7 @@ const WorkTile = ({data, incrementTogglesCounter, decrementTogglesCounter}) => {
                     <img className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full h-full rounded-md shadow-md z-0" src={require(("./../data/assets/"+data.img)).default} />
                 </div>
 
-                <BackgroundScrollTransistion className={"link w-full h-full absolute flex flex-col justify-center items-center text-white z-10"} trigger={expanded} >
+                <BackgroundScrollTransistion className={"bg-black w-full h-full absolute flex flex-col justify-center items-center text-white z-10"} trigger={expanded} >
                     
                 <div className="w-full relative text-right flex-inital flex" style={{height: "24px"}}>
 
