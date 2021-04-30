@@ -5,14 +5,14 @@ import { Route, Switch, useLocation } from 'react-router-dom'
 
 
 
-const RouteTransitionSlide = ({exact, path, slide, slideUp, children, ...rest}) => (
+const RouteTransitionSlide = ({exact, path, slideIn, slideOut, duration, children, ...rest}) => (
   <Route exact={exact} path={path} {...rest}>
 
     <motion.div
-        exit={{ x: "-100%"}}
-        initial={{ x: "100%"}}
+        exit={{ x: slideOut}}
+        initial={{ x: slideIn}}
         animate={{ x: 0}}
-        transition={{ duration: 0.5 }}
+        transition={{ duration: duration}}
 
     >
         {children}

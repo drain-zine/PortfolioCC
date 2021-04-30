@@ -66,10 +66,10 @@ function App() {
           return(
             <AnimatePresence exitBeforeEnter initial={false}>
               <Switch location={location} key={location.pathname}>
-                <RouteTransitionSlide path="/" exact slide={"100%"} slideUp={0}><Home/></RouteTransitionSlide>
+                <RouteTransitionSlide path="/" exact slideIn={"100%"} slideOut={"-100%"} duration={0.5}><Home/></RouteTransitionSlide>
                 <RouteTransition path="/works" exact slide={"-50%"}  slideUp={0}><Works previews={previews} loading={loading} /></RouteTransition>
                 <RouteTransition path="/nimdods-never-ending-scroll"><Nimdods CMSTree={CMSTree} loading={loading} /></RouteTransition>
-                <RouteTransitionSlide path="/contact" exact slide={"100%"} slideUp={0}><Contact/></RouteTransitionSlide>
+                <RouteTransition path="/contact" exact ><Contact/></RouteTransition>
               </Switch>
             </AnimatePresence>
           );
