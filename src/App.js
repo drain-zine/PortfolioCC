@@ -8,7 +8,9 @@ import Nimdods from './views/Nimdods.js';
 import loadCMS from './components/NimdodBlocks/loadCMS';
 import ReactDOM from "react-dom";
 import RouteTransition from './components/animations/RouteTransition';
+import RouteTransitionSlide from './components/animations/RouteTransitionSlide';
 import { AnimatePresence } from 'framer-motion';
+import Contact from './views/Contact.js';
 
 function App() {
   const [CMSTree, setCMSTree] = useState(null);
@@ -64,9 +66,10 @@ function App() {
           return(
             <AnimatePresence exitBeforeEnter initial={false}>
               <Switch location={location} key={location.pathname}>
-                <RouteTransition path="/" exact slide={"100%"} slideUp={0}><Home/></RouteTransition>
+                <RouteTransitionSlide path="/" exact slide={"100%"} slideUp={0}><Home/></RouteTransitionSlide>
                 <RouteTransition path="/works" exact slide={"-50%"}  slideUp={0}><Works previews={previews} loading={loading} /></RouteTransition>
                 <RouteTransition path="/nimdods-never-ending-scroll"><Nimdods CMSTree={CMSTree} loading={loading} /></RouteTransition>
+                <RouteTransitionSlide path="/contact" exact slide={"100%"} slideUp={0}><Contact/></RouteTransitionSlide>
               </Switch>
             </AnimatePresence>
           );
