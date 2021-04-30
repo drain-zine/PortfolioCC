@@ -1,10 +1,27 @@
 import React, { useEffect, useState } from "react";
-import { motion } from "framer-motion";
+import { motion, useAnimation } from "framer-motion";
+
+const transition = { duration: 0.25 };
+const variants = { visible: {opacity: 1}, hidden: {opacity: 0} };
 
 
-const ScrollOverlay = () => {
+const ScrollOverlay = (props) => {
 
     const [scrollPercent, setScrollPercent] = useState(0);
+
+    const controls = useAnimation();
+    const trigger = 0.073
+
+    // handle visibilty
+    useEffect(() => {
+        if(scrollPercent > trigger){
+            controls.start("visible");
+            console.log("element visible");
+        } else {
+           controls.start("hidden");
+        }
+    }, [controls, scrollPercent]);
+
 
     useEffect(() => {
         Number.prototype.round = function(places) {
@@ -29,11 +46,17 @@ const ScrollOverlay = () => {
     }, []);
 
     return(
-        <div className="w-screen h-screen fixed z-20 pointer-events-none">
+        <motion.div 
+            className="w-screen h-screen fixed z-20 pointer-events-none"
+            animate={controls}
+            initial={"hidden"}
+            transition={transition}
+            variants={variants}
+        >
             <div className="absolute left-0 ml-4" style={{top: "20%"}}>
                 <p className="transform -rotate-90 text-2xl">{scrollPercent}</p>
             </div>
-        </div>
+        </motion.div>
     );
 };
 
