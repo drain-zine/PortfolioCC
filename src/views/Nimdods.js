@@ -2,6 +2,7 @@
 import React, { useState, useEffect} from "react"
 import ReactDOM from 'react-dom';
 import CursorDot from "../components/CursorDot";
+import ScrollOverlay from "../components/ScrollOverlay";
 
 /* import NimdodsTile from "./../components/NimdodsTile"; */
 import BackgroundScrollTransistion from './../components/animations/BackgroundScrollTransistion'
@@ -84,6 +85,9 @@ const Nimdods = (props) => {
                 <div id="stagingArea" className="nimdodsCanvas w-full flex-grow px-16 mb-96">
                 </div> 
             </div>
+
+            {/* */}
+            <ScrollOverlay />
 
             {/* footer */}
             <CursorDot />
