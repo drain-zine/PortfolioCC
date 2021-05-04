@@ -1,0 +1,53 @@
+<blog>
+    <post>
+        <title>
+        Cigar Culture
+        </title>
+
+        <textbox>
+        Hi, I'm Bryan Glynn and I've been producing cigar content online for over 10 years. I've reviewed thousands of cigars giving you the info you need to make a good purchase decision and find your next favorite stick! I've had countless industry experts, brand owners, shop owners and celebrities on CO Live for live chats with all the viewers. I've produced easy how-to guides for everything related to enjoying this fine hobby of cigars.
+        </textbox>
+
+        <textcol>
+        <col>
+        Protocol Sir Robert Peel Maduro Toro Cigar Review – This 6×52 soft box pressed stick features a dark cocoa oily wrapper with a satin feel, small veins, tight invisible seams, double cap and pungent sweet musty cocoa aroma. First light reveals a good draw with fairly smooth mild-medium smoke output showing flavors of a mint and wood with a bit of pepper and spice texture on the finish. 
+        </col>
+
+        <col>
+        The first third burns terribly because of at least one huge stem that needed to be pulled out. 1/2 the cigar was un smokeable and after clipping it down, flavors changed to a musty sweet earth with plentiful medium bodied smoke. Ending short at 30 minutes the last bit was unchanged. This video is sponsored by SmokeInn.com
+        </col>
+        </textcol>
+
+        <gallery>
+            "static/cigar1.jpg", "static/cigar2.jpg"
+        </gallery>
+
+
+        <quotebox>
+        red:"Corona", yellow:"Robusto", green:"Panetela", blue:"Opulence"
+        </quotebox>
+
+
+	<textbox>
+This project is going to be a labor of love for me, simply taking you through my ongoing quest for the perfect cigar. What I bring to the table is both popular and unique. Let me explain!
+
+I am not an aficionado. I am not an expert. I am simply a regular guy with 25+ years of experience who happens to LOVE cigars. I give honest reviews without the subjectiveness. Just the facts – how does it burn and what does it taste like?
+</textbox>
+        <button link="CigarObsession">
+        Explore more on 
+        </button>
+    </post>
+
+<preview>
+
+<title>
+Cigar Culture
+</title>
+
+<image src="static/CO.jpg"/>
+<blurb>
+CigarObsession is where to find the best cigar video reviews, Live shows with your favorite industry guests, cigar lighter, cutter storage and more!
+</blurb>
+</preview>
+
+</blog>
