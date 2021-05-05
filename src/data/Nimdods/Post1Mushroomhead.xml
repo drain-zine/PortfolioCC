@@ -4,16 +4,13 @@
 mushroomhead (for A2B2 Magazine)
 </title>
 
-
 <textbox>
 Digital collage made for Volume 1, Edition 1, of A2B2 Magazine under the theme of “The Fungal World”
 </textbox>
 
-
 <gallery>
-“static/mushroomhead.jpg”
+"static/mushroomhead.jpg"
 </gallery>
-
 
 <textcol>
 <col>
@@ -23,7 +20,6 @@ PROCESS
 In creating this artwork, I wanted to translate fungal growth into something that existed fluidly within both physical and virtual space. To this end, compositional assets were photographed locally and were later digitized. Through use of the image manipulation program GIMP, I distorted and arranged these assets in a manner that recontextualized them with new meaning.
 </col>
 
-
 <col>
 <title>
 THEORY
@@ -32,20 +28,17 @@ American poet Kay Ryan notes the curiosity of scale, stating that by “changing
 </col>
 </textcol>
 
-
 <quotebox>
 green: WHAT IS SPACE? REALLY, HOW LARGE CAN THE EVERYDAY BE?
 </quotebox>
 </post>
-
 
 <preview>
 <title>
 mushroomhead
 </title>
 
-
-<image src=”static/mushroomhead.jpg”/>
+<image src="static/mushroomhead.jpg"/>
 <blurb>
 Original Artwork for A2B2 Magazine
 </blurb>
