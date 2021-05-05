@@ -21,11 +21,11 @@ const Contact = () => {
                 <table>
                         <tr>
                             <th class="font-bold text-left pr-8">Email</th>
-                            <th class="text-red-600 font-normal secondary-font-stack">gregghead1@gmail.com</th>
+                            <th class="text-red-600 font-normal secondary-font-stack">christiandaichicarlson@gmail.com</th>
                         </tr>
                         <tr>
-                            <th class="font-bold text-left">Mobile</th>
-                            <th class="text-red-600 font-normal secondary-font-stack">666</th>
+                            <th class="font-bold text-left">Phone</th>
+                            <th class="text-red-600 font-normal secondary-font-stack">(1)6505729457</th>
                         </tr>
                     </table>
                 </div>
