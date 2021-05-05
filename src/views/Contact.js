@@ -1,6 +1,6 @@
 import React from "react";
 import useInteractDrag from "../hooks/useInteractDrag";
-import  video  from "../data/assets/dynamic/contact.webm";
+import  video  from "../data/assets/dynamic/contact.mp4";
 import SVGHorizLine from "./../components/SVGHorizLine";
 
 
