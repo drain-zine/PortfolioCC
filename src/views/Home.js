@@ -17,7 +17,7 @@ const Home = () => {
         <main className="pt-2 flex justify-center trolley">
             <div className="puzzle-container md:absolute md:top-1/2 md:transform md:-translate-y-1/2 md:w-1/2">
                  <div className="relative text-center">
-                    <h1 className="primary-font-stack primary-color xl:top-0" >Is this page a verbal contraption? What hides underneath this name?</h1>
+                    <h1 className="primary-font-stack primary-color xl:top-0" >Is this page a visual contraption? What hides underneath this name?</h1>
                     <div className="bg-noisy puzzleBackground"></div>
                     <img className="background" src={background}/>
                     
