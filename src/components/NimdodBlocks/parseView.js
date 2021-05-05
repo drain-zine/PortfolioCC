@@ -58,10 +58,10 @@ const parseView = (element, index) => {
         // set post ID
         if(element.tagName === "post"){
             let post_id = element.getElementsByTagName("title")[0].textContent;
-            props = {id: post_id, className: "w-full justify-center items-center flex flex-col mt-16"}; 
+            props = {id: post_id.replace(/[\n\s\"]+/g,""), className: "w-full justify-center items-center flex flex-col mt-16"}; 
+          
         } 
-
-        //console.log(props);
+        
         props.key = index;
         return React.createElement(component, props, reactChildren); 
     }

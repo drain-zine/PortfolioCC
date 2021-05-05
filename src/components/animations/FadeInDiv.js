@@ -11,6 +11,7 @@ const FadeInDiv = (props) => (
         className={props.className}
         style={props.style}
         onDoubleClick={props.onDoubleClick}
+        id={props.id}
     
     >
         {props.children}

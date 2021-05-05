@@ -62,7 +62,7 @@ const WorkTile = ({data, incrementTogglesCounter, decrementTogglesCounter}) => {
                                 <SVGHorizLine /> 
                             </div>
 
-                            <p className="flex-initial mx-1 text-center text-red-800 hover:text-red-900 cursor-pointer"><Link to={"/nimdods-never-ending-scroll#"+data.title}>LINK</Link></p> 
+                            <p className="flex-initial mx-1 text-center text-red-800 hover:text-red-900 cursor-pointer"><Link to={"/nimdods-never-ending-scroll#"+data.title.replace(/[\n\s\"]+/g,"")}>LINK</Link></p> 
                             <div className="flex-1 mx-2">
                                 <SVGHorizLine /> 
                             </div>
