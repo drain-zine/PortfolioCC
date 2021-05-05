@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { motion, useAnimation } from "framer-motion";
 
-const transition = { duration: 0.25 };
+const transition = { duration: 0.45 };
 const variants = { visible: {opacity: 1}, hidden: {opacity: 0} };
 
 

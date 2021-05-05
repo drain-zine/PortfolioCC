@@ -7,6 +7,10 @@ import Nimdods from './views/Nimdods.js';
 
 import loadCMS from './components/NimdodBlocks/loadCMS';
 import ReactDOM from "react-dom";
+import RouteTransition from './components/animations/RouteTransition';
+import RouteTransitionSlide from './components/animations/RouteTransitionSlide';
+import { AnimatePresence } from 'framer-motion';
+import Contact from './views/Contact.js';
 
 function App() {
   const [CMSTree, setCMSTree] = useState(null);
@@ -60,11 +64,14 @@ function App() {
         <Route render={({location}) => {
 
           return(
-            <Switch location={location}>
-              <Route path="/" exact component={Home} />
-              <Route path="/works" exact component={() => (<Works previews={previews} loading={loading} />)}/>
-              <Route path="/nimdods-never-ending-scroll" exact component={() => (<Nimdods CMSTree={CMSTree} loading={loading} />)} />
-            </Switch>
+            <AnimatePresence exitBeforeEnter initial={false}>
+              <Switch location={location} key={location.pathname}>
+                <RouteTransitionSlide path="/" exact slideIn={"100%"} slideOut={"-100%"} duration={0.5}><Home/></RouteTransitionSlide>
+                <RouteTransition path="/works" exact slide={"-50%"}  slideUp={0}><Works previews={previews} loading={loading} /></RouteTransition>
+                <RouteTransition path="/nimdods-never-ending-scroll"><Nimdods CMSTree={CMSTree} loading={loading} /></RouteTransition>
+                <RouteTransition path="/contact" exact ><Contact/></RouteTransition>
+              </Switch>
+            </AnimatePresence>
           );
 
         }}/>

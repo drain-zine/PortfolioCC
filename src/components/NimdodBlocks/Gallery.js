@@ -10,12 +10,12 @@ const Gallery = (props) => {
     const size = (imgs.length === 1 ? 100 : 100/(imgs.length+1));
     
     return(
-        <div className="imgContainer justify-center flex flex-row block">
+        <div className="imgContainer w-full justify-center flex flex-row block">
             {imgs.map((img) => (
                 <motion.img 
                     style={{width: size+"%"}} 
                     className="mx-4" 
-                    src={require("../../res/" + img).default} 
+                    src={require("../../data/assets/" + img).default} 
                     transition={transition}
                     whileHover={{scale: 1.1}}
                 />
