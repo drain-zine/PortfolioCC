@@ -17,6 +17,7 @@ const Nimdods = (props) => {
 
     const [reactTree, setReactTree] = useState(null);
 
+    // scroll to url anchor, react router doesnt like so we must implement ourselves
     useEffect(() => {
         // get tar ID
         const hash = window.location.hash.substring(1);
