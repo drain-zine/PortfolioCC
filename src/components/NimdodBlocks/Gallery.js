@@ -10,7 +10,7 @@ const Gallery = (props) => {
     const size = (imgs.length === 1 ? 100 : 100/(imgs.length+1));
     
     return(
-        <div className="imgContainer w-full justify-center flex flex-row block">
+        <div className="imgContainer w-full justify-between flex flex-row block">
             {imgs.map((img) => (
                 <motion.img 
                     style={{width: size+"%"}} 
