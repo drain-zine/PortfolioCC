@@ -12,7 +12,7 @@ const ScrollOverlay = (props) => {
     const controls = useAnimation();
     const trigger = 0.073; // derived from qualitative testing
 
-    // handle visibilty
+    // handle scroll visibilty
     useEffect(() => {
         if(scrollPercent > trigger){
             controls.start("visible");
@@ -23,6 +23,7 @@ const ScrollOverlay = (props) => {
     }, [controls, scrollPercent]);
 
 
+    // get scroll % as string
     useEffect(() => {
         Number.prototype.round = function(places) {
             return +(Math.round(this + "e+" + places)  + "e-" + places);
@@ -45,17 +46,23 @@ const ScrollOverlay = (props) => {
 
     }, []);
 
+
     return(
         <motion.div 
-            className="w-screen h-screen fixed z-20 pointer-events-none"
+            className="w-screen left-0 h-screen fixed z-20 pointer-events-none"
             animate={controls}
             initial={"hidden"}
             transition={transition}
             variants={variants}
         >
-            <div className="absolute left-0 ml-4" style={{top: "15%"}}>
-                <p className="transform -rotate-90 text-2xl -translate-x-1/2">{scrollPercent}</p>
+            <div className="absolute left-0 pl-4" style={{top: "15%"}}>
+                <p className="transform -rotate-90 text-2xl translate-x-1/2">{scrollPercent}</p>
             </div>
+
+            <div className="absolute right-0 pr-4" style={{top: "15%"}}>
+                <p className="transform rotate-90 text-2xl text-red-900 -translate-x-1/2">TEST</p>
+            </div>
+
         </motion.div>
     );
 };
