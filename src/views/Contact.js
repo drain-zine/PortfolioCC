@@ -25,7 +25,7 @@ const Contact = () => {
                         </tr>
                         <tr>
                             <th class="font-bold text-left">Phone</th>
-                            <th class="text-red-600 font-normal secondary-font-stack">(1)6505729457</th>
+                            <th class="text-red-600 font-normal secondary-font-stack">650-572-9457</th>
                         </tr>
                     </table>
                 </div>
