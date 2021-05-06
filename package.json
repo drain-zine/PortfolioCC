@@ -11,7 +11,6 @@
     "react": "^17.0.2",
     "react-device-detect": "^1.17.0",
     "react-dom": "^17.0.2",
-    "react-markdown": "^6.0.0",
     "react-scripts": "4.0.3",
     "web-vitals": "^1.1.1"
   },
@@ -50,6 +49,7 @@
     "postcss": "^7.0.35",
     "react-double-marquee": "^1.1.0",
     "react-helmet": "^6.1.0",
+    "react-markdown": "^6.0.1",
     "react-router-dom": "^5.2.0",
     "sass": "^1.32.8",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.1.0"
