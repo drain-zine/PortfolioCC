@@ -1,11 +1,12 @@
 ﻿<blog>
 <post>
 <title>
-mushroomhead (for A2B2 Magazine) - 2021
+**mushroomhead (for A2B2 Magazine) - 2021**
 </title>
 
 <textbox>
-Digital collage made for Volume 1, Edition 1, of A2B2 Magazine under the theme of “The Fungal World” 
+Digital collage made for Volume 1, Edition 1 
+of A2B2 Magazine - “The Fungal World” 
 </textbox>
 
 <gallery>
@@ -14,17 +15,17 @@ Digital collage made for Volume 1, Edition 1, of A2B2 Magazine under the theme o
 
 <textcol>
 <col>
-> # **PROCESS:**
->
-> In creating this artwork, I wanted to translate fungal growth into something that existed fluidly within both physical and virtual space. To this end, compositional assets were photographed locally and were later digitized. Through use of the image manipulation program GIMP, I distorted and arranged these assets in a manner that recontextualized them with new meaning.
+# **PROCESS:**
+
+In creating this artwork, I wanted to translate fungal growth into something that existed fluidly within both physical and virtual space. To this end, compositional assets were photographed locally and were later digitized. Through use of the image manipulation program GIMP, I distorted and arranged these assets in a manner that recontextualized them with new meaning.
 </col>
 
 <col>
-> # **THEORY:** 
-> 
-> American poet Kay Ryan notes the curiosity of scale, stating that by “changing size... [we] loosen an imaginative space that gets larger as it gets smaller” (“On the Miniature”). “mushroomhead” draws upon Ryan’s thinking and applies it to the question of spatial representation. Essentially, if a physically tangible asset is brought into a new, digital environment, what happens to it? 
->
-> This artwork seeks to answer this question by embracing naturally occurring fungus (and other small objects), with its comparably diminutive size in everyday life, and highlighting its ability to draw attention and get “larger as it gets smaller” when compressed into an expansive virtual space.
+# **THEORY:** 
+ 
+American poet Kay Ryan notes the curiosity of scale, stating that by “changing size... [we] loosen an imaginative space that gets larger as it gets smaller” (“On the Miniature”). “mushroomhead” draws upon Ryan’s thinking and applies it to the question of spatial representation. Essentially, if a physically tangible asset is brought into a new, digital environment, what happens to it? 
+
+This artwork seeks to answer this question by embracing naturally occurring fungus (and other small objects), with its comparably diminutive size in everyday life, and highlighting its ability to draw attention and get “larger as it gets smaller” when compressed into an expansive virtual space.
 </col>
 </textcol>
 
@@ -35,12 +36,13 @@ yellow: **SPACE IS SO STRANGE**
 
 <preview>
 <title>
-mushroomhead
+**mushroomhead**
 </title>
 
 <image src="static/mushroomhead.jpg"/>
 <blurb>
-Original Artwork for A2B2 Magazine (2021)
+Original Artwork for A2B2 Magazine 
+(2021)
 </blurb>
 </preview>
    
