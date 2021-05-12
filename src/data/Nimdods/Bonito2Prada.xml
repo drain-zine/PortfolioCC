@@ -1,0 +1,58 @@
+<blog>
+<post>
+<title>
+> P.R.A.D.A
+> Prada SS20 Campaign - 2020
+</title>
+
+<textbox>
+Acrostic Poem for Prada
+</textbox>
+
+<gallery>
+"static/prada1.jpg"
+</gallery>
+
+<quotebox>
+white: “Prada is characterised by plurality,”, red: “by a protean nature,”, white: “eschewing any single definition,”, red: “any easy hypothesis.”
+</quotebox>
+
+<gallery>
+"static/prada2.jpg"
+</gallery>
+
+<textcol>
+<col>
+# **PROCESS:**
+> I reflected on the potentiality of form, something shared by both poetry and fashion. What can be achieved within limited space? 
+</col>
+
+<col>
+# **THEORY:**
+> “Art feeds on restrictions, or rather perhaps it would be truer to say that they are the very ground on which it grows, the earth from which it reaches up towards its imagined heaven” 
+> - Elizabeth Daryush
+</textcol>
+
+<gallery>
+"static/prada3.jpg”
+</gallery>
+
+<quotebox>
+white: **STARTING SOMEWHERE**
+</quotebox>
+</post>
+
+<preview>
+<title>
+**P.R.A.D.A**
+</title>
+
+<image src="static/prada2.jpg"/>
+<blurb>
+> Poem for Prada SS20
+>
+> (2020)
+</blurb>
+</preview>
+
+</blog>
