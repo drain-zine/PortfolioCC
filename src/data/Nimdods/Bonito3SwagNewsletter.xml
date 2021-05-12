@@ -4,9 +4,10 @@
 Swag Newsletter
 </title>
 
-<textbox>
-An ongoing series of publishing experiments (2020 - ?)
-</textbox>
+<quotebox>
+An ongoing series of 
+publishing experiments (2020 - ?)
+</quotebox>
 
 <textbox>
 # ISSUE 1
@@ -27,7 +28,9 @@ Digital assemblage of archived images from internet and own photography; physica
 <col>
 # **THEORY**
 If “the medium is the message” like Marshall McLuhan says, what can we make of contemporary popular forms of communicative media? Platforms such as TikTok are directly conducive to the efficient condensation of ideas, in turn allowing for (sub)cultures to process information and disseminate content at faster rates than ever before. On the other hand, literal newsletters sent through Substack are seemingly personalized, but actually widespread, written material, marking an evolution in what consumers are willing to read. 
-
+</col>
+  
+<col>
 The Swag Newsletter seeks to question these forms by challenging the very idea of media consumption. What is the fastest speed at which something can be physically sent? Is a newsletter still a newsletter if I can’t be easily read?
 </col>
 </textcol>
@@ -39,7 +42,7 @@ The Swag Newsletter seeks to question these forms by challenging the very idea o
 Overprinted pages used as posters by a recipient
 
 <quotebox>
-orange: **A NEWSLETTER IS A NEWSLETTER IS A NEWSLETTER IS**
+yellow: A NEWSLETTER IS A NEWSLETTER IS A NEWSLETTER IS
   </quotebox>
 
 <textbox>
@@ -61,7 +64,9 @@ Digital assemblage of text and archived images from internet and own photography
 <col>
 # **THEORY**
 Re-presenting the intellectual challenge to legibility raised by Issue 1, this iteration of the Swag Newsletter responds to the growth of zine culture during the COVID-19 Quarantine Era, especially as popularized by publications like New York’s ***Civilization*** and ***The Drunken Canal***. If such publications mark a revitalized interest in anti-digital materiality, can this interest be physically complicated through a literal compaction? 
+  </col>
 
+<col>
 Michelangelo Antonioni’s 1966 film ***Blowup*** suggests a re-examination of scale coming from the miniature (there, photography), an interest which is translated into this issue. Copies of the newsletter were printed into small, film-like strips that could be kept in their current form or used even as stickers; however, they also were scannable into a larger, more readable version online. Is either a version a kind of simulacrum of the other? Are both or neither an “original” version?
 </col>
 </textcol>
@@ -72,12 +77,14 @@ Michelangelo Antonioni’s 1966 film ***Blowup*** suggests a re-examination of s
 Assortment of strip samples prior to sending
 
 <quotebox>
-orange: **EVEN IF I CAN SEE IT, CAN I SEE IT?**
+yellow: EVEN IF I CAN SEE IT, CAN I SEE IT?
 </quotebox>
 
 <textbox>
 If you are interested in being added to the mailing list for a copy, please email me via this website’s CONTACTS page :)
 </textbox>
+
+  </post>
 
 <preview>
 <title>
@@ -86,7 +93,7 @@ NEWS
 LETTER
 </title>
 
-<image src="static/sn24.jpg"/>
+<image src="static/sn23.jpg"/>
 <blurb>
 Experimental publication (2020 - ?)
 </blurb>
