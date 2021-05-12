@@ -40,6 +40,7 @@ Overprinted pages used as posters by a recipient
 
 <quotebox>
 orange: **A NEWSLETTER IS A NEWSLETTER IS A NEWSLETTER IS**
+  </quotebox>
 
 <textbox>
 # ISSUE 2
@@ -80,10 +81,12 @@ If you are interested in being added to the mailing list for a copy, please emai
 
 <preview>
 <title>
-SWAG NEWSLETTER
+SWAG 
+NEWS 
+LETTER
 </title>
 
-<image src="static/sn12.jpg"/>
+<image src="static/sn24.jpg"/>
 <blurb>
 Experimental publication (2020 - ?)
 </blurb>
