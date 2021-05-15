@@ -54,13 +54,14 @@ white: THIS IS BRAINFERG.
         BRAINFERG
         </title>
       
-         <image src="static/brainferg0.jpg/>
-     <blurb>
-        MY BLOG HAHAHA
-      </blurb>
-  </preview>
-  
-  </blog>
+<image src="static/brainferg0.jpg"/>
+<blurb>
+MY BLOG HAHAHA
+</blurb>
+</preview>
+   
+</blog>
+
           
    
  
