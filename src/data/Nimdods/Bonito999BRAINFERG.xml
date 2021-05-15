@@ -20,15 +20,9 @@ white: THIS IS BRAINFERG.
     # MAY 14, 2021 - THOUGHTS ON KORN
   </textbox>
   
-  <textcol>
-    <col>
-      For some inexplicable reason, I've felt a strong draw to the band Korn recently. Constantly, [Freak on a Leash](https://www.youtube.com/watch?v=jRGrNDV2mKc) plays through my head, I saw the artist Lil Texas with a Korn tattoo earlier today (see below), 
-    </col>
-      
-    <col>
-      and earlier this week, I even felt inclined to purchase a (relatively) [vintage Korn t-shirt](https://www.depop.com/products/allifisher1-rare-vintage-korn-issues-album/).
-    </col>
-  </textcol>
+  <textbox>
+For some inexplicable reason, I've felt a strong draw to the band Korn recently. Constantly, [Freak on a Leash](https://www.youtube.com/watch?v=jRGrNDV2mKc) plays through my head, I saw the artist Lil Texas with a Korn tattoo earlier today (see below), and earlier this week, I even felt inclined to purchase a (relatively) [vintage Korn t-shirt](https://www.depop.com/products/allifisher1-rare-vintage-korn-issues-album/).
+  </textbox>
     
     <gallery>
 "static/brainferg2.jpg"
@@ -36,12 +30,15 @@ white: THIS IS BRAINFERG.
   
     The tattoo in question 
 
-     <textbox>
+     <textcol>
+       <col>
       What can I make of all this though? I never was particularly keen on Korn when younger, and I (thanks to a fellow [bossman](https://www.tm-stnt.dev/)) only really picked up on things perhaps comparable (thinking especially of Limp Bizkit and [this track](https://www.youtube.com/watch?v=v290M8W-HFI), which kind of blows my mind) in the last year.
-   
- Is this an expression of some inner angst that I've been unknowingly carrying for a long time? Perhaps! Is it a connection to my recent fascination with XXL sized t-shirts, giving me a Durstian fitment that puts me onto some strong CEO vibes? Partially, yes! 
+       </col>
       
-      </textbox>
+   <col>
+ Is this an expression of some inner angst that I've been unknowingly carrying for a long time? Perhaps! Is it a connection to my recent fascination with XXL sized t-shirts, giving me a Durstian fitment that puts me onto some strong CEO vibes? Partially, yes! 
+       </col>
+   </textcol>
         
     <textcol> 
       <col>
