@@ -38,7 +38,7 @@ const WorkTile = ({data, incrementTogglesCounter, decrementTogglesCounter}) => {
                                 <SVGHorizLine /> 
                             </div>
 
-                            <p className="flex-initial mx-1 text-center text-red-900">2021</p> 
+                            <p className="flex-initial mx-1 text-center text-red-900">{data.date}</p> 
                             <div className="mx-2" style={{flex: "1 1 60%"}}>
                                 <SVGHorizLine /> 
                             </div>

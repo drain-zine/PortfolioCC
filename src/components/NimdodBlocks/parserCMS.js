@@ -9,7 +9,7 @@ const parseCMS = (content) => {
    
     /* img_src = "./../data/assets/"+img_src; */
     console.log("TEST: " + img_src);
-    let tile = {title: preview.getElementsByTagName("title")[0].textContent , img: img_src, blurb: preview.getElementsByTagName("blurb")[0].textContent.replace(/[\n\"]+/g,"")};
+    let tile = {title: preview.getElementsByTagName("title")[0].textContent , img: img_src, blurb: preview.getElementsByTagName("blurb")[0].textContent.replace(/[\n\"]+/g,""), date: preview.getElementsByTagName("date")[0].textContent.trim()};
     
     return {"tree": reactTree, "preview": tile};
 }
