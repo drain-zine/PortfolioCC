@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import GalleryImg from "../components/Ephemera/GalleryImg";
+import TextColumn from "../components/Ephemera/TextColumn";
 import test from "../data/Ephemera/placeholder.png";
 import dmap from "../data/Ephemera/dmaps/clouds.jpg";
 import CanvasSlideshow from "../components/animations/LiquidTransition";
@@ -7,6 +8,9 @@ import CanvasSlideshow from "../components/animations/LiquidTransition";
 
 const Ephemera = () => {
 
+    const column = ["EPHEMERA", "OBJECT", "EPHEMERA", "TRANSIENCE", "EPHEMERA", "BEING", "EPHEMERA", "FEELING", "EPHEMERA", "SILENCE", "EPHEMERA", "REMINDER", "EPHEMERA"];
+
+    // init canvas for anim effect
     useEffect(() => {
         var spriteImages = document.querySelectorAll( '.slide-item__image' );
 			var spriteImagesSrc = [];
@@ -38,35 +42,10 @@ const Ephemera = () => {
 
     return(
         <main className="lander absolute w-screen h-screen overflow-hidden flex py-24">
-            <div style={{fontSize: "2rem"}} className="w-1/6 flex flex-col text-white text-center ">
-                <div  className="flex  flex-grow flex-col w-full">
-                    <h1 className="flex-1">EPHEMERA</h1>
-                    <h1 className="flex-1">OBJECT</h1>
-                    <h1 className="flex-1">EPHEMERA</h1>
-                    <h1 className="flex-1">TRANSIENCE</h1>
-                    <h1 className="flex-1">EPHEMERA</h1>
-                    <h1 className="flex-1">BEING</h1>
-                    <h1 className="flex-1">EPHEMERA</h1>
-                    <h1 className="flex-1">FEELING</h1>
-                    <h1 className="flex-1">EPHEMERA</h1>
-                    <h1 className="flex-1">SILENCE</h1>
-                    <h1 className="flex-1">EPHEMERA</h1>
-                    <h1 className="flex-1">REMINDER</h1>
-                    <h1 className="flex-1">EPHEMERA</h1>
-                </div>
-
-                <div className="flex-1">
-                    <h1 className="flex-1">HOME</h1>
-                </div>
-
-            </div>
+            
+            <TextColumn column={column} button={"HOME"}/>
 
             <div className="w-2/3 border-2 border-white text-white">
-                {/*<div ref={ref} className="galleryContainer overflow-y-scroll h-screen absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 ">
-                     {  [...Array(8)].map((e, i) => (
-                        <GalleryImg src={"placeholder.png"}/>
-                    ))} 
- </div>*/}
                     <div class="slide-wrapper hidden">
                         <div class="slide-item">
                             <img src={test} class="slide-item__image"/>
@@ -75,35 +54,11 @@ const Ephemera = () => {
                         <div class="slide-item">
                             <img src={test} class="slide-item__image"/>
                         </div>
-                    </div>
-
-             
-                
+                    </div> 
             </div>
             
 
-            <div style={{fontSize: "2rem"}} className="w-1/6 flex flex-col text-white text-center ">
-                <div  className="flex  flex-grow flex-col w-full">
-                    <h1 className="flex-1">EPHEMERA</h1>
-                    <h1 className="flex-1">OBJECT</h1>
-                    <h1 className="flex-1">EPHEMERA</h1>
-                    <h1 className="flex-1">TRANSIENCE</h1>
-                    <h1 className="flex-1">EPHEMERA</h1>
-                    <h1 className="flex-1">BEING</h1>
-                    <h1 className="flex-1">EPHEMERA</h1>
-                    <h1 className="flex-1">FEELING</h1>
-                    <h1 className="flex-1">EPHEMERA</h1>
-                    <h1 className="flex-1">SILENCE</h1>
-                    <h1 className="flex-1">EPHEMERA</h1>
-                    <h1 className="flex-1">REMINDER</h1>
-                    <h1 className="flex-1">EPHEMERA</h1>
-                </div>
-
-                <div className="flex-1">
-                    <h1 className="flex-1">SEE ALL</h1>
-                </div>
-
-            </div>
+            <TextColumn column={column} button={"ALL"}/>
 
         </main>
     );
