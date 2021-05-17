@@ -1,11 +1,13 @@
-import {createCanvas} from './utils/canvas';
-import Haze from './haze';
-import shader from './shaders/haze-water.frag';
+import {createCanvas} from '../components/animations/utils/canvas.js';
+import Haze from './../components/animations/Haze';
+import shader from './../components/animations/shaders/haze-water.frag';
 import TweenLite from 'gsap'
+import react, {useEffect} from "react";
+import { fromPairs } from 'lodash';
 
 const useWaterAnimation = (target) => {
   useEffect(() => {
-      let canvas=document.querySelector('.Background-canvas');
+      let canvas=document.querySelector(target);
 
       let textureAlign={x:0.5,y:0.9};
       let textures=[
@@ -106,7 +108,7 @@ const useWaterAnimation = (target) => {
       }
       window.addEventListener('resize',updateSize);
       function updateSize(){
-        let container=document.querySelector('.Background');
+        let container=document.querySelector('.galleryContainer');
         let dimensions=container.getBoundingClientRect();
         haze.width=dimensions.width;
         haze.height=dimensions.height;
@@ -117,4 +119,6 @@ const useWaterAnimation = (target) => {
       }
       updateSize();
     },[]);
-}
+};
+
+export default useWaterAnimation;

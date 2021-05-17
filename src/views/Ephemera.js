@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import GalleryImg from "../components/Ephemera/GalleryImg";
+import useWaterAnimation from "../hooks/useWaterAnimation";
 
 
 const Ephemera = () => {
@@ -48,6 +49,8 @@ const Ephemera = () => {
 
     },[ref.current]);
 
+    useWaterAnimation(".Background-canvas");
+
     return(
         <main className="lander absolute w-screen h-screen overflow-hidden flex py-24">
             <div style={{fontSize: "2rem"}} className="w-1/6 flex flex-col text-white text-center ">
@@ -74,12 +77,13 @@ const Ephemera = () => {
             </div>
 
             <div className="w-2/3 border-2 border-white">
-            <div ref={ref} className="galleryContainer overflow-y-scroll h-screen absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 ">
-                    {  [...Array(8)].map((e, i) => (
+                <div ref={ref} className="galleryContainer overflow-y-scroll h-screen absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 ">
+                  {/*   {  [...Array(8)].map((e, i) => (
                         <GalleryImg src={"placeholder.png"}/>
-                    ))} 
+                    ))} */}    
+                        <canvas class="Background-canvas"></canvas>
 
-                       
+                        
                   
                 </div>
             </div>
