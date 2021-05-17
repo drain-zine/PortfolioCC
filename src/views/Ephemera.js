@@ -1,52 +1,40 @@
 import React, { useEffect, useRef, useState } from "react";
 import GalleryImg from "../components/Ephemera/GalleryImg";
+import test from "../data/Ephemera/placeholder.png";
+import dmap from "../data/Ephemera/dmaps/clouds.jpg";
+import CanvasSlideshow from "../components/animations/LiquidTransition";
 
 
 const Ephemera = () => {
 
-    const [scrollPercent, setScrollPercent] = useState(0);
-    const ref = useRef(null);
-
     useEffect(() => {
-        Number.prototype.round = function(places) {
-            return +(Math.round(this + "e+" + places)  + "e-" + places);
-        }
+        var spriteImages = document.querySelectorAll( '.slide-item__image' );
+			var spriteImagesSrc = [];
+			var texts = [];
 
-        const getScrollPercent = () => {
-            var h = document.documentElement, 
-                b = document.body,
-                st = 'scrollTop',
-                sh = 'scrollHeight';
-            
-            setScrollPercent(((h[st]||b[st]) / ((h[sh]||b[sh]) - h.clientHeight)));
-            console.log(((h[st]||b[st]) / ((h[sh]||b[sh]) - h.clientHeight)));
-        }
-
-        
-    }, []);
-
-  
-
-    useEffect(() => {
-        if(ref.current){
-            var lastScrollTop = 0;
-            const scrollTest = () => {
-              
-                ref.current.scrollTop -= 10;
-                console.log("scrolling");
-                
-    
-            }
-    
-            window.addEventListener("scroll", scrollTest, false);
-    
-            return () => {
-                window.removeEventListener("scroll", scrollTest, false);
-            }
-    
-        }
-
-    },[ref.current]);
+			for ( var i = 0; i < spriteImages.length; i++ ) {
+				var img = spriteImages[i];
+				// Set the texts you want to display to each slide 
+				// in a sibling element of your image and edit accordingly
+				if ( img.nextElementSibling ) {
+					texts.push(img.nextElementSibling.innerHTML);
+				} else {
+					texts.push('');
+				}
+				spriteImagesSrc.push( img.getAttribute('src' ) );
+			}
+      
+			var initCanvasSlideshow = new CanvasSlideshow({
+				sprites: spriteImagesSrc,
+				displacementImage: "./../data/Ephemera/dmaps/clouds.jpg",
+				autoPlay: false,
+				autoPlaySpeed: [0.1, 0.1],
+				centerSprites: true,
+                scale: [800, 600],
+                fullScreen: false,
+                scrollTransition: true
+			});
+    },[]);
 
     return(
         <main className="lander absolute w-screen h-screen overflow-hidden flex py-24">
@@ -73,15 +61,24 @@ const Ephemera = () => {
 
             </div>
 
-            <div className="w-2/3 border-2 border-white">
-            <div ref={ref} className="galleryContainer overflow-y-scroll h-screen absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 ">
-                    {  [...Array(8)].map((e, i) => (
+            <div className="w-2/3 border-2 border-white text-white">
+                {/*<div ref={ref} className="galleryContainer overflow-y-scroll h-screen absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 ">
+                     {  [...Array(8)].map((e, i) => (
                         <GalleryImg src={"placeholder.png"}/>
                     ))} 
+ </div>*/}
+                    <div class="slide-wrapper hidden">
+                        <div class="slide-item">
+                            <img src={test} class="slide-item__image"/>
+                        </div>
 
-                       
-                  
-                </div>
+                        <div class="slide-item">
+                            <img src={test} class="slide-item__image"/>
+                        </div>
+                    </div>
+
+             
+                
             </div>
             
 
