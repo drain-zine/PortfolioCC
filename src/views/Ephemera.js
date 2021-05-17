@@ -1,29 +1,57 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
+import GalleryImg from "../components/Ephemera/GalleryImg";
 
 
 const Ephemera = () => {
 
-    const sidebar = useRef(null);
+    const [scrollPercent, setScrollPercent] = useState(0);
+    const ref = useRef(null);
 
     useEffect(() => {
-        if(sidebar.current){
-                let parentHeight=sidebar.current.parentElement.offsetHeight;
-                let sidebarHeight = sidebar.current.offsetHeight;
-
-                console.log(parentHeight + ", " + sidebarHeight);
-
-                /*  while(parentHeight > sidebarHeight){
-                   sidebar.current.style.fontSize = parseInt(sidebar.current.style.fontSize) + 1;
-                   sidebarHeight = sidebar.current.offsetHeight;
-                }  */
+        Number.prototype.round = function(places) {
+            return +(Math.round(this + "e+" + places)  + "e-" + places);
         }
 
-    },[sidebar.current]);
+        const getScrollPercent = () => {
+            var h = document.documentElement, 
+                b = document.body,
+                st = 'scrollTop',
+                sh = 'scrollHeight';
+            
+            setScrollPercent(((h[st]||b[st]) / ((h[sh]||b[sh]) - h.clientHeight)));
+            console.log(((h[st]||b[st]) / ((h[sh]||b[sh]) - h.clientHeight)));
+        }
+
+        
+    }, []);
+
+  
+
+    useEffect(() => {
+        if(ref.current){
+            var lastScrollTop = 0;
+            const scrollTest = () => {
+              
+                ref.current.scrollTop -= 10;
+                console.log("scrolling");
+                
+    
+            }
+    
+            window.addEventListener("scroll", scrollTest, false);
+    
+            return () => {
+                window.removeEventListener("scroll", scrollTest, false);
+            }
+    
+        }
+
+    },[ref.current]);
 
     return(
         <main className="lander absolute w-screen h-screen overflow-hidden flex py-24">
             <div style={{fontSize: "2rem"}} className="w-1/6 flex flex-col text-white text-center ">
-                <div  ref={sidebar} className="flex  flex-grow flex-col w-full">
+                <div  className="flex  flex-grow flex-col w-full">
                     <h1 className="flex-1">EPHEMERA</h1>
                     <h1 className="flex-1">OBJECT</h1>
                     <h1 className="flex-1">EPHEMERA</h1>
@@ -46,11 +74,19 @@ const Ephemera = () => {
             </div>
 
             <div className="w-2/3 border-2 border-white">
+            <div ref={ref} className="galleryContainer overflow-y-scroll h-screen absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 ">
+                    {  [...Array(8)].map((e, i) => (
+                        <GalleryImg src={"placeholder.png"}/>
+                    ))} 
 
+                       
+                  
+                </div>
             </div>
+            
 
             <div style={{fontSize: "2rem"}} className="w-1/6 flex flex-col text-white text-center ">
-                <div  ref={sidebar} className="flex  flex-grow flex-col w-full">
+                <div  className="flex  flex-grow flex-col w-full">
                     <h1 className="flex-1">EPHEMERA</h1>
                     <h1 className="flex-1">OBJECT</h1>
                     <h1 className="flex-1">EPHEMERA</h1>
