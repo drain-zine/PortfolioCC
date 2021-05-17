@@ -9,6 +9,12 @@ import CanvasSlideshow from "../components/animations/LiquidTransition";
 const Ephemera = () => {
 
     const column = ["EPHEMERA", "OBJECT", "EPHEMERA", "TRANSIENCE", "EPHEMERA", "BEING", "EPHEMERA", "FEELING", "EPHEMERA", "SILENCE", "EPHEMERA", "REMINDER", "EPHEMERA"];
+    const imgArray = ["placeholder.png", "placeholder2.jpg", "placeholder3.png", "placeholder5.jpg", "placeholder6.jpg"];
+    
+    const imgN = imgArray.length;
+
+    const [imgProg, setImgProg] = useState(0);
+    const [scrollPercent, setScrollPercent] = useState(0);
 
     // init canvas for anim effect
     useEffect(() => {
@@ -34,27 +40,36 @@ const Ephemera = () => {
 				autoPlay: false,
 				autoPlaySpeed: [0.1, 0.1],
 				centerSprites: true,
-                scale: [800, 600],
+                scale: ["60%", "auto"],
                 fullScreen: false,
-                scrollTransition: true
+                scrollTransition: true,
+                scrollStateUpdater: setImgProg
 			});
     },[]);
+
+    // increment image counter
+     useEffect(() => {
+        setScrollPercent(((imgProg+1)/imgN).toFixed(3));
+    },[imgProg]); 
+
 
     return(
         <main className="lander absolute w-screen h-screen overflow-hidden flex py-24">
             
             <TextColumn column={column} button={"HOME"}/>
 
-            <div className="w-2/3 border-2 border-white text-white">
-                    <div class="slide-wrapper hidden">
-                        <div class="slide-item">
-                            <img src={test} class="slide-item__image"/>
-                        </div>
+            <div className="w-2/3 border-2 border-white text-white relative">
+                <div className="absolute" style={{left: "10%", top: "50%", transform: "translateY(-50%)"}}>
+                    <p className="transform -rotate-90 text-2xl -translate-x-1/2">{scrollPercent}</p>
+                </div>
 
+                <div class="slide-wrapper hidden">
+                    {imgArray.map((i) => (
                         <div class="slide-item">
-                            <img src={test} class="slide-item__image"/>
+                            <img src={require(("./../data/Ephemera/"+i)).default} class="slide-item__image"/>
                         </div>
-                    </div> 
+                    ))}
+                </div> 
             </div>
             
 

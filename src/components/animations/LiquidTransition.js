@@ -33,7 +33,8 @@ import {TweenMax, Power3, TimelineMax} from "gsap";
       options.displacementCenter  = options.hasOwnProperty('displacementCenter') ? options.displacementCenter : false;
       options.dispatchPointerOver = options.hasOwnProperty('dispatchPointerOver') ? options.dispatchPointerOver : false;
       options.scrollTransition = options.hasOwnProperty('scrollTransition') ? options.scrollTransition : false;
-      options.scale = options.hasOwnProperty('scale') ? options.scale : [800,600];
+      options.scale = options.hasOwnProperty('scale') ? options.scale : ["800px","600px"];
+      options.scrollStateUpdater = options.hasOwnProperty('scrollStateUpdater') ? options.scrollStateUpdater : false;
 
       //  PIXI VARIABLES
       /// ---------------------------    
@@ -268,8 +269,6 @@ import {TweenMax, Power3, TimelineMax} from "gsap";
       var nav = options.navElement;
 
       if(options.scrollTransition){
-          console.log("[TRANSITION]: Hello world!");
-        
           const getScrollNav = (e) => {
                 
                 console.log(e.deltaY);
@@ -282,17 +281,22 @@ import {TweenMax, Power3, TimelineMax} from "gsap";
                 if ( e.deltaY > 0 ) {
 
                     if ( that.currentIndex >= 0 && that.currentIndex < slideImages.length - 1 ) {
-                    that.moveSlider( that.currentIndex + 1 );
+                        that.moveSlider( that.currentIndex + 1 );
+                        options.scrollStateUpdater(that.currentIndex + 1 );
                     } else {
-                    that.moveSlider( 0 );
+                        that.moveSlider( 0 );
+                        options.scrollStateUpdater( 0 );
                     }
 
                 } else {
 
                     if ( that.currentIndex > 0 && that.currentIndex < slideImages.length ) {
                     that.moveSlider( that.currentIndex - 1 );
+                    options.scrollStateUpdater(that.currentIndex - 1 );
+                  
                     } else {
-                    that.moveSlider( slideImages.length - 1 );
+                        that.moveSlider( slideImages.length - 1 );
+                        options.scrollStateUpdater( slideImages.length -1  );
                     }            
 
                 }
@@ -464,7 +468,8 @@ import {TweenMax, Power3, TimelineMax} from "gsap";
         //Scale the canvas based on whichever value is less: `scaleX` or `scaleY`
         scale = Math.min(scaleX, scaleY); */
         canvas.style.transformOrigin = "0 0";
-        canvas.style.transform = "scale(" + options.scale + ")";
+        canvas.style.width = options.scale[0];
+        canvas.style.height = options.scale[1];
       
         //2. Center the canvas.
         //Decide whether to center the canvas vertically or horizontally.
