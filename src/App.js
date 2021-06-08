@@ -18,6 +18,7 @@ function App() {
   const [previews, setPreviews] = useState(null);
   const [loading, setLoading] = useState(true);
 
+
   // util function for CMS return sanitising
   const combineKeyData = (data) => {
     var output = {}, item;
@@ -58,6 +59,7 @@ function App() {
           /* ReactDOM.render(CMSTree, document.getElementById('stagingArea'));  */
       }
   }, [loading, CMSTree]);
+
 
   return (
     <Router>
