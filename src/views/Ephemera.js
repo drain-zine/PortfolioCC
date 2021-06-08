@@ -4,6 +4,7 @@ import TextColumn from "../components/Ephemera/TextColumn";
 import test from "../data/Ephemera/placeholder.png";
 import dmap from "../data/Ephemera/dmaps/clouds.jpg";
 import CanvasSlideshow from "../components/animations/LiquidTransition";
+import FadeDiv from "../components/animations/FadeDiv";
 
 
 const Ephemera = () => {
@@ -13,6 +14,7 @@ const Ephemera = () => {
     
     const imgN = imgArray.length;
 
+    const [toggleAll, setToggleAll] = useState(false);
     const [imgProg, setImgProg] = useState(0);
     const [scrollPercent, setScrollPercent] = useState(0);
 
@@ -54,7 +56,29 @@ const Ephemera = () => {
 
     const seeAll = (e) => {
         
+
     }
+
+    useEffect(() => {
+        let canvas = document.getElementsByTagName("canvas")[0];
+        let scroll = document.getElementById("scroll");
+
+        if(toggleAll){
+            canvas.classList.remove("fadeIn");
+            canvas.classList.add("fadeOut");
+
+            scroll.classList.remove("fadeIn");
+            scroll.classList.add("fadeOut");
+
+        }else{
+            canvas.classList.remove("fadeOut");
+            canvas.classList.add("fadeIn");
+
+            scroll.classList.remove("fadeOut");
+            scroll.classList.add("fadeIn");
+
+        }
+    }, [toggleAll])
 
 
     return(
@@ -63,7 +87,7 @@ const Ephemera = () => {
             <TextColumn column={column} button={"HOME"}/>
 
             <div className="w-2/3 border-2 border-white text-white relative">
-                <div className="absolute" style={{left: "10%", top: "50%", transform: "translateY(-50%)"}}>
+                <div id="scroll" className="absolute" style={{left: "10%", top: "50%", transform: "translateY(-50%)"}}>
                     <p className="transform -rotate-90 text-2xl -translate-x-1/2">{scrollPercent}</p>
                 </div>
 
@@ -74,10 +98,21 @@ const Ephemera = () => {
                         </div>
                     ))}
                 </div> 
+
+                
+                 
+                        <FadeDiv trigger={toggleAll} id="gallery" className="fadeOut img-grd flex flex-row flex-wrap justify-center">
+                        {imgArray.map((i) => (
+                            <div style={{"flex-basis": "33%"}} class="p-2">
+                                <img src={require(("./../data/Ephemera/"+i)).default} class="slide-item__image"/>
+                            </div>
+                        ))}</FadeDiv>
+                   
+                
             </div>
             
 
-            <TextColumn column={column} button={"ALL"} onClick={seeAll}/>
+            <TextColumn column={column} button={toggleAll ? "BACK" : "ALL"} onClick={() => (setToggleAll(!toggleAll))}/>
 
         </main>
     );
