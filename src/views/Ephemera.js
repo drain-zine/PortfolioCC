@@ -52,6 +52,10 @@ const Ephemera = () => {
         setScrollPercent(((imgProg+1)/imgN).toFixed(3));
     },[imgProg]); 
 
+    const seeAll = (e) => {
+        
+    }
+
 
     return(
         <main className="lander absolute w-screen h-screen overflow-hidden flex py-24">
@@ -73,7 +77,7 @@ const Ephemera = () => {
             </div>
             
 
-            <TextColumn column={column} button={"ALL"}/>
+            <TextColumn column={column} button={"ALL"} onClick={seeAll}/>
 
         </main>
     );
