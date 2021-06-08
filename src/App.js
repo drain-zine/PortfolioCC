@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Home from "./views/Home.js";
 import Works from './views/Works.js';
 import Nimdods from './views/Nimdods.js';
+import Ephemera from './views/Ephemera.js';
 
 import loadCMS from './components/NimdodBlocks/loadCMS';
 import ReactDOM from "react-dom";
@@ -16,6 +17,7 @@ function App() {
   const [CMSTree, setCMSTree] = useState(null);
   const [previews, setPreviews] = useState(null);
   const [loading, setLoading] = useState(true);
+
 
   // util function for CMS return sanitising
   const combineKeyData = (data) => {
@@ -58,6 +60,7 @@ function App() {
       }
   }, [loading, CMSTree]);
 
+
   return (
     <Router>
       <div className="App">
@@ -69,6 +72,7 @@ function App() {
                 <RouteTransitionSlide path="/" exact slideIn={"100%"} slideOut={"-100%"} duration={0.5}><Home/></RouteTransitionSlide>
                 <RouteTransition path="/works" exact slide={"-50%"}  slideUp={0}><Works previews={previews} loading={loading} /></RouteTransition>
                 <RouteTransition path="/nimdods-never-ending-scroll"><Nimdods CMSTree={CMSTree} loading={loading} /></RouteTransition>
+                <RouteTransition path="/ephemera"><Ephemera/></RouteTransition>
                 <RouteTransition path="/contact" exact ><Contact/></RouteTransition>
               </Switch>
             </AnimatePresence>
