@@ -6,13 +6,15 @@ import dmap from "../data/Ephemera/dmaps/clouds.jpg";
 import CanvasSlideshow from "../components/animations/LiquidTransition";
 import FadeDiv from "../components/animations/FadeDiv";
 import FadeInDiv from "../components/animations/FadeDiv";
+import useIsMount from "../hooks/useIsMount";
 
 
 const Ephemera = () => {
 
     const column = ["EPHEMERA", "OBJECT", "EPHEMERA", "TRANSIENCE", "EPHEMERA", "BEING", "EPHEMERA", "FEELING", "EPHEMERA", "SILENCE", "EPHEMERA", "REMINDER", "EPHEMERA"];
     const imgArray = ["placeholder.png", "placeholder2.jpg", "placeholder3.png", "placeholder5.jpg", "placeholder6.jpg"];
-    
+    const isMount = useIsMount();
+
     const imgN = imgArray.length;
 
     const [toggleAll, setToggleAll] = useState(false);
@@ -56,7 +58,9 @@ const Ephemera = () => {
     },[imgProg]); 
 
     const seeAll = (e) => {
-        
+        if(!isMount){
+            setToggleAll(!toggleAll);
+        }
 
     }
 
@@ -101,7 +105,7 @@ const Ephemera = () => {
 
                 
                  
-                        <FadeDiv trigger={toggleAll} id="gallery" className="img-grd flex flex-row flex-wrap justify-center">
+                        <FadeDiv style={{"opacity": 0}}trigger={toggleAll} id="gallery" className="img-grd flex flex-row flex-wrap justify-center">
                         {imgArray.map((i) => (
                             <FadeDiv trigger={toggleAll} style={{"flex-basis": "33%"}} className="p-2">
                                 <img src={require(("./../data/Ephemera/"+i)).default} className="slide-item__image"/>
@@ -112,7 +116,7 @@ const Ephemera = () => {
             </div>
             
 
-            <TextColumn column={column} button={toggleAll ? "BACK" : "ALL"} onClick={() => (setToggleAll(!toggleAll))}/>
+            <TextColumn column={column} button={toggleAll ? "BACK" : "ALL"} onClick={seeAll}/>
 
         </main>
     );
