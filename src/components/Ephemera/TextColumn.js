@@ -2,7 +2,7 @@ import React from "react";
 import {Link} from "react-router-dom";
 
 const TextColumn = (props) => (
-        <div style={{fontSize: "200%"}} className="w-1/6 flex flex-col text-white text-center ">
+        <div style={{fontSize: "1.7vw"}} className="w-1/6 flex flex-col text-white text-center ">
                 <div  className="flex  flex-grow flex-col w-full">
  
 

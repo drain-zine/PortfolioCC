@@ -97,6 +97,8 @@ import {TweenMax, Power3, TimelineMax} from "gsap";
           renderer.view.style.webkitTransform = 'translate( -50%, -50% )';
           renderer.view.style.transform = 'translate( -50%, -50% )';         
           renderer.view.style.position = 'absolute'; 
+          renderer.view.style.width     = '36%';
+          renderer.view.style.height    = 'auto';
         }
         
   
@@ -468,8 +470,8 @@ import {TweenMax, Power3, TimelineMax} from "gsap";
         //Scale the canvas based on whichever value is less: `scaleX` or `scaleY`
         scale = Math.min(scaleX, scaleY); */
         canvas.style.transformOrigin = "0 0";
-        canvas.style.width = options.scale[0];
-        canvas.style.height = options.scale[1];
+       /*  canvas.style.width = options.scale[0];
+        canvas.style.height = options.scale[1]; */
       
         //2. Center the canvas.
         //Decide whether to center the canvas vertically or horizontally.

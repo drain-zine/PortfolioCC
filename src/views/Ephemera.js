@@ -36,7 +36,7 @@ const Ephemera = () => {
       
 			var initCanvasSlideshow = new CanvasSlideshow({
 				sprites: spriteImagesSrc,
-				displacementImage: "./../data/Ephemera/dmaps/clouds.jpg",
+				displacementImage: "./../data/Ephemera/dmaps/ripple.jpg",
 				autoPlay: false,
 				autoPlaySpeed: [0.1, 0.1],
 				centerSprites: true,
