@@ -1,8 +1,8 @@
 import { motion } from 'framer-motion'
 
-const transition = {duration: 2, staggerChildren: 0.5};
+const transition = {duration: 2 };
 const variants = {
-    fadeIn: { opacity: 1},
+    fadeIn: { opacity: 1, delayChildren: 0.6},
     fadeOut: { opacity: 0},
 }
 

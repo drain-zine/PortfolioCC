@@ -5,6 +5,7 @@ import test from "../data/Ephemera/placeholder.png";
 import dmap from "../data/Ephemera/dmaps/clouds.jpg";
 import CanvasSlideshow from "../components/animations/LiquidTransition";
 import FadeDiv from "../components/animations/FadeDiv";
+import FadeInDiv from "../components/animations/FadeDiv";
 
 
 const Ephemera = () => {
@@ -80,7 +81,6 @@ const Ephemera = () => {
         }
     }, [toggleAll])
 
-
     return(
         <main className="lander absolute w-screen h-screen overflow-hidden flex py-24">
             
@@ -91,21 +91,21 @@ const Ephemera = () => {
                     <p className="transform -rotate-90 text-2xl -translate-x-1/2">{scrollPercent}</p>
                 </div>
 
-                <div class="slide-wrapper hidden">
+                <div className="slide-wrapper hidden">
                     {imgArray.map((i) => (
-                        <div class="slide-item">
-                            <img src={require(("./../data/Ephemera/"+i)).default} class="slide-item__image"/>
+                        <div className="slide-item">
+                            <img src={require(("./../data/Ephemera/"+i)).default} className="slide-item__image"/>
                         </div>
                     ))}
                 </div> 
 
                 
                  
-                        <FadeDiv trigger={toggleAll} id="gallery" className="fadeOut img-grd flex flex-row flex-wrap justify-center">
+                        <FadeDiv trigger={toggleAll} id="gallery" className="img-grd flex flex-row flex-wrap justify-center">
                         {imgArray.map((i) => (
-                            <div style={{"flex-basis": "33%"}} class="p-2">
-                                <img src={require(("./../data/Ephemera/"+i)).default} class="slide-item__image"/>
-                            </div>
+                            <FadeDiv trigger={toggleAll} style={{"flex-basis": "33%"}} className="p-2">
+                                <img src={require(("./../data/Ephemera/"+i)).default} className="slide-item__image"/>
+                            </FadeDiv>
                         ))}</FadeDiv>
                    
                 
