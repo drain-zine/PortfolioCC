@@ -1,10 +1,8 @@
 
 import parseCMS from './parserCMS';
 import axios from "axios";
+import importAll from "./../../utils/importAll.js";
 
-function importAll(r) {
-    return r.keys().map(r);
-}
 
 const fetchData = async(url) => {
     let test = await axios.get(url, {

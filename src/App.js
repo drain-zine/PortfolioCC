@@ -55,10 +55,10 @@ function App() {
           
       });
 
-      let data = await loadImgTree().promise();
+      let data = await loadImgTree();
       
       setImgTree(data);
-      preloadAllAssets();
+      await preloadAllAssets();
 
       await timer(15000);
       setLoading(false);
