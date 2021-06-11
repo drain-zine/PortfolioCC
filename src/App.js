@@ -7,6 +7,8 @@ import Nimdods from './views/Nimdods.js';
 import Ephemera from './views/Ephemera.js';
 
 import loadCMS from './components/NimdodBlocks/loadCMS';
+import loadImgTree from './components/Ephemera/loadImgTree';
+
 import ReactDOM from "react-dom";
 import RouteTransition from './components/animations/RouteTransition';
 import RouteTransitionSlide from './components/animations/RouteTransitionSlide';
@@ -17,6 +19,7 @@ function App() {
   const [CMSTree, setCMSTree] = useState(null);
   const [previews, setPreviews] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [imgTree, setImgTree] = useState(null);
 
 
   // util function for CMS return sanitising
@@ -48,6 +51,9 @@ function App() {
           setPreviews(combined_data["preview"])
           setLoading(false);
       });
+
+      let data = await loadImgTree()
+      setImgTree(data);
     }
 
     injectData();
@@ -72,7 +78,7 @@ function App() {
                 <RouteTransitionSlide path="/" exact slideIn={"100%"} slideOut={"-100%"} duration={0.5}><Home/></RouteTransitionSlide>
                 <RouteTransition path="/works" exact slide={"-50%"}  slideUp={0}><Works previews={previews} loading={loading} /></RouteTransition>
                 <RouteTransition path="/nimdods-never-ending-scroll"><Nimdods CMSTree={CMSTree} loading={loading} /></RouteTransition>
-                <RouteTransition path="/ephemera"><Ephemera/></RouteTransition>
+                <RouteTransition path="/ephemera"><Ephemera imgTree={imgTree}/></RouteTransition>
                 <RouteTransition path="/contact" exact ><Contact/></RouteTransition>
               </Switch>
             </AnimatePresence>

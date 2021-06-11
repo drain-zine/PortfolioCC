@@ -9,13 +9,13 @@ import FadeInDiv from "../components/animations/FadeDiv";
 import useIsMount from "../hooks/useIsMount";
 
 
-const Ephemera = () => {
-
+const Ephemera = (props) => {
+    const { imgTree } = props; 
     const column = ["EPHEMERA", "OBJECT", "EPHEMERA", "TRANSIENCE", "EPHEMERA", "BEING", "EPHEMERA", "FEELING", "EPHEMERA", "SILENCE", "EPHEMERA", "REMINDER", "EPHEMERA"];
-    const imgArray = ["placeholder.png", "placeholder2.jpg", "placeholder3.png", "placeholder5.jpg", "placeholder6.jpg"];
+   // const imgArray = ["placeholder.png", "placeholder2.jpg", "placeholder3.png", "placeholder5.jpg", "placeholder6.jpg"];
     const isMount = useIsMount();
 
-    const imgN = imgArray.length;
+    const imgN = imgTree.length;
 
     const [toggleAll, setToggleAll] = useState(false);
     const [imgProg, setImgProg] = useState(0);
@@ -26,7 +26,7 @@ const Ephemera = () => {
         var spriteImages = document.querySelectorAll( '.slide-item__image' );
 			var spriteImagesSrc = [];
 			var texts = [];
-
+/* 
 			for ( var i = 0; i < spriteImages.length; i++ ) {
 				var img = spriteImages[i];
 				// Set the texts you want to display to each slide 
@@ -36,8 +36,10 @@ const Ephemera = () => {
 				} else {
 					texts.push('');
 				}
-				spriteImagesSrc.push( img.getAttribute('src' ) );
+				
 			}
+ */
+            imgTree.forEach((i) => (spriteImagesSrc.push(i.src)));
       
 			var initCanvasSlideshow = new CanvasSlideshow({
 				sprites: spriteImagesSrc,
@@ -96,9 +98,9 @@ const Ephemera = () => {
                 </div>
 
                 <div className="slide-wrapper hidden">
-                    {imgArray.map((i) => (
+                    {imgTree.map((i) => (
                         <div className="slide-item">
-                            <img src={require(("./../data/Ephemera/"+i)).default} className="slide-item__image"/>
+                            <img src={(i.src).default} className="slide-item__image"/>
                         </div>
                     ))}
                 </div> 
@@ -106,9 +108,9 @@ const Ephemera = () => {
                 
                  
                         <FadeDiv style={{"opacity": 0}}trigger={toggleAll} id="gallery" className="img-grd flex flex-row flex-wrap justify-center">
-                        {imgArray.map((i) => (
+                        {imgTree.map((i) => (
                             <FadeDiv trigger={toggleAll} style={{"flex-basis": "33%"}} className="p-2">
-                                <img src={require(("./../data/Ephemera/"+i)).default} className="slide-item__image"/>
+                                <img src={(i.src)} className="slide-item__image"/>
                             </FadeDiv>
                         ))}</FadeDiv>
                    
