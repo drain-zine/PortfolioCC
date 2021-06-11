@@ -5,6 +5,7 @@ import Home from "./views/Home.js";
 import Works from './views/Works.js';
 import Nimdods from './views/Nimdods.js';
 import Ephemera from './views/Ephemera.js';
+import LoadingScreen from "./views/LoadingScreen.js"
 
 import loadCMS from './components/NimdodBlocks/loadCMS';
 import loadImgTree from './components/Ephemera/loadImgTree';
@@ -41,19 +42,23 @@ function App() {
 
    // inject data into state
   useEffect(() => {
+    function timer(ms) { return new Promise(res => setTimeout(res, ms)); }
     const injectData = async() => {
-      Promise.all(loadCMS()).then((data) => {
+      await Promise.all(loadCMS()).then((data) => {
           /* setCMSTree(data["trees"]);
           setPreviews(data["previews"]); */
 
           let combined_data = combineKeyData(data);
           setCMSTree(combined_data["tree"]);
           setPreviews(combined_data["preview"])
-          setLoading(false);
+          
       });
 
       let data = await loadImgTree()
+      
       setImgTree(data);
+      await timer(15000);
+      setLoading(false);
     }
 
     injectData();
@@ -68,8 +73,10 @@ function App() {
 
 
   return (
+   
     <Router>
       <div className="App">
+      { loading ? <LoadingScreen />: (
         <Route render={({location}) => {
 
           return(
@@ -82,11 +89,12 @@ function App() {
                 <RouteTransition path="/contact" exact ><Contact/></RouteTransition>
               </Switch>
             </AnimatePresence>
+                                  
           );
 
-        }}/>
+        }}/> )}
       </div>
-    </Router>
+    </Router> 
   );
 }
 
