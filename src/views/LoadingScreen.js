@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
+import timer from "./../utils/timer";
 
 const LoadingScreen = () => {
     const background = useRef();
@@ -11,9 +12,6 @@ const LoadingScreen = () => {
 
     const colorN = colors.length;
     const time = 1000;
-
-
-    function timer(ms) { return new Promise(res => setTimeout(res, ms)); }
 
     useEffect(async()=>{
         if(background.current && text.current){

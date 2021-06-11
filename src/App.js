@@ -15,6 +15,8 @@ import RouteTransition from './components/animations/RouteTransition';
 import RouteTransitionSlide from './components/animations/RouteTransitionSlide';
 import { AnimatePresence } from 'framer-motion';
 import Contact from './views/Contact.js';
+import preloadAllAssets from "./utils/preloadAllAssets";
+import timer from "./utils/timer";
 
 function App() {
   const [CMSTree, setCMSTree] = useState(null);
@@ -42,7 +44,6 @@ function App() {
 
    // inject data into state
   useEffect(() => {
-    function timer(ms) { return new Promise(res => setTimeout(res, ms)); }
     const injectData = async() => {
       await Promise.all(loadCMS()).then((data) => {
           /* setCMSTree(data["trees"]);
@@ -54,9 +55,11 @@ function App() {
           
       });
 
-      let data = await loadImgTree()
+      let data = await loadImgTree().promise();
       
       setImgTree(data);
+      preloadAllAssets();
+
       await timer(15000);
       setLoading(false);
     }
