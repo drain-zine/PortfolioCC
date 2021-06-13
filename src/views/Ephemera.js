@@ -88,11 +88,11 @@ const Ephemera = (props) => {
     }, [toggleAll])
 
     return(
-        <main className="lander absolute w-screen h-screen overflow-hidden flex py-24">
+        <main className="cursor-none lander absolute w-screen h-screen overflow-hidden flex py-24">
             
             <TextColumn column={column} button={"HOME"}/>
 
-            <div className="w-2/3 border-2 border-white text-white relative overflow-hidden">
+            <div className="galleryContainer w-2/3 border-2 border-white text-white relative overflow-y-scroll">
                 <div id="scroll" className="absolute" style={{left: "10%", top: "50%", transform: "translateY(-50%)"}}>
                     <p className="transform -rotate-90 text-2xl -translate-x-1/2">{scrollPercent}</p>
                 </div>
@@ -107,7 +107,7 @@ const Ephemera = (props) => {
 
                 
             
-                <FadeDiv style={{"opacity": 0}}trigger={toggleAll} id="gallery" className="galleryContainer img-grd flex flex-row flex-wrap justify-center overflow-y-scroll">
+                <FadeDiv style={{"opacity": 0}}trigger={toggleAll} id="gallery" className=" img-grd flex flex-row flex-wrap justify-center">
                 {imgTree.map((i) => (
                     <FadeDiv trigger={toggleAll} style={{"flex-basis": "33%"}} className="p-2">
                         <img src={(i.src)} className="slide-item__image"/>

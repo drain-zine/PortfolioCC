@@ -75,7 +75,7 @@ function App() {
     if(locationState != (undefined || null)){ // catch loading splash
       if(locationState.pathname == "/ephemera"){
         setPrevLocationState(locationState.pathname);
-      }else if(locationState.pathname == "/"){
+      }else if(locationState.pathname != "/ephemera"){
         if(prevLocationState == "/ephemera"){
           console.log("arriverdeci")
           let canvas = document.getElementsByTagName("canvas")[0];
