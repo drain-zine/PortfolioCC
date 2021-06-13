@@ -1,7 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import GalleryImg from "../components/Ephemera/GalleryImg";
 import TextColumn from "../components/Ephemera/TextColumn";
-import test from "../data/Ephemera/placeholder.png";
 import dmap from "../data/Ephemera/dmaps/clouds.jpg";
 import CanvasSlideshow from "../components/animations/LiquidTransition";
 import FadeDiv from "../components/animations/FadeDiv";
@@ -13,7 +12,7 @@ import CursorDot from "../components/CursorDot";
 const Ephemera = (props) => {
     const { imgTree } = props; 
     const column = ["EPHEMERA", "OBJECT", "EPHEMERA", "TRANSIENCE", "EPHEMERA", "BEING", "EPHEMERA", "FEELING", "EPHEMERA", "SILENCE", "EPHEMERA", "REMINDER", "EPHEMERA"];
-   // const imgArray = ["placeholder.png", "placeholder2.jpg", "placeholder3.png", "placeholder5.jpg", "placeholder6.jpg"];
+  
     const isMount = useIsMount();
 
     const imgN = imgTree.length;
