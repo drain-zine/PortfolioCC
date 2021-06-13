@@ -7,6 +7,7 @@ import ScrollOverlay from "../components/ScrollOverlay";
 /* import NimdodsTile from "./../components/NimdodsTile"; */
 import BackgroundScrollTransistion from './../components/animations/BackgroundScrollTransistion'
 import ScrollableLine from './../components/ScrollableLine';
+import NavButton from './../components/NavButton';
 
 import loadCMS from "../components/NimdodBlocks/loadCMS";
 
@@ -74,7 +75,10 @@ const Nimdods = (props) => {
                     <h1 className="flex-1 text-9xl"><b>Nimdod's Never Ending Scroll</b></h1>
                 </div>
             </header>
-
+            <div class="flex flex-row justify-between">
+            <NavButton to="/" className="text-2xl flex-1">HOME</NavButton>
+            <NavButton to="/works" className="text-2xl flex-1 text-right">BACK</NavButton>
+            </div>
             {/* tiles */}
             <div className="nimdodsCanvas w-full flex-grow px-16 mb-96">
 
@@ -87,6 +91,7 @@ const Nimdods = (props) => {
 
             {/* footer */}
             <CursorDot />
+
         </main>
         
     );

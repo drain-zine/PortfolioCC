@@ -6,6 +6,7 @@ import Marquee from "react-double-marquee";
 
 import WorkTile from "./../components/WorkTile";
 import BackgroundScrollTransistion from './../components/animations/BackgroundScrollTransistion'
+import NavButton from "../components/NavButton";
 
 const Works = (props) => {
 
@@ -75,6 +76,9 @@ const Works = (props) => {
 
                 )))}
             </div>
+
+            <NavButton to="/" style={{position: "absolute", bottom: "2.5%", left: "2.5%"}} className="text-2xl">HOME</NavButton>
+            <NavButton to="/nimdods-never-ending-scroll" style={{position: "absolute", bottom: "2.5%", right: "2.5%"}} className="text-2xl">ALL</NavButton>
         </main>
     );
 }

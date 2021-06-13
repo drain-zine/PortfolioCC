@@ -3,11 +3,11 @@ import importAll from "./importAll";
 const preloadImage = ( name ) => {
     return new Promise(resolve => {
       const img = new Image();
-      img.src = name;
       img.onload = () => {
-        store.dispatch(addSavedimage([name, img])); // <-- dispatch img element itself
-        resolve();
+        alert("image is loaded");
       };
+
+      img.src = name;
     });
   };
 

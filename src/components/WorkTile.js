@@ -8,7 +8,7 @@ import SVGHorizLine from "./SVGHorizLine";
 const WorkTile = ({data, incrementTogglesCounter, decrementTogglesCounter}) => {
 
     const [expanded, setExpanded] = useState(false);
-    const [init, setInit] = useState([Math.floor(Math.random() * 100) + 1, Math.floor(Math.random() * 100) + 1])
+    const [init, setInit] = useState([Math.floor(Math.random() * 60) + 1, Math.floor(Math.random() * 60) + 1])
     const [backgroundScroll, setBackgroundScroll] = useState(0);
 
     var width = 15;
@@ -47,7 +47,7 @@ const WorkTile = ({data, incrementTogglesCounter, decrementTogglesCounter}) => {
                     <div className="flex-1 flex flex-row justify-center items-center">
                         <div className="flex-grow text-center">
                          
-                                <h1 style={{fontSize: "200%"}} className="text-red-900">{data.title.toUpperCase()}</h1>
+                                <h1 style={{fontSize: "1.75vw"}} className="text-red-900">{data.title.toUpperCase()}</h1>
                                 <p className="text-sm mt-4">{data.blurb}</p>
                             
                         </div>

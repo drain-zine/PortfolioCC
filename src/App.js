@@ -58,9 +58,9 @@ function App() {
       let data = await loadImgTree();
       
       setImgTree(data);
-      await preloadAllAssets();
+     // await preloadAllAssets();
 
-      await timer(15000);
+     // await timer(15000);
       setLoading(false);
     }
 

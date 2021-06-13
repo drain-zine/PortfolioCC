@@ -13,8 +13,8 @@ const TextColumn = (props) => (
 
                 <div style={{marginLeft: "20%", marginRight: "20%", marginTop: "5%"}} className="flex-1 relative border-t-2 border-white">
                    { props.onClick ? 
-                        <Link onClick={props.onClick}><h1 style={{bottom: "-21%"}} className="flex-1 absolute left-1/2 transform -translate-x-1/2">{props.button}</h1></Link> :
-                        <Link onClick={()=>{document.getElementsByTagName("canvas")[0].remove()}} to="/"><h1 style={{bottom: "-21%"}} className="flex-1 absolute left-1/2 transform -translate-x-1/2">{props.button}</h1></Link>}
+                        <Link onClick={props.onClick}><h1 style={{bottom: "-21%"}} className="flex-1  ">{props.button}</h1></Link> :
+                        <Link onClick={()=>{document.getElementsByTagName("canvas")[0].remove()}} to="/"><h1 style={{bottom: "-21%"}} className="flex-1 ">{props.button}</h1></Link>}
                     
                 </div>
 
