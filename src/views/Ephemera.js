@@ -7,6 +7,7 @@ import CanvasSlideshow from "../components/animations/LiquidTransition";
 import FadeDiv from "../components/animations/FadeDiv";
 import FadeInDiv from "../components/animations/FadeDiv";
 import useIsMount from "../hooks/useIsMount";
+import CursorDot from "../components/CursorDot";
 
 
 const Ephemera = (props) => {
@@ -92,7 +93,7 @@ const Ephemera = (props) => {
             
             <TextColumn column={column} button={"HOME"}/>
 
-            <div className="w-2/3 border-2 border-white text-white relative">
+            <div className="w-2/3 border-2 border-white text-white relative overflow-hidden">
                 <div id="scroll" className="absolute" style={{left: "10%", top: "50%", transform: "translateY(-50%)"}}>
                     <p className="transform -rotate-90 text-2xl -translate-x-1/2">{scrollPercent}</p>
                 </div>
@@ -106,20 +107,20 @@ const Ephemera = (props) => {
                 </div> 
 
                 
-                 
-                        <FadeDiv style={{"opacity": 0}}trigger={toggleAll} id="gallery" className="img-grd flex flex-row flex-wrap justify-center">
-                        {imgTree.map((i) => (
-                            <FadeDiv trigger={toggleAll} style={{"flex-basis": "33%"}} className="p-2">
-                                <img src={(i.src)} className="slide-item__image"/>
-                            </FadeDiv>
-                        ))}</FadeDiv>
+            
+                <FadeDiv style={{"opacity": 0}}trigger={toggleAll} id="gallery" className="galleryContainer img-grd flex flex-row flex-wrap justify-center overflow-y-scroll">
+                {imgTree.map((i) => (
+                    <FadeDiv trigger={toggleAll} style={{"flex-basis": "33%"}} className="p-2">
+                        <img src={(i.src)} className="slide-item__image"/>
+                    </FadeDiv>
+                ))}</FadeDiv>
                    
                 
             </div>
             
 
             <TextColumn column={column} button={toggleAll ? "BACK" : "ALL"} onClick={seeAll}/>
-
+            <CursorDot />
         </main>
     );
 };
