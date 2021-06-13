@@ -1,4 +1,4 @@
-import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import {BrowserRouter as Router, Route, Switch, useLocation} from 'react-router-dom';
 import { useState, useEffect } from "react";
 
 import Home from "./views/Home.js";
@@ -24,6 +24,8 @@ function App() {
   const [loading, setLoading] = useState(true);
   const [imgTree, setImgTree] = useState(null);
 
+  const [locationState, setLocationState] = useState(null);
+  const [prevLocationState, setPrevLocationState] = useState(null);
 
   // util function for CMS return sanitising
   const combineKeyData = (data) => {
@@ -67,6 +69,28 @@ function App() {
     injectData();
   }, []);
 
+  // destroy epherma canvas on route change
+  useEffect(async() => {
+    console.log(locationState);
+    if(locationState != (undefined || null)){ // catch loading splash
+      if(locationState.pathname == "/ephemera"){
+        setPrevLocationState(locationState.pathname);
+      }else if(locationState.pathname == "/"){
+        if(prevLocationState == "/ephemera"){
+          console.log("arriverdeci")
+          let canvas = document.getElementsByTagName("canvas")[0];
+          let scroll = document.getElementById("scroll");
+
+          canvas.classList.remove("fadeIn");
+          canvas.classList.add("fadeOutFast"); 
+
+          await timer(500);
+          canvas.remove();
+          setPrevLocationState(locationState.pathname);
+        }
+      }
+    }
+  }, [locationState]);
   // update DOM
   useEffect(() => {
       if(!loading && CMSTree){
@@ -81,7 +105,7 @@ function App() {
       <div className="App">
       { loading ? <LoadingScreen />: (
         <Route render={({location}) => {
-
+          { setLocationState(location)}
           return(
             <AnimatePresence exitBeforeEnter initial={false}>
               <Switch location={location} key={location.pathname}>
