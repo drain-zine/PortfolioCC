@@ -20,7 +20,8 @@ const Ephemera = (props) => {
     const [toggleAll, setToggleAll] = useState(false);
     const [imgProg, setImgProg] = useState(0);
     const [scrollPercent, setScrollPercent] = useState(0);
-
+    var initCanvasSlideshow;
+    
     // init canvas for anim effect
     useEffect(() => {
         var spriteImages = document.querySelectorAll( '.slide-item__image' );
@@ -41,7 +42,7 @@ const Ephemera = (props) => {
  */
             imgTree.forEach((i) => (spriteImagesSrc.push(i.src)));
       
-			var initCanvasSlideshow = new CanvasSlideshow({
+			initCanvasSlideshow = new CanvasSlideshow({
 				sprites: spriteImagesSrc,
 				displacementImage: "./../data/Ephemera/dmaps/ripple.jpg",
 				autoPlay: false,
@@ -62,6 +63,8 @@ const Ephemera = (props) => {
     const seeAll = (e) => {
         if(!isMount){
             setToggleAll(!toggleAll);
+            console.log(initCanvasSlideshow);
+            //document.removeEventListener("wheel", getScrollNav, true);
         }
 
     }
@@ -107,7 +110,7 @@ const Ephemera = (props) => {
 
                 
             
-                <FadeDiv style={{"opacity": 0}}trigger={toggleAll} id="gallery" className=" img-grd flex flex-row flex-wrap justify-center">
+                <FadeDiv style={{"opacity": 0}}trigger={toggleAll} id="gallery"  >
                 {imgTree.map((i) => (
                     <FadeDiv trigger={toggleAll} style={{"flex-basis": "33%"}} className="p-2">
                         <img src={(i.src)} className="slide-item__image"/>

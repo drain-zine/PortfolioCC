@@ -79,7 +79,7 @@ function App() {
         if(prevLocationState == "/ephemera"){
           console.log("arriverdeci")
           let canvas = document.getElementsByTagName("canvas")[0];
-          let scroll = document.getElementById("scroll");
+          
 
           canvas.classList.remove("fadeIn");
           canvas.classList.add("fadeOutFast"); 
