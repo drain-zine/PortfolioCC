@@ -136,8 +136,8 @@ const CursorDot = () => {
 
     return(
         <div>
-            <div class="cursor-dot-outline"></div>
-            <div class="cursor-dot"></div>
+            <div className="cursor-dot-outline z-50"></div>
+            <div className="cursor-dot z-50"></div>
         </div>
     );
 }
