@@ -26,8 +26,10 @@ import importAll from "./importAll";
 
 
 const preloadAllAssets = async() => {
-    const imgs = importAll(require.context('./../res/', true, /\.(gif|jpe?g|tiff?|png|webp|bmp)$/i));
-    const loadingPromises = []
+    const res = importAll(require.context('./../res/', true, /\.(gif|jpe?g|tiff?|png|webp|bmp)$/i));
+    const cms =  importAll(require.context('./../data/', true, /\.(gif|jpe?g|tiff?|png|webp|bmp)$/i));
+    const imgs = res.concat(cms);
+
     console.log("In preload images")
     preloadImages(imgs);
     console.log("done");
