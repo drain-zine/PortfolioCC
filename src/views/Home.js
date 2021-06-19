@@ -6,6 +6,7 @@ import piece1 from './../res/static/piece1.png';
 import piece2 from './../res/static/piece2.png';
 import piece3 from './../res/static/piece3.png';
 import piece4 from './../res/static/piece4.png';
+import CursorDot from "./../components/CursorDot";
 
 import background from './../res/static/puzzleBackBorder.png';
 
@@ -15,6 +16,7 @@ const Home = () => {
 
     return (
         <main className="pt-2 flex justify-center trolley">
+            <CursorDot />
             <div className="puzzle-container md:absolute md:top-1/2 md:transform md:-translate-y-1/2 md:w-1/2">
                  <div className="relative text-center">
 

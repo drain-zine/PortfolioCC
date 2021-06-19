@@ -6,6 +6,7 @@ import dmap from "../data/Ephemera/dmaps/clouds.jpg";
 import FadeDiv from "../components/animations/FadeDiv";
 import FadeInDiv from "../components/animations/FadeDiv";
 import useIsMount from "../hooks/useIsMount";
+import CursorDot from "../components/CursorDot";
 
 
 const Ephemera = (props) => {
@@ -102,6 +103,7 @@ const Ephemera = (props) => {
 
     return(
         <main>
+            <CursorDot/>
             <div className="noScrollY lander absolute w-screen h-screen overflow-hidden flex py-24">
                 
                 <TextColumn column={column} button={"HOME"}/>

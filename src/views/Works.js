@@ -7,6 +7,7 @@ import Marquee from "react-double-marquee";
 import WorkTile from "./../components/WorkTile";
 import BackgroundScrollTransistion from './../components/animations/BackgroundScrollTransistion'
 import NavButton from "../components/NavButton";
+import CursorDot from "./../components/CursorDot";
 
 const Works = (props) => {
 
@@ -55,6 +56,7 @@ const Works = (props) => {
 
     return(
         <main className="relative primary-font-stack bg-color primary-font-color h-screen select-none">
+             <CursorDot />
              <marquee direction="right" className={"w-full absolute z-20 top-0 left-0 " + (!trigger ? "text-white" : "text-black")}>How curious... I can drag these around... I wonder if I can (double) click them too...</marquee>
             <div className="w-full h-full absolute z-0">
 

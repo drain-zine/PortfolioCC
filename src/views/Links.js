@@ -3,6 +3,7 @@ import useInteractDrag from "../hooks/useInteractDrag";
 import LinksTitle from "../components/LinksTitle";
 import LinksLink from "../components/LinksLink";
 import NavButton from "../components/NavButton";
+import CursorDot from "../components/CursorDot";
 
 const Links = ({links}) => {
     useInteractDrag('.draggable');
@@ -15,6 +16,7 @@ const Links = ({links}) => {
 
     return(
         <main className="noScrollY lander absolute w-screen h-screen flex-row overflow-scroll-y overflow-x-hidden">
+            <CursorDot/>
             <div className="flex flex-col text-white text-4xl" style={{flexBasis: "33%"}}>
                {links.map((l) => (
                    <LinksLink url={l}/>

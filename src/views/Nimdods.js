@@ -9,6 +9,7 @@ import ScrollableLine from './../components/ScrollableLine';
 import NavButton from './../components/NavButton';
 
 import loadCMS from "../components/NimdodBlocks/loadCMS";
+import CursorDot from "../components/CursorDot";
 
 
 const Nimdods = (props) => {
@@ -67,6 +68,7 @@ const Nimdods = (props) => {
 
     return(
         <main className="relative noScrollY flex flex-col primary-font-stack bg-color primary-font-color select-none px-10">
+           <CursorDot />
            {/* <ScrollableLine fontColor={"white"} /> */}
             {/* header */}
             <header className="w-full flex justify-center flex-initial my-10 border-b-2 border-t-2 border-white">

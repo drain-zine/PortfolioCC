@@ -7,7 +7,7 @@ $primary-red: mix(red, $primary, 25%);
 $primary-ultradark: mix(black, $primary, 80%);
 $black: #333333;
 $white: #eeeeee;
-$trans: 1000ms;
+$trans: 500ms;
 
 .cursor-dot,
 .cursor-dot-outline {
@@ -27,7 +27,15 @@ $trans: 1000ms;
     $size: 8px;
     width: $size;
     height: $size;
+    
+}
+
+.dotNormal {
     background-color: $primary;
+}
+
+.dotLink {
+    background-color: $black;
 }
 
 .cursor-dot-outline {
@@ -45,6 +53,10 @@ $trans: 1000ms;
     background-color: rgba(DarkRed, 0.7) !important;
     //animation: dragColorChange 5s infinite;
 
+}
+
+.linkColor{
+    background-color: rgba(DarkRed, 0.3) !important;
 }
 
 @keyframes dragColorChange {
