@@ -9,6 +9,7 @@ import LoadingScreen from "./views/LoadingScreen.js"
 
 import loadCMS from './components/NimdodBlocks/loadCMS';
 import loadImgTree from './components/Ephemera/loadImgTree';
+import loadLinks from './components/loadLinks';
 
 import ReactDOM from "react-dom";
 import RouteTransition from './components/animations/RouteTransition';
@@ -17,9 +18,11 @@ import { AnimatePresence } from 'framer-motion';
 import Contact from './views/Contact.js';
 import preloadAllAssets from "./utils/preloadAllAssets";
 import timer from "./utils/timer";
+import Links from './views/Links.js';
 
 function App() {
   const [CMSTree, setCMSTree] = useState(null);
+  const [links, setLinks] = useState(null);
   const [previews, setPreviews] = useState(null);
   const [loading, setLoading] = useState(true);
   const [imgTree, setImgTree] = useState(null);
@@ -58,6 +61,8 @@ function App() {
       });
 
       let data = await loadImgTree();
+      let tempLinks = await loadLinks();
+      setLinks(tempLinks)
       
       setImgTree(data);
      // await preloadAllAssets();
@@ -93,6 +98,7 @@ function App() {
                 <RouteTransition path="/nimdods-never-ending-scroll"><Nimdods CMSTree={CMSTree} loading={loading} /></RouteTransition>
                 <RouteTransition path="/ephemera"><Ephemera imgTree={imgTree}/></RouteTransition>
                 <RouteTransition path="/contact" exact ><Contact/></RouteTransition>
+                <RouteTransition path="/links" exact ><Links links={links}/></RouteTransition>
               </Switch>
             </AnimatePresence>
                                   
