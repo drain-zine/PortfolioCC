@@ -4,6 +4,7 @@ import "./../cursorStyling.scss";
 
 const CursorDot = () => {
 
+
     useEffect(() => {
         var cursor = {
             delay: 8,
@@ -25,36 +26,80 @@ const CursorDot = () => {
                 this.animateDotOutline();
             },
             
-        //     updateCursor: function(e) {
-        //         var self = this;
+            updateCursor: function(e) {
+                var self = this;
                 
-        //         console.log(e)
+                console.log(e)
                 
-        //         // Show the cursor
-        //         self.cursorVisible = true;
-        //         self.toggleCursorVisibility();
+                // Show the cursor
+                self.cursorVisible = true;
+                self.toggleCursorVisibility();
         
-        //         // Position the dot
-        //         self.endX = e.pageX;
-        //         self.endY = e.pageY;
-        //         self.$dot.style.top = self.endY + 'px';
-        //         self.$dot.style.left = self.endX + 'px';
-        //     },
+                // Position the dot
+                self.endX = e.pageX;
+                self.endY = e.pageY;
+                self.$dot.style.top = self.endY + 'px';
+                self.$dot.style.left = self.endX + 'px';
+            },
             
             setupEventListeners: function() {
                 var self = this;
-                
+            
                 // Anchor hovering
-                document.querySelectorAll('img, a').forEach(function(el) {
+                 document.querySelectorAll('.draggable').forEach(function(el) {
                     el.addEventListener('mouseover', function() {
                         self.cursorEnlarged = true;
                         self.toggleCursorSize();
+
+                        self.$outline.classList.remove("normalColor");
+                        self.$outline.classList.add("dragColor");
                     });
                     el.addEventListener('mouseout', function() {
                         self.cursorEnlarged = false;
                         self.toggleCursorSize();
+
+                        self.$outline.classList.remove("dragColor");
+                        self.$outline.classList.add("normalColor");
+
                     });
-                });
+                }); 
+
+                document.querySelectorAll('a').forEach(function(el) {
+                    el.addEventListener('mouseover', function() {
+
+                        self.$dot.classList.remove("dotNormal");
+                        self.$dot.classList.add("dotLink");
+
+                        self.$outline.classList.remove("normalColor");
+                        self.$outline.classList.add("linkColor");
+
+                    });
+                    el.addEventListener('mouseout', function() {
+
+                        self.$dot.classList.remove("dotLink");
+                        self.$dot.classList.add("dotNormal");
+
+                        self.$outline.classList.remove("linkColor");
+                        self.$outline.classList.add("normalColor");
+
+                    });
+                }); 
+
+                // Anchor hovering
+                document.querySelectorAll('img').forEach(function(el) {
+                    el.addEventListener('mouseover', function() {
+                        self.cursorEnlarged = true;
+                        self.toggleCursorSize();
+
+                    });
+                    el.addEventListener('mouseout', function() {
+                        self.cursorEnlarged = false;
+                        self.toggleCursorSize();
+
+                    });
+                }); 
+
+
                 
                 // Click events
                 document.addEventListener('mousedown', function() {
@@ -136,8 +181,8 @@ const CursorDot = () => {
 
     return(
         <div>
-            <div className="cursor-dot-outline z-50"></div>
-            <div className="cursor-dot z-50"></div>
+            <div className="cursor-dot-outline normalColor z-50"></div>
+            <div className="cursor-dot dotNormal z-50"></div>
         </div>
     );
 }

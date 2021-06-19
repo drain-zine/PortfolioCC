@@ -6,6 +6,7 @@ import dmap from "../data/Ephemera/dmaps/clouds.jpg";
 import FadeDiv from "../components/animations/FadeDiv";
 import FadeInDiv from "../components/animations/FadeDiv";
 import useIsMount from "../hooks/useIsMount";
+import CursorDot from "../components/CursorDot";
 
 
 const Ephemera = (props) => {
@@ -102,6 +103,7 @@ const Ephemera = (props) => {
 
     return(
         <main>
+            <CursorDot/>
             <div className="noScrollY lander absolute w-screen h-screen overflow-hidden flex py-24">
                 
                 <TextColumn column={column} button={"HOME"}/>
@@ -119,7 +121,7 @@ const Ephemera = (props) => {
                     <div ref={scrollWrapper} className="scrollWrapper w-full" style={{opacity: "0"}}>
                         <FadeDiv trigger={toggleAll} id="gallery" className="z-20">
                         {imgTree.map((img,i) => (
-                            <FadeDiv trigger={toggleAll} style={{"flex-basis": "33%"}} className=" p-2" onClick={selectImage}>
+                            <FadeDiv trigger={toggleAll} style={{"flex-basis": "33%"}} className=" p-2" onClick={toggleAll ? selectImage : null}>
                                 <img src={(img.src)} className="slide-item__image"  id={i}/>
                             </FadeDiv>
                         ))}</FadeDiv>

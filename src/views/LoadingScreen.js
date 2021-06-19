@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import timer from "./../utils/timer";
 import audio from "./../res/sound/loadingAudio.wav";
+import CursorDot from "../components/CursorDot";
 
 const LoadingScreen = () => {
     const background = useRef();
@@ -37,6 +38,7 @@ const LoadingScreen = () => {
 
     return(        
     <main ref={background} className="relative primary-font-stack bg-color primary-font-color h-screen select-none">
+        <CursorDot/>
         <audio controls autoplay id="backgroundMusic" className="hidden">
             <source src={audio} type="audio/wav" />
             Your browser does not support the audio element.

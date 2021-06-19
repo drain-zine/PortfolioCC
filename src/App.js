@@ -8,7 +8,6 @@ import Ephemera from './views/Ephemera.js';
 import LoadingScreen from "./views/LoadingScreen.js"
 
 import loadCMS from './components/NimdodBlocks/loadCMS';
-import CursorDot from "./components/CursorDot";
 import loadImgTree from './components/Ephemera/loadImgTree';
 import loadLinks from './components/loadLinks';
 
@@ -66,7 +65,7 @@ function App() {
       setLinks(tempLinks)
       
       setImgTree(data);
-     // await preloadAllAssets();
+     await preloadAllAssets();
 
       await timer(10000);
       setLoading(false);
@@ -88,7 +87,6 @@ function App() {
    
     <Router>
       <div className="App cursor-none">
-      <CursorDot />
       { loading ? <LoadingScreen />: (
         <Route render={({location}) => {
           { setLocationState(location)}

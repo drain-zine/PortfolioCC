@@ -2,6 +2,7 @@ import React from "react";
 import useInteractDrag from "../hooks/useInteractDrag";
 import  video  from "../data/assets/dynamic/contact.mp4";
 import SVGHorizLine from "./../components/SVGHorizLine";
+import CursorDot from "../components/CursorDot";
 
 
 const Contact = () => {
@@ -9,6 +10,7 @@ const Contact = () => {
 
     return(
         <main className="lander absolute w-screen h-screen overflow-hidden">
+            <CursorDot/>
             <div class=" flex flex-col justify-center items-center top-10 left-10 bg-black text-white absolute z-10 draggable py-2 px-2 rounded-2xl shadow-md">
                 <div className="relative text-right flex-inital flex" style={{height: "24px"}}>
 

@@ -9,6 +9,7 @@ import ScrollableLine from './../components/ScrollableLine';
 import NavButton from './../components/NavButton';
 
 import loadCMS from "../components/NimdodBlocks/loadCMS";
+import CursorDot from "../components/CursorDot";
 
 
 const Nimdods = (props) => {
@@ -66,7 +67,7 @@ const Nimdods = (props) => {
     }, [loading, CMSTree]); 
 
     return(
-        <main className="relative flex flex-col primary-font-stack bg-color primary-font-color select-none px-10">
+        <main className="relative noScrollY flex flex-col primary-font-stack bg-color primary-font-color select-none px-10">
            {/* <ScrollableLine fontColor={"white"} /> */}
             {/* header */}
             <header className="w-full flex justify-center flex-initial my-10 border-b-2 border-t-2 border-white">
@@ -79,14 +80,15 @@ const Nimdods = (props) => {
             <NavButton to="/works" className="text-2xl flex-1 text-right">BACK</NavButton>
             </div>
             {/* tiles */}
-            <div className="nimdodsCanvas w-full flex-grow px-16 mb-96">
+            <div className="nimdodsCanvas overflow-y-scroll noScrollY w-full flex-grow px-16 mb-96">
 
-                <div id="stagingArea" className="nimdodsCanvas w-full flex-grow px-16 mb-96">
+                <div id="stagingArea" className="nimdodsCanvas noScrollY w-full flex-grow px-16 mb-96">
                 </div> 
             </div>
 
             {/* */}
             <ScrollOverlay />
+            <CursorDot />
 
 
         </main>
