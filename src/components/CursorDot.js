@@ -49,6 +49,19 @@ const CursorDot = () => {
                     el.addEventListener('mouseover', function() {
                         self.cursorEnlarged = true;
                         self.toggleCursorSize();
+                        //self.$outline.style.backgroundColor="blue";
+                    });
+                    el.addEventListener('mouseout', function() {
+                        self.cursorEnlarged = false;
+                        self.toggleCursorSize();
+                    });
+                });
+
+                document.querySelectorAll('.draggable').forEach(function(el) {
+                    el.addEventListener('mouseover', function() {
+                        self.cursorEnlarged = true;
+                        console.log("Draggable")
+                        self.toggleCursorSize();
                     });
                     el.addEventListener('mouseout', function() {
                         self.cursorEnlarged = false;
