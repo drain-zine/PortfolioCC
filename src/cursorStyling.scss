@@ -3,10 +3,11 @@ $primary: white;
 $primary-ultralight: mix(white, $primary, 80%);
 $primary-light: mix(white, $primary, 25%);
 $primary-dark: mix(black, $primary, 25%);
+$primary-red: mix(red, $primary, 25%);
 $primary-ultradark: mix(black, $primary, 80%);
 $black: #333333;
 $white: #eeeeee;
-
+$trans: 1000ms;
 
 .cursor-dot,
 .cursor-dot-outline {
@@ -18,7 +19,8 @@ $white: #eeeeee;
     opacity: 0;
     transform: translate(-50%, -50%);
     transition: opacity 0.3s ease-in-out,
-                transform 0.3s ease-in-out;
+                transform 0.3s ease-in-out,
+                background-color $trans linear;
 }
 
 .cursor-dot {
@@ -32,5 +34,20 @@ $white: #eeeeee;
     $size: 40px;
     width: $size;
     height: $size;
-    background-color: rgba($primary-light, 0.2);
+    
 }
+
+.normalColor{
+    background-color: rgba($primary-light, 0.2);
+    
+}
+.dragColor {
+    background-color: rgba(DarkRed, 0.7) !important;
+    //animation: dragColorChange 5s infinite;
+
+}
+
+@keyframes dragColorChange {
+    from {background-color: rgba($primary-light, 0.2);}
+    to {background-color:  rgba(DarkRed, 0.7);}
+  }

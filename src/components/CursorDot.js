@@ -4,6 +4,7 @@ import "./../cursorStyling.scss";
 
 const CursorDot = () => {
 
+
     useEffect(() => {
         var cursor = {
             delay: 8,
@@ -45,29 +46,38 @@ const CursorDot = () => {
                 var self = this;
                 
                 // Anchor hovering
-                document.querySelectorAll('img, a').forEach(function(el) {
+                 document.querySelectorAll('.draggable').forEach(function(el) {
                     el.addEventListener('mouseover', function() {
                         self.cursorEnlarged = true;
                         self.toggleCursorSize();
-                        //self.$outline.style.backgroundColor="blue";
-                    });
-                    el.addEventListener('mouseout', function() {
-                        self.cursorEnlarged = false;
-                        self.toggleCursorSize();
-                    });
-                });
 
-                document.querySelectorAll('.draggable').forEach(function(el) {
-                    el.addEventListener('mouseover', function() {
-                        self.cursorEnlarged = true;
-                        console.log("Draggable")
-                        self.toggleCursorSize();
+                        self.$outline.classList.remove("normalColor");
+                        self.$outline.classList.add("dragColor")
                     });
                     el.addEventListener('mouseout', function() {
                         self.cursorEnlarged = false;
                         self.toggleCursorSize();
+
+                        self.$outline.classList.remove("dragColor")
+                        self.$outline.classList.add("normalColor");
                     });
-                });
+                }); 
+
+                // document.querySelectorAll('.draggable').forEach(function(el) {
+                //     el.addEventListener('mouseover', function() {
+                //         self.cursorEnlarged = true;
+                //         self.toggleCursorSize();
+                //         // self.$outline.classList.remove("normalColor");
+                //         // self.$outline.classList.add("dragColor")
+
+                //     });
+                //     el.addEventListener('mouseout', function() {
+                //         self.cursorEnlarged = false;
+                //         self.toggleCursorSize();
+                //         self.$outline.classList.remove("dragColor")
+                //         self.$outline.classList.add("normalColor");
+                //     });
+                // });
                 
                 // Click events
                 document.addEventListener('mousedown', function() {
@@ -149,7 +159,7 @@ const CursorDot = () => {
 
     return(
         <div>
-            <div className="cursor-dot-outline z-50"></div>
+            <div className="cursor-dot-outline normalColor z-50"></div>
             <div className="cursor-dot z-50"></div>
         </div>
     );
