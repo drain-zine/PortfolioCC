@@ -76,10 +76,8 @@ html, body
 	min-height: 100%
 	background-color: black
 	font-size: 16px
-
-body 
-	/*background: linear-gradient(90deg, $background-color ($dot-space - $dot-size), transparent 1%) center, linear-gradient($background-color ($dot-space - $dot-size), transparent 1%) center, $secondary-color */
-	/* background-size: $dot-space $dot-space */
+	overflow-x: hidden
+	
 
 header
 	display: flex
@@ -417,11 +415,11 @@ line.point
 		border-top: $primary-grid-border-stack
 		border-bottom: $primary-grid-border-stack
 
-.noScrollY
+html, .noScrollY
 	-ms-overflow-style: none
 	scrollbar-width: none
 
-.noScrollY::-webkit-scrollbar 
+html::-webkit-scrollbar, .noScrollY::-webkit-scrollbar 
 	display: none
 	background: transparent
 

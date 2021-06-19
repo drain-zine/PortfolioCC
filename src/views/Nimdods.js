@@ -68,7 +68,6 @@ const Nimdods = (props) => {
 
     return(
         <main className="relative noScrollY flex flex-col primary-font-stack bg-color primary-font-color select-none px-10">
-           <CursorDot />
            {/* <ScrollableLine fontColor={"white"} /> */}
             {/* header */}
             <header className="w-full flex justify-center flex-initial my-10 border-b-2 border-t-2 border-white">
@@ -89,6 +88,7 @@ const Nimdods = (props) => {
 
             {/* */}
             <ScrollOverlay />
+            <CursorDot />
 
 
         </main>
