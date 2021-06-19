@@ -62,9 +62,7 @@ const Ephemera = (props) => {
         //console.log("id:" + e.target.id);
         setImageMain(e.target.id);
         setToggleAll(!toggleAll);
-        if(gallery){
-            setTimeout(500, gallery.current.scrollTo(0,0));
-        }
+
     }
 
     useEffect(() => {
@@ -94,7 +92,9 @@ const Ephemera = (props) => {
                 gallery.current.classList.add(`borderIn`);
             }else{
                 gallery.current.classList.remove(`borderIn`);
-                gallery.current.classList.add(`borderOut`);  
+                gallery.current.classList.add(`borderOut`); 
+                
+            
             }
         }
        
