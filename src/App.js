@@ -68,7 +68,7 @@ function App() {
       setImgTree(data);
      // await preloadAllAssets();
 
-      //await timer(10000);
+      await timer(10000);
       setLoading(false);
     }
 
