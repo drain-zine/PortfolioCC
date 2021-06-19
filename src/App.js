@@ -10,6 +10,7 @@ import LoadingScreen from "./views/LoadingScreen.js"
 import loadCMS from './components/NimdodBlocks/loadCMS';
 import loadImgTree from './components/Ephemera/loadImgTree';
 import loadLinks from './components/loadLinks';
+import Head from './components/Head';
 
 import ReactDOM from "react-dom";
 import RouteTransition from './components/animations/RouteTransition';
@@ -87,6 +88,7 @@ function App() {
    
     <Router>
       <div className="App cursor-none">
+        <Head />
       { loading ? <LoadingScreen />: (
         <Route render={({location}) => {
           { setLocationState(location)}
