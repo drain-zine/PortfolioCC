@@ -66,7 +66,7 @@ function App() {
       setLinks(tempLinks)
       
       setImgTree(data);
-     // await preloadAllAssets();
+     await preloadAllAssets();
 
       await timer(10000);
       setLoading(false);
