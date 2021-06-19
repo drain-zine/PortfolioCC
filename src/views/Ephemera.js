@@ -6,7 +6,6 @@ import dmap from "../data/Ephemera/dmaps/clouds.jpg";
 import FadeDiv from "../components/animations/FadeDiv";
 import FadeInDiv from "../components/animations/FadeDiv";
 import useIsMount from "../hooks/useIsMount";
-import CursorDot from "../components/CursorDot";
 
 
 const Ephemera = (props) => {
@@ -92,7 +91,7 @@ const Ephemera = (props) => {
 
     return(
         <main>
-            <div className="cursor-none lander absolute w-screen h-screen overflow-hidden flex py-24">
+            <div className="lander absolute w-screen h-screen overflow-hidden flex py-24">
                 
                 <TextColumn column={column} button={"HOME"}/>
 
@@ -120,7 +119,6 @@ const Ephemera = (props) => {
                 
 
                 <TextColumn column={column} button={toggleAll ? "BACK" : "ALL"} onClick={seeAll}/>
-                <CursorDot />
             </div>
 
         </main>);

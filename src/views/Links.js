@@ -4,7 +4,6 @@ import LinksTitle from "../components/LinksTitle";
 import LinksLink from "../components/LinksLink";
 import NavButton from "../components/NavButton";
 
-
 const Links = ({links}) => {
     useInteractDrag('.draggable');
     const [screenHeight, setScreenHeight] = useState(0);
@@ -27,6 +26,7 @@ const Links = ({links}) => {
                 <LinksTitle screenHeight={screenHeight}/>
                 <NavButton to="/" style={{position: "absolute", bottom: "5%", right: "5%"}} className="text-3xl">HOME</NavButton>
             </div>
+            
         </main>
     );
 };
