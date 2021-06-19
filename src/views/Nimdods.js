@@ -1,7 +1,6 @@
 
 import React, { useState, useEffect} from "react"
 import ReactDOM from 'react-dom';
-import CursorDot from "../components/CursorDot";
 import ScrollOverlay from "../components/ScrollOverlay";
 
 /* import NimdodsTile from "./../components/NimdodsTile"; */
@@ -67,7 +66,7 @@ const Nimdods = (props) => {
     }, [loading, CMSTree]); 
 
     return(
-        <main className="cursor-none relative flex flex-col primary-font-stack bg-color primary-font-color select-none px-10">
+        <main className="relative flex flex-col primary-font-stack bg-color primary-font-color select-none px-10">
            {/* <ScrollableLine fontColor={"white"} /> */}
             {/* header */}
             <header className="w-full flex justify-center flex-initial my-10 border-b-2 border-t-2 border-white">
@@ -89,8 +88,6 @@ const Nimdods = (props) => {
             {/* */}
             <ScrollOverlay />
 
-            {/* footer */}
-            <CursorDot />
 
         </main>
         

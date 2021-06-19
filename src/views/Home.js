@@ -26,7 +26,7 @@ const Home = () => {
 
                 <div className="piece p1 draggable"><img src={piece1}/></div><div className="link l1"><Link to="/works" className="xl:text-xl lg:text-base md:text-sm">WORKS</Link></div>
                 <div className="piece p2 draggable"><img src={piece2}/></div><div className="link l2"><Link to="/ephemera" className="xl:text-xl  lg:text-base md:text-xs">EPHEMERA</Link></div>
-                <div className="piece p3 draggable"><img src={piece3}/></div><div className="link l3"><p className="xl:text-xl  lg:text-base md:text-xs">COLLABS</p></div>
+                <div className="piece p3 draggable"><img src={piece3}/></div><div className="link l3"><Link to="/links" className="xl:text-xl  lg:text-base md:text-xs">LINKS</Link></div>
                 <div className="piece p4 draggable"><img src={piece4}/></div> <div className="link l4"><Link to="/contact" className="xl:text-xl  lg:text-base md:text-xs">CONTACT</Link></div>
             </div>
         </main>
