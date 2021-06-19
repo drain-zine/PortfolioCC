@@ -37,6 +37,11 @@ const Ephemera = (props) => {
 
     }
 
+    const selectImage = (e) => {
+        console.log("id:" + e.target.id);
+        setImageMain(e.target.id);
+    }
+
     useEffect(() => {
         setImageMain(Math.round(Math.random() * imgN));
     }, [])
@@ -52,16 +57,15 @@ const Ephemera = (props) => {
                         <p className="transform -rotate-90 text-2xl -translate-x-1/2">{scrollPercent}</p>
                     </div>
 
-                
-                    <FadeDiv trigger={!toggleAll} className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2"id="expanded">
+                    <FadeDiv trigger={!toggleAll} className="z-0 absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2"id="expanded">
                         <img src={imgTree[imageMain].src} alt="" className="slide-item__image"/>
                     </FadeDiv>
                     
                 
-                    <FadeDiv trigger={toggleAll} id="gallery">
-                    {imgTree.map((i) => (
-                        <FadeDiv trigger={toggleAll} style={{"flex-basis": "33%"}} className="p-2">
-                            <img src={(i.src)} className="slide-item__image"/>
+                    <FadeDiv trigger={toggleAll} id="gallery" className="z-10">
+                    {imgTree.map((img,i) => (
+                        <FadeDiv trigger={toggleAll} style={{"flex-basis": "33%"}} className=" p-2" onClick={selectImage}>
+                            <img src={(img.src)} className="slide-item__image"  id={i}/>
                         </FadeDiv>
                     ))}</FadeDiv>
                     
