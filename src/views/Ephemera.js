@@ -63,7 +63,7 @@ const Ephemera = (props) => {
         setImageMain(e.target.id);
         setToggleAll(!toggleAll);
         if(gallery){
-            gallery.current.scrollTo(0,0);
+            setTimeout(500, gallery.current.scrollTo(0,0));
         }
     }
 
