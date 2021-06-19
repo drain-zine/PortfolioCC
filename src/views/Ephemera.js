@@ -14,6 +14,8 @@ const Ephemera = (props) => {
   
     const isMount = useIsMount();
     const gallery = useRef();
+    const scrollWrapper = useRef();
+    const scrollCount = useRef();
 
     const imgN = imgTree.length;
 
@@ -41,7 +43,16 @@ const Ephemera = (props) => {
 
     const seeAll = (e) => {
         if(!isMount){
+            
             setToggleAll(!toggleAll);
+            if(scrollWrapper.current){
+                scrollWrapper.current.style.opacity = "1";
+                
+            }
+            if(scrollCount.current){
+                scrollCount.current.style.opacity = "1";
+                
+            }
         }
 
     }
@@ -91,7 +102,7 @@ const Ephemera = (props) => {
 
     return(
         <main>
-            <div className="lander absolute w-screen h-screen overflow-hidden flex py-24">
+            <div className="noScrollY lander absolute w-screen h-screen overflow-hidden flex py-24">
                 
                 <TextColumn column={column} button={"HOME"}/>
 
@@ -99,13 +110,13 @@ const Ephemera = (props) => {
                         <img src={imgTree[imageMain].src} alt="" className="mx-auto"/>
                     </FadeDiv>
 
-                <FadeDiv trigger={toggleAll} id="scroll" className="absolute left-1/2 transform -translate-x-1/2 -translate-y-full text-white text-2xl" style={{top: scrollY}}>
+                <FadeDiv ref={scrollCount} trigger={toggleAll} id="scroll" className="absolute left-1/2 transform -translate-x-1/2 -translate-y-full text-white text-2xl" style={{top: scrollY, opacity: "0"}}>
                         <p className="">{scrollPercent}</p>
                 </FadeDiv>
                 
                 <div ref={gallery} className={"noScrollY w-2/3 z-10 text-white relative overflow-y-scroll borderOut " + (toggleAll ? "borderFadeIn" : "borderFadeOut")}>  
                 
-                    <div className="scrollWrapper w-full">
+                    <div ref={scrollWrapper} className="scrollWrapper w-full" style={{opacity: "0"}}>
                         <FadeDiv trigger={toggleAll} id="gallery" className="z-20">
                         {imgTree.map((img,i) => (
                             <FadeDiv trigger={toggleAll} style={{"flex-basis": "33%"}} className=" p-2" onClick={selectImage}>
