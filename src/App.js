@@ -62,35 +62,14 @@ function App() {
       setImgTree(data);
      // await preloadAllAssets();
 
-      await timer(10000);
+      //await timer(10000);
       setLoading(false);
     }
 
     injectData();
   }, []);
 
-  // destroy epherma canvas on route change
-  useEffect(async() => {
-    console.log(locationState);
-    if(locationState != (undefined || null)){ // catch loading splash
-      if(locationState.pathname == "/ephemera"){
-        setPrevLocationState(locationState.pathname);
-      }else if(locationState.pathname == "/"){
-        if(prevLocationState == "/ephemera"){
-          console.log("arriverdeci")
-          let canvas = document.getElementsByTagName("canvas")[0];
-          let scroll = document.getElementById("scroll");
-
-          canvas.classList.remove("fadeIn");
-          canvas.classList.add("fadeOutFast"); 
-
-          await timer(500);
-          canvas.remove();
-          setPrevLocationState(locationState.pathname);
-        }
-      }
-    }
-  }, [locationState]);
+ 
   // update DOM
   useEffect(() => {
       if(!loading && CMSTree){

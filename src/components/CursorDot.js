@@ -45,7 +45,7 @@ const CursorDot = () => {
                 var self = this;
                 
                 // Anchor hovering
-                document.querySelectorAll('img').forEach(function(el) {
+                document.querySelectorAll('img, a').forEach(function(el) {
                     el.addEventListener('mouseover', function() {
                         self.cursorEnlarged = true;
                         self.toggleCursorSize();
@@ -136,8 +136,8 @@ const CursorDot = () => {
 
     return(
         <div>
-            <div class="cursor-dot-outline"></div>
-            <div class="cursor-dot"></div>
+            <div className="cursor-dot-outline z-50"></div>
+            <div className="cursor-dot z-50"></div>
         </div>
     );
 }

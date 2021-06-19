@@ -441,3 +441,37 @@ line.point
 //	html
 //		font-size: 16px	
 		 
+/* Main CSS */
+#gallery
+	/* Prevent vertical gaps */
+	line-height: 0
+
+	-webkit-column-count: 5
+	-webkit-column-gap:   0px
+	-moz-column-count:    5
+	-moz-column-gap:      0px
+	column-count:         3
+	column-gap:           0px
+
+
+#gallery 
+	div
+		img
+			/* Just in case there are inline attributes */
+			width: 100% !important
+			height: auto !important
+
+
+
+$borderFadeAlpha: 0.3
+
+.borderIn
+	border: 2px solid rgba(255,255,255,1)
+.borderOut
+	border: 2px solid rgba(255,255,255,$borderFadeAlpha)
+
+.borderFadeIn
+	transition: border-color 3s linear
+
+.borderFadeOut
+	transition: border-color 1.5s linear
