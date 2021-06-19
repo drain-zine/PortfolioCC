@@ -85,19 +85,20 @@ const CursorDot = () => {
                     });
                 }); 
 
-                // document.querySelectorAll('a').forEach(function(el) {
-                //     el.addEventListener('mouseover', function() {
+                // Anchor hovering
+                document.querySelectorAll('img').forEach(function(el) {
+                    el.addEventListener('mouseover', function() {
+                        self.cursorEnlarged = true;
+                        self.toggleCursorSize();
 
-                //         console.log("link");
-                //         self.$dot.classList.remove("dotNormal");
-                //         self.$dot.classList.add("dotLink")
-                //     });
-                //     el.addEventListener('mouseout', function() {
+                    });
+                    el.addEventListener('mouseout', function() {
+                        self.cursorEnlarged = false;
+                        self.toggleCursorSize();
 
-                //         self.$outline.classList.remove("dotLink")
-                //         self.$outline.classList.add("dotNormal");
-                //     });
-                // }); 
+                    });
+                }); 
+
 
                 
                 // Click events
