@@ -15,8 +15,8 @@ const Links = ({links}) => {
     }, []);
 
     return(
-        <main className="lander absolute w-screen h-screen flex-row overflow-scroll-y">
-            <div className="bg-red-900 flex flex-col text-white text-4xl" style={{flexBasis: "33%"}}>
+        <main className="noScrollY lander absolute w-screen h-screen flex-row overflow-scroll-y overflow-x-hidden">
+            <div className="flex flex-col text-white text-4xl" style={{flexBasis: "33%"}}>
                {links.map((l) => (
                    <LinksLink url={l}/>
                ))}

@@ -67,7 +67,9 @@ const Ephemera = (props) => {
             gallery.current.addEventListener('scroll', handleScroll, { passive: true });
     
             return () => {
-                gallery.current.removeEventListener('scroll', handleScroll);
+                if(gallery.current){
+                    gallery.current.removeEventListener('scroll', handleScroll);
+                }
             };
 
         }
@@ -102,7 +104,7 @@ const Ephemera = (props) => {
                         <p className="">{scrollPercent}</p>
                 </FadeDiv>
                 
-                <div ref={gallery} className={"galleryContainer w-2/3 z-10 text-white relative overflow-y-scroll borderOut " + (toggleAll ? "borderFadeIn" : "borderFadeOut")}>  
+                <div ref={gallery} className={"noScrollY w-2/3 z-10 text-white relative overflow-y-scroll borderOut " + (toggleAll ? "borderFadeIn" : "borderFadeOut")}>  
                 
                     <div className="scrollWrapper w-full">
                         <FadeDiv trigger={toggleAll} id="gallery" className="z-20">
