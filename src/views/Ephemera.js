@@ -74,8 +74,18 @@ const Ephemera = (props) => {
     }, [gallery])
 
     useEffect(() => {
+
+        if(gallery){
+            if(toggleAll){
+                gallery.current.classList.remove(`borderOut`);
+                gallery.current.classList.add(`borderIn`);
+            }else{
+                gallery.current.classList.remove(`borderIn`);
+                gallery.current.classList.add(`borderOut`);  
+            }
+        }
        
-    }, []);
+    }, [toggleAll]);
 
 
     return(
@@ -92,7 +102,7 @@ const Ephemera = (props) => {
                         <p className="">{scrollPercent}</p>
                 </FadeDiv>
                 
-                <div ref={gallery} className="galleryContainer w-2/3 border-2 border-white z-10 text-white relative overflow-y-scroll">  
+                <div ref={gallery} className={"galleryContainer w-2/3 z-10 text-white relative overflow-y-scroll borderOut " + (toggleAll ? "borderFadeIn" : "borderFadeOut")}>  
                 
                     <div className="scrollWrapper w-full">
                         <FadeDiv trigger={toggleAll} id="gallery" className="z-20">
