@@ -26,7 +26,7 @@ const useInteractDrag = (target) => {
             move: dragMoveListener,
 
             }
-        })
+        }).styleCursor(false);
 
         function dragMoveListener (event) {
         var target = event.target
