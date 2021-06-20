@@ -5,14 +5,14 @@ import importAll from "./importAll";
         preloadImages.list = [];
     }
     var list = preloadImages.list;
-    console.log("In func, detected: " + array.length + " images")
+    //console.log("In func, detected: " + array.length + " images")
     array.forEach((i) => {
       var img = new Image();
-      console.log(i);
+      //console.log(i);
       list.push(img);
       img.src = i.default;
       img.onload = function() {
-          console.log("Loaded: " + img.src);
+          //console.log("Loaded: " + img.src);
             var index = list.indexOf(this);
             if (index !== -1) {
                 // remove image from the array once it's loaded
@@ -30,9 +30,9 @@ const preloadAllAssets = async() => {
     const cms =  importAll(require.context('./../data/', true, /\.(gif|jpe?g|tiff?|png|webp|bmp)$/i));
     const imgs = res.concat(cms);
 
-    console.log("In preload images")
+    //console.log("In preload images")
     preloadImages(imgs);
-    console.log("done");
+    //console.log("done");
 }
 
 export default preloadAllAssets;

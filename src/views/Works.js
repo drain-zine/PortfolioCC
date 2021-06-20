@@ -32,7 +32,7 @@ const Works = (props) => {
     // listen to when first card is opened and last card is closed to trigger background anim
     useEffect(() => {
         if(togglesCounter.count === -1){
-            console.log("EVERYTHING CLOSED");
+            //console.log("EVERYTHING CLOSED");
             if(!firstClick){
                 setFirstClick(true);
             }else{
@@ -45,10 +45,10 @@ const Works = (props) => {
              /* setFirstClick(false) */
         }
          if(togglesCounter.count === -1 && togglesCounter.ve === -1 && firstClick){
-            console.log("HERE");
+            //console.log("HERE");
             setTrigger(!trigger);
         }
-        console.log(togglesCounter);
+        //console.log(togglesCounter);
     }, [togglesCounter])
 
     // bind drag listener

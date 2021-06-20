@@ -26,9 +26,9 @@ const parseView = (element, index) => {
     if (element.tagName === undefined) {
         
         if(!element.nodeValue.trim()){
-            console.log("NULL");
+            //console.log("NULL");
         }else{
-            //console.log("END OF TREE: " + element.nodeValue)
+            ////console.log("END OF TREE: " + element.nodeValue)
             return element.nodeValue;
         }
         
@@ -38,14 +38,14 @@ const parseView = (element, index) => {
 
     // cross ref w manifest to get component
     let component = manifest[element.tagName];
-    //console.log("ele_name: " + element.tagName  +" COMPONENT: " + component);
+    ////console.log("ele_name: " + element.tagName  +" COMPONENT: " + component);
 
     if (component) {
         let reactChildren = [];
 
         if (element.childNodes) {
             for(let i = 0; i < element.childNodes.length; i++){
-                console.log("CHILD " + i + " : " +element.childNodes[i]);
+                //console.log("CHILD " + i + " : " +element.childNodes[i]);
                 reactChildren.push(parseView(element.childNodes[i], i));
             }
         }

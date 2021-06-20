@@ -7,14 +7,14 @@ const fetchData = async(url) => {
     .then(response => response.data)
     .then(str =>  (new window.DOMParser()).parseFromString(str, "text/xml"))
     .then(data => {
-        console.log(data);
+        //console.log(data);
         return data;
     });
 
-    console.log("LINKS: " + test);
+    //console.log("LINKS: " + test);
     
     let linkEls = test.getElementsByTagName("link");
-    console.log(linkEls)
+    //console.log(linkEls)
     let links = [];
     
     for(let l of linkEls){
@@ -32,7 +32,7 @@ const loadLinks = () => {
     let previews= [];
     let test = [];
 
-    console.log(file)
+    //console.log(file)
 
     return fetchData(file[0].default);
 }

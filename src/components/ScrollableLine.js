@@ -22,7 +22,7 @@ const ScrollableLine = (props) => {
             setLineRandYOffset(rand_offset);
 
             var pathLength = Math.max(ref.current.offsetHeight);
-            console.log("[INIT LINE] INIT LINE Height:  " + pathLength + " test:  ");
+            //console.log("[INIT LINE] INIT LINE Height:  " + pathLength + " test:  ");
 
             setLineHeight(pathLength);
             setStrokeDasharray(pathLength + ' ' + pathLength);

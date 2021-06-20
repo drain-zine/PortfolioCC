@@ -59,7 +59,7 @@ const Ephemera = (props) => {
     }
 
     const selectImage = (e) => {
-        //console.log("id:" + e.target.id);
+        ////console.log("id:" + e.target.id);
         setImageMain(e.target.id);
         setToggleAll(!toggleAll);
 
@@ -71,7 +71,7 @@ const Ephemera = (props) => {
             const scaledHeight = gallery.current.clientHeight + (window.innerHeight - (gallery.current.clientHeight))/2
             setGalleryDim({width: gallery.current.clientWidth, height: scaledHeight});
             setScrollY(gallery.current.getBoundingClientRect().top);
-            console.log(galleryDim);
+            //console.log(galleryDim);
 
             gallery.current.addEventListener('scroll', handleScroll, { passive: true });
     

@@ -11,16 +11,16 @@ const fetchData = async(url) => {
     .then(response => response.data)
     .then(str =>  (new window.DOMParser()).parseFromString(str, "text/xml"))
     .then(data => {
-        console.log(data);
+        //console.log(data);
         return data;
     });
 
-    console.log("TEST: " + test);
+    //console.log("TEST: " + test);
     
     
     let root = test.getElementsByTagName("post")[0];
     for(let i = 0; i < root.children.length; i++){
-        console.log("FOUND NODE: " + root.children[i].tagName);
+        //console.log("FOUND NODE: " + root.children[i].tagName);
     }
 
     return parseCMS(test);
@@ -33,12 +33,12 @@ const loadCMS = () => {
     let test = [];
 
     for(let i = 0; i < files.length; i++){
-        console.log(files[i]);
+        //console.log(files[i]);
         let content = fetchData(files[i].default);
         /* reactTree.push(content["tree"]);
         previews.push(content["preview"]); */
         test.push(content);
-        console.log(content);
+        //console.log(content);
     }
 
     return test;

@@ -28,7 +28,7 @@ const LoadingScreen = () => {
 
     const initAnimation =() => {
         if(!isInit){
-            console.log("HELLO");
+            //console.log("HELLO");
             setTimeout(document.getElementById("test").click(), 300);
             document.getElementById("backgroundMusic").play();
             setIndex((index+1)%colorN)

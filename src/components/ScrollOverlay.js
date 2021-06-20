@@ -16,7 +16,7 @@ const ScrollOverlay = (props) => {
     useEffect(() => {
         if(scrollPercent > trigger){
             controls.start("visible");
-            console.log("element visible");
+            //console.log("element visible");
         } else {
            controls.start("hidden");
         }

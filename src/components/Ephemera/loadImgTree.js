@@ -6,7 +6,7 @@ const loadImgTree = () => {
     const imgTree = []
 
     imgs.forEach((img) => {
-        console.log(img);
+        //console.log(img);
         const newImage = new Image();
         newImage.src = img.default;
         imgTree.push(newImage);
