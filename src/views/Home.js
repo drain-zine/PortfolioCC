@@ -20,7 +20,7 @@ const Home = () => {
             <div className="puzzle-container md:absolute md:top-1/2 md:transform md:-translate-y-1/2 md:w-1/2">
                  <div className="relative text-center">
 
-                    <h1 className="primary-font-stack text-white xl:top-0 2xl:text-3xl lg:text-lg"> Is this page a visual contraption? What hides underneath this name? Can I perhaps drag these elements around?</h1>
+                    <h1 className="primary-font-stack text-white xl:top-0 2xl:text-3xl lg:text-lg"> What is this visual contraption of a name? Can I drag these fragments around?</h1>
                     <div className="bg-noisy puzzleBackground"></div>
                     <img className="background" src={background}/>
                     
