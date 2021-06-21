@@ -57,7 +57,7 @@ const Works = (props) => {
     return(
         <main className="relative primary-font-stack bg-color primary-font-color h-screen select-none overflow-hidden">
              <CursorDot />
-             <marquee direction="right" className={"w-full absolute z-20 top-0 left-0 " + (!trigger ? "text-white" : "text-black")}>How curious... I can drag these around... I wonder if I can (double) click them too...</marquee>
+             <marquee direction="right" className={"w-full absolute z-20 top-0 left-0 " + (!trigger ? "text-white" : "text-black")}>How curious... Are these ancient panels moveable? What happens if I (double) click them? I am drawn to them... </marquee>
             <div className="w-full h-full absolute z-0">
 
                 <div className="backgroundTitle absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2">
